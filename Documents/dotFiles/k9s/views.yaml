@@ -1,0 +1,6 @@
+# views:
+#   helm.toolkit.fluxcd.io/v2/helmreleases:
+#     columns:
+#       - header: NAME
+#         field: .metadata.namespace
+#         width: 20
