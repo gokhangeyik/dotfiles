@@ -1,0 +1,93 @@
+#
+ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
+
+# Download Zinit, if it's not there yet
+if [ ! -d "$ZINIT_HOME" ]; then
+   mkdir -p "$(dirname $ZINIT_HOME)"
+   git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+fi
+
+# Source/Load zinit
+source "${ZINIT_HOME}/zinit.zsh"
+
+zinit light zsh-users/zsh-syntax-highlighting
+zinit light zsh-users/zsh-completions
+zinit light zsh-users/zsh-autosuggestions
+zinit light Aloxaf/fzf-tab
+
+autoload -Uz compinit && compinit
+
+zinit cdreplay -q
+#use a history file in here
+HISTFILE=~/.zsh_history
+SAVEHIST=1000000
+HISTSIZE=1000000
+HISTDUP=erase
+
+setopt appendhistory
+setopt sharehistory
+setopt hist_ignore_space
+setopt hist_ignore_all_dups
+setopt hist_save_no_dups
+setopt hist_ignore_dups
+setopt hist_find_no_dups
+
+alias history="history 0"
+
+export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH="/usr/local/sbin:$PATH"
+export PATH="$HOME/.local/bin:$PATH"
+export PATH="${PATH}:${HOME}/.krew/bin"
+export PATH="${PATH}:{$HOME}/.cargo/bin"
+export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
+export TERM=xterm-256color
+export EDITOR="nvim"
+export VISUAL="nvim"
+
+zstyle ':completion:*' menu no
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
+
+#FZF Catppuccin Macchiato
+# export FZF_DEFAULT_OPTS=" \
+# --color=bg+:#363a4f,bg:#24273a,spinner:#f4dbd6,hl:#ed8796 \
+# --color=fg:#cad3f5,header:#ed8796,info:#c6a0f6,pointer:#f4dbd6 \
+# --color=marker:#f4dbd6,fg+:#cad3f5,prompt:#c6a0f6,hl+:#ed8796"
+
+export FZF_DEFAULT_OPTS=" \
+--color=bg+:#313244,bg:#1e1e2e,spinner:#f5e0dc,hl:#f38ba8 \
+--color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc \
+--color=marker:#b4befe,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8 \
+--color=selected-bg:#45475a \
+--multi"
+
+function gi(){
+    curl -sLw "\n" https://www.toptal.com/developers/gitignore/api/$@ | awk '(!/^#/) && (NF)' ;
+}
+
+function repoclean() {
+   git fetch -p && git branch -vv | awk '/: gone]/{print $1}' | xargs git branch -D
+}
+
+
+
+alias ls='lsd -l'
+alias ll='lsd -al'
+alias -g k='kubectl'
+alias t='tmux'
+alias top='htop'
+alias vim='nvim'
+alias vi='nvim'
+alias gcli='docker run --net=host --rm -it -v $HOME:/home/gokko registry.kodzilla.net/gokko-cli/gokko-cli:latest zsh'
+alias argo="docker run --net=host --rm -it -v $HOME:/home/gokko registry.kodzilla.net/gokko-cli/gokko-cli:latest argo"
+
+# bindkey -s '^F' 'tmux-sessionzer\n'
+bindkey '^R' history-incremental-search-backward
+bindkey '^p' history-search-backward
+bindkey '^n' history-search-forward
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+eval "$(fzf --zsh)"
+
+export BW_SESSION="zSzakfwurvK6TAz68IY/UAkOF9U7sIsieMX6+RX76L4vCjKNaFRJNE7hu6NjZl90qc5yzz1M+4J4m3hJcx1zUg=="
+
