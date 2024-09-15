@@ -8,7 +8,7 @@ return {
       floating_border = "on",
       custom_highlights = function(colors)
         return {
-          CursorLine = { bg = colors.base },
+          CursorLine = { bg = colors.surface0, blend = 100 },
           CursorLineNr = { fg = colors.peach, style = { "bold" } },
           LineNr = { fg = colors.overlay0 },
         }
