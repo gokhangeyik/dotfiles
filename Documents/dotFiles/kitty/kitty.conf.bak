@@ -2467,7 +2467,7 @@ macos_option_as_alt yes
 
 
 # BEGIN_KITTY_THEME
-# Doom Vibrant
+# Rosé Pine
 include current-theme.conf
 # END_KITTY_THEME
 
