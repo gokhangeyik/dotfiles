@@ -4,13 +4,37 @@ return {
   lazy = false,
   version = false, -- set this if you want to always pull the latest change
   opts = {
-    provider = "ollama",
+    provider = "llama3",
     vendors = {
       ---@type AvanteProvider
-      ollama = {
+      llama3 = {
         ["local"] = true,
         endpoint = "192.168.178.254:11434/v1",
         model = "llama3.1:8b",
+        parse_curl_args = function(opts, code_opts)
+          return {
+            url = opts.endpoint .. "/chat/completions",
+            headers = {
+              ["Accept"] = "application/json",
+              ["Content-Type"] = "application/json",
+            },
+            body = {
+              model = opts.model,
+              messages = require("avante.providers").copilot.parse_message(code_opts), -- you can make your own message, but this is very advanced
+              max_tokens = 2048,
+              stream = true,
+            },
+          }
+        end,
+        parse_response_data = function(data_stream, event_state, opts)
+          require("avante.providers").openai.parse_response(data_stream, event_state, opts)
+        end,
+      },
+      ---@type AvanteProvider
+      gemma2 = {
+        ["local"] = true,
+        endpoint = "192.168.178.254:11434/v1",
+        model = "gemma2:9b",
         parse_curl_args = function(opts, code_opts)
           return {
             url = opts.endpoint .. "/chat/completions",
