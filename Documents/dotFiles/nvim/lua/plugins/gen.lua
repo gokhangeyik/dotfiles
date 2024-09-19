@@ -31,7 +31,7 @@ return {
     },
   },
   opts = {
-    model = "deepseek-coder-v2:16b", -- The default model to use.
+    model = "llama3.1:8b", -- The default model to use.
     host = "192.168.178.254", -- The host running the Ollama service.
     port = "11434", -- The port on which the Ollama service is listening.
     quit_map = "q", -- set keymap for close the response window
