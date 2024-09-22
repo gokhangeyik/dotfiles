@@ -72,9 +72,9 @@ return {
         extract = "```$filetype\n(.-)```",
       },
     },
-    init = function(options)
-      pcall(io.popen, "ollama serve > /dev/null 2>&1 &")
-    end,
+    -- init = function(options)
+    --   pcall(io.popen, "ollama serve > /dev/null 2>&1 &")
+    -- end,
     -- Function to initialize Ollama
     command = function(options)
       local body = { model = options.model, stream = true }
