@@ -12,6 +12,10 @@ _GokkoNvim.remove_dups = function(list)
   return res
 end
 
+function _GokkoNvim.func_exist(func)
+  return type(func) == "function"
+end
+
 _GokkoNvim.init_deps = function()
   local config_path = vim.fn.stdpath("config")
   local scandir = vim.uv.fs_scandir(config_path .. "/lua/plugins/lsp/lang")
@@ -22,7 +26,7 @@ _GokkoNvim.init_deps = function()
         break
       end
       if t == "file" and file:match("%.lua$") then
-        local module_name = file:sub(1, -5) -- Remove the .lua extension
+        local module_name = file:sub(1, -5)
         local lang_module = require("plugins.lsp.lang." .. module_name)
         _GokkoNvim.lsp = vim.tbl_deep_extend("force", _GokkoNvim.lsp or {}, lang_module.lsp or {})
         _GokkoNvim.lsp_overrides =
@@ -42,9 +46,12 @@ end
 _GokkoNvim.mason_tools_installer = function()
   local mason_registry = require("mason-registry")
   for _, tool_name in ipairs(_GokkoNvim.tools) do
-    local tool = mason_registry.get_package(tool_name)
-    if not tool:is_installed() then
-      tool:install()
+    local ok, tool = pcall(mason_registry.get_package, tool_name)
+    if ok then
+      if not tool:is_installed() then
+        tool:install()
+        vim.notify("Sucessfully installed:" .. tool_name)
+      end
     end
   end
 end

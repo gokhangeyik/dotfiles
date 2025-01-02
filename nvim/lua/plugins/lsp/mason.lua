@@ -23,7 +23,6 @@ return {
     event = "VeryLazy",
     dependencies = "williamboman/mason.nvim",
     config = function()
-      _GokkoNvim.async(_GokkoNvim.mason_tools_installer)
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
       local ensure_installed = vim.tbl_deep_extend("force", vim.tbl_keys(_GokkoNvim.lsp), {})
@@ -41,6 +40,7 @@ return {
           end,
         },
       })
+      _GokkoNvim.async(_GokkoNvim.mason_tools_installer)
     end,
   },
 }

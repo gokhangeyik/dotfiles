@@ -28,11 +28,13 @@ local lsp = {
   basedpyright = {
     filetypes = { "python" },
     settings = {
-      python = {
+      basedpyright = {
         analysis = {
           autoSearchPaths = true,
           diagnosticMode = "workspace",
           useLibraryCodeForTypes = true,
+          typeCheckingMode = "standard",
+          -- stubPath = "typings",
           -- ignore = { "*" },
         },
       },
@@ -51,9 +53,9 @@ local treesitter = {
   "rst",
 }
 local lsp_overrides = {
-  -- pyright = function(client)
+  -- basedpyright = function(client)
   --   client.server_capabilities.renameProvider = false
-  --   client.server_capabilities.definitionProvider = true
+  --   client.server_capabilities.definitionProvider = false
   --   client.server_capabilities.referencesProvider = true
   --   client.server_capabilities.documentFormattingProvider = false
   --   client.server_capabilities.documentRangeFormattingProvider = false

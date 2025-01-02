@@ -21,7 +21,7 @@ return {
     {
       "mfussenegger/nvim-ansible",
       lazy = true,
-      ft = {},
+      ft = { "ansible.yaml" },
       keys = {
         {
           "<leader>ta",
