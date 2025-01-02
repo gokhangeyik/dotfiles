@@ -57,17 +57,18 @@ return {
 
         -- LSP Config Exceptions
         local client = vim.lsp.get_client_by_id(event.data.client_id) or {}
+
         if client.name == "gopls" and not client.server_capabilities.semanticTokensProvider then
           client = _GokkoNvim.lsp_overrides.gopls(client)
         end
 
-        if client.name == "pyright" then
-          client = _GokkoNvim.lsp_overrides.pyright(client)
-        end
+        -- if client.name == "ruff" then
+        --   client = _GokkoNvim.lsp_overrides.ruff(client)
+        -- end
 
-        if client.name == "ruff" then
-          client = _GokkoNvim.lsp_overrides.ruff(client)
-        end
+        -- if client.name == "pyright" then
+        --   client = _GokkoNvim.lsp_overrides.pyright(client)
+        -- end
         -- /LSP Config Exceptions
 
         if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
