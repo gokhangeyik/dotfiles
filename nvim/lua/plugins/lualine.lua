@@ -4,9 +4,9 @@ return {
   priority = 800,
   enabled = true,
   lazy = true,
-  dependencies = {
-    "folke/tokyonight.nvim",
-  },
+  -- dependencies = {
+  --   "folke/tokyonight.nvim",
+  -- },
   config = function()
     local branch = { "branch", icon = "" }
     local mode = { "mode", icon = "" }
@@ -53,7 +53,7 @@ return {
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        theme = "auto",
+        theme = "tokyonight",
         disabled_filetypes = { "Avante" },
         -- section_separators = { left = "🬗", right = "🬤" },
         -- component_separators = { left = "🬗", right = "🬤" },

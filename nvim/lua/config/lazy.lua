@@ -44,6 +44,7 @@ require("lazy").setup({
   },
   spec = {
     -- import your plugins
+    { import = "plugins.themes" },
     { import = "plugins" },
     { import = "plugins.lsp" },
     lang_plugins,
