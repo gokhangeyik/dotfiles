@@ -15,6 +15,24 @@ return {
   dependencies = {
     "nvim-lua/plenary.nvim",
   },
+  keys = {
+    { "<leader>ot", mode = { "n" }, "<cmd>ObsidianToday<cr>", desc = "Today" },
+    { "<leader>oT", mode = { "n" }, "<cmd>ObsidianToday +1<cr>", desc = "Tomorrow" },
+    { "<leader>oY", mode = { "n" }, "<cmd>ObsidianToday -1<cr>", desc = "Yesterday" },
+    { "<leader>oN", mode = { "n" }, "<cmd>ObsidianNewFromTemplate<cr>", desc = "New Note From Template" },
+    {
+      "<leader>os",
+      mode = { "n" },
+      function()
+        vim.ui.input({ prompt = "Obsidian Search: " }, function(input)
+          if input then
+            vim.cmd("ObsidianSearch " .. input)
+          end
+        end)
+      end,
+      desc = "Obsidian Search",
+    },
+  },
   opts = {
     templates = {
       folder = "Templates",
