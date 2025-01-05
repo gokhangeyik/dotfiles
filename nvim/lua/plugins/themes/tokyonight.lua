@@ -39,6 +39,7 @@ return {
       ---@param colors ColorScheme
       on_highlights = function(highlights, colors)
         local prompt = "#2d3149"
+        highlights.CursorLine = { bg = colors.bg_dark, blend = 1 }
         highlights.TelescopeNormal = {
           bg = colors.bg_dark,
           fg = colors.fg_dark,
