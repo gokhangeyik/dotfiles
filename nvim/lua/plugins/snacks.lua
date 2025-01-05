@@ -9,7 +9,7 @@ return {
     bigfile = { enabled = true },
     dashboard = { enabled = true },
     notifier = {
-      enabled = true,
+      enabled = false,
       timeout = 3000,
     },
     quickfile = { enabled = true },
