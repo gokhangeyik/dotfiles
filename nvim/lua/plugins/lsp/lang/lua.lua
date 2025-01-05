@@ -60,14 +60,23 @@ return {
       "saghen/blink.cmp",
       opts = {
         sources = {
-          completion = {
-            enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" },
-          },
+          default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+          -- completion = {
+          --   enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" },
+          -- },
           providers = {
-            -- dont show LuaLS require statements when lazydev has items
-            lsp = { fallback_for = { "lazydev" } },
-            lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
+            lazydev = {
+              name = "LazyDev",
+              module = "lazydev.integrations.blink",
+              -- make lazydev completions top priority (see `:h blink.cmp`)
+              score_offset = 100,
+            },
           },
+          -- providers = {
+          --   -- dont show LuaLS require statements when lazydev has items
+          --   lsp = { fallback_for = { "lazydev" } },
+          --   lazydev = { name = "LazyDev", module = "lazydev.integrations.blink" },
+          -- },
         },
       },
     },
