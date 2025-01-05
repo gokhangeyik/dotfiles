@@ -3,6 +3,7 @@ return {
   -- event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   -- event = "VeryLazy",
   lazy = true,
+  enabled = true,
   dependencies = {
     { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",

@@ -34,6 +34,7 @@ return {
     },
   },
   opts = {
+    ui = { enable = false },
     templates = {
       folder = "Templates",
       date_format = "%d-%m-%Y",
