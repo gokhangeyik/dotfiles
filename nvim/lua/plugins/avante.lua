@@ -5,36 +5,7 @@ return {
   event = "VeryLazy",
   -- lazy = true,
   version = false, -- set this if you want to always pull the latest change
-  opts = {
-    ---@alias Provider "claude" | "openai" | "azure" | "gemini" | "cohere" | "copilot" | string
-    provider = "copilot",
-    hints = { enabled = true },
-    auto_suggestion_provider = "copilot",
-    behaviour = {
-      auto_suggestions = false, -- Experimental stage
-      auto_set_highlight_group = true,
-      auto_set_keymaps = true,
-      auto_apply_diff_after_generation = false,
-      support_paste_from_clipboard = false,
-      minimize_diff = false, -- Whether to remove unchanged lines when applying a code block
-    },
-    vendors = {
-      codestral_comp01 = {
-        __inherited_from = "openai",
-        api_key_name = "",
-        endpoint = "http://192.168.178.254:11434/v1",
-        model = "codestral:22b",
-        stream = true,
-      },
-      qwen25coder_comp01 = {
-        __inherited_from = "openai",
-        api_key_name = "",
-        endpoint = "http://192.168.178.254:11434/v1",
-        model = "qwen2.5-coder:14b",
-        stream = true,
-      },
-    },
-  },
+  opts = {},
   build = "make",
   dependencies = {
     "stevearc/dressing.nvim",
