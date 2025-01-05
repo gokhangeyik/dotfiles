@@ -50,7 +50,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
             end,
           },
         },
-        -- winblend = 10, -- Transparency level
+        winblend = 0, -- Transparency level
         -- border = false, -- Show borders
       },
       -- You can put your default mappings / updates / etc. in here
@@ -91,7 +91,7 @@ return { -- Fuzzy Finder (files, lsp, etc)
     vim.keymap.set("n", "<leader>/", function()
       -- You can pass additional configuration to Telescope to change the theme, layout, etc.
       builtin.current_buffer_fuzzy_find(require("telescope.themes").get_dropdown({
-        winblend = 10,
+        winblend = 0,
         previewer = false,
       }))
     end, { desc = "[/] Fuzzily search in current buffer" })
