@@ -1,6 +1,6 @@
 return {
   "folke/tokyonight.nvim",
-  event = "VeryLazy",
+  -- event = "VeryLazy",
   lazy = false,
   priority = 1000,
   config = function()
@@ -39,7 +39,15 @@ return {
       ---@param colors ColorScheme
       on_highlights = function(highlights, colors)
         local prompt = "#2d3149"
+        -- highlights.FloatBorder = { bg = colors.bg_dark, fg = colors.bg_dark }
+        local titles = {
+          Yeet = { fg = colors.orange, bg = colors.bg_dark },
+          Harpoon = { fg = colors.orange, bg = colors.bg_dark },
+        }
+
+        _GokkoNvim.flat_floats(colors, titles)
         highlights.CursorLine = { bg = colors.bg_dark, blend = 1 }
+
         highlights.TelescopeNormal = {
           bg = colors.bg_dark,
           fg = colors.fg_dark,
