@@ -2,13 +2,10 @@ return {
   {
     "nvim-treesitter/nvim-treesitter",
     build = ":TSUpdate",
-    enabled = true,
     main = "nvim-treesitter.configs", -- Sets main module to use for opts
-    -- lazy = false,
     event = "VeryLazy",
     opts = {
       ensure_installed = _GokkoNvim.treesitter,
-      -- Autoinstall languages that are not installed
       auto_install = true,
       highlight = {
         enable = true,
