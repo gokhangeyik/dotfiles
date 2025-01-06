@@ -496,6 +496,14 @@ live_config_reload = true
 # All imports must either be absolute paths starting with /, or paths relative to the user's home directory starting with ~/.
 
 # Example:
+import = [
+  # uncomment the flavour you want below:
+  #  "~/.config/alacritty/catppuccin-latte.toml",
+  # "~/.config/alacritty/catppuccin-frappe.toml"
+  # "~/.config/alacritty/catppuccin-macchiato.toml"
+  #"~/.config/alacritty/catppuccin-mocha.toml",
+  "~/.config/alacritty/tokyonight-night.toml",
+]
 
 # import = [
 # "~/.config/alacritty/base16-dark.toml",
@@ -942,11 +950,3 @@ live_config_reload = true
 # MAINTAINERS
 # · Christian Duerr <contact@christianduerr.com>
 # · Kirill Chibisov <contact@kchibisov.com>
-import = [
-  # uncomment the flavour you want below:
-  #  "~/.config/alacritty/catppuccin-latte.toml",
-  # "~/.config/alacritty/catppuccin-frappe.toml"
-  # "~/.config/alacritty/catppuccin-macchiato.toml"
-  #"~/.config/alacritty/catppuccin-mocha.toml",
-  "~/.config/alacritty/tokyonight-night.toml",
-]
