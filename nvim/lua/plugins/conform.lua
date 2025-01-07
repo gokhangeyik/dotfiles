@@ -27,8 +27,6 @@ return {
       css = { "prettierd", "prettier", stop_after_first = true },
       hcl = { "packer_fmt" },
       terraform = { "terraform_fmt" },
-      tf = { "terraform_fmt" },
-      ["terraform-vars"] = { "terraform_fmt" },
     },
     default_format_opts = {
       lsp_format = "fallback",
