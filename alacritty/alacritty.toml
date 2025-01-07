@@ -24,9 +24,9 @@
 # program = "/bin/zsh"
 # args = ["-l"]
 
-[terminal.shell]
-program = "/usr/bin/zsh"
-args = ["-l"]
+# [terminal.shell]
+# program = "/usr/bin/zsh"
+# args = ["-l"]
 
 
 # ENV
@@ -200,15 +200,15 @@ multiplier = 3
 # When true, Alacritty will use a custom built-in font for box drawing characters (Unicode points U+2500 - U+259F) and powerline symbols (Unicode points U+E0B0 - U+E0B3).
 # Default: true
 
-[font]
-normal = { family = "JetBrains Mono", style = "Light" }
-# italic = { family = "JetBrains Mono", style = "Italic" }
-# bold = { family = "JetBrains Mono", style = "Bold" }
-# bold_italic = { family = "JetBrains Mono", style = "Bold Italic" }
-size = 11
-builtin_box_drawing = true
-offset = { x = 0, y = 20 }
-glyph_offset = { x = 0, y = 10 }
+# [font]
+# normal = { family = "JetBrains Mono", style = "Light" }
+# # italic = { family = "JetBrains Mono", style = "Italic" }
+# # bold = { family = "JetBrains Mono", style = "Bold" }
+# # bold_italic = { family = "JetBrains Mono", style = "Bold Italic" }
+# size = 11
+# builtin_box_drawing = true
+# offset = { x = 0, y = 20 }
+# glyph_offset = { x = 0, y = 10 }
 
 # COLORS
 # This section documents the [colors] table of the configuration file.
@@ -503,6 +503,7 @@ import = [
   # "~/.config/alacritty/catppuccin-macchiato.toml"
   #"~/.config/alacritty/catppuccin-mocha.toml",
   "~/.config/alacritty/tokyonight-night.toml",
+  "~/.config/alacritty/alacritty-overrides.toml",
 ]
 
 # import = [
@@ -900,8 +901,13 @@ import = [
 # { key = "L", mods = "Control|Shift", chars = "l" },
 # ]
 
-#[keyboard]
-
+# [keyboard]
+# bindings = [
+# { key = "H", mods = "Control|Shift", chars = "\u001b[72;5u" },
+# { key = "J", mods = "Control|Shift", chars = "\u001b[74;5u" },
+# { key = "K", mods = "Control|Shift", chars = "\u001b[75;5u" },
+# { key = "L", mods = "Control|Shift", chars = "\u001b[76;5u" },
+# ]
 
 # DEBUG
 # This section documents the [debug] table of the configuration file.
