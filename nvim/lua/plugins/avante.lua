@@ -16,7 +16,11 @@ return {
       cmd = "Copilot",
       event = "InsertEnter",
       config = function()
-        require("copilot").setup({})
+        require("copilot").setup({
+          filetypes = {
+            ["*"] = false,
+          },
+        })
       end,
     },
     -- {
