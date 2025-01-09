@@ -8,7 +8,6 @@ return {
     { "williamboman/mason.nvim", config = true },
     "williamboman/mason-lspconfig.nvim",
     "saghen/blink.cmp",
-    "j-hui/fidget.nvim",
   },
   opts = {
     capabilities = {
