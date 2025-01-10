@@ -5,7 +5,13 @@ return {
   event = "VeryLazy",
   -- lazy = true,
   version = false, -- set this if you want to always pull the latest change
-  opts = {},
+  opts = {
+    windows = {
+      sidebar_header = {
+        rounded = false,
+      },
+    },
+  },
   build = "make",
   dependencies = {
     "stevearc/dressing.nvim",
