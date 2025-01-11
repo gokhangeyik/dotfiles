@@ -17,6 +17,7 @@ return {
     },
   },
   opts = {
+    popup_border_style = "solid",
     sources = { "filesystem", "buffers", "git_status" },
     open_files_do_not_replace_types = { "terminal", "Trouble", "trouble", "qf", "Outline" },
     filesystem = {
