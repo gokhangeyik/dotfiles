@@ -58,16 +58,9 @@ _GokkoNvim.async = function(func)
   vim.defer_fn(func, 0)
 end
 
-_GokkoNvim.flat_floats = function()
-  -- Example titles:
-  -- {
-  --   Yeet = { fg = colors.orange, bg = colors.bg_dark },
-  --   Mason = { fg = colors.blue, bg = colors.bg_dark },
-  -- }
-
+_GokkoNvim.float_styler = function()
   vim.api.nvim_create_autocmd("WinNew", {
     callback = function()
-      -- vim.schedule(function()
       local win_id = vim.api.nvim_get_current_win()
       local win_conf = vim.api.nvim_win_get_config(win_id)
 
@@ -76,37 +69,13 @@ _GokkoNvim.flat_floats = function()
         if title and type(title) == "table" and title[1] and title[1][1] then
           local window_title = title[1][1]
 
-          -- for t_name, t_colors in pairs(titles) do
-          --   if window_title == t_name then
-          --     local ns_id = vim.api.nvim_create_namespace("float_" .. t_name:lower())
-          --
-          --     vim.api.nvim_set_hl(ns_id, "FloatBorder", {
-          --       bg = t_colors.bg,
-          --       fg = t_colors.bg,
-          --     })
-          --     vim.api.nvim_set_hl(ns_id, "FloatTitle", {
-          --       bg = t_colors.fg,
-          --       fg = t_colors.bg,
-          --       bold = true,
-          --     })
-          --     vim.api.nvim_set_hl(ns_id, "NormalFloat", {
-          --       bg = t_colors.bg,
-          --     })
-          --
-          --     vim.api.nvim_win_set_hl_ns(win_id, ns_id)
-
           local config = vim.api.nvim_win_get_config(win_id)
           config.title_pos = "center"
           config.title = { { " " .. window_title .. " ", "FloatTitle" } }
           config.relative = "editor"
           vim.api.nvim_win_set_config(win_id, config)
-
-          -- break
         end
       end
-      -- end
-      -- end
-      -- end)
     end,
   })
 end

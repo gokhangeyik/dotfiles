@@ -30,12 +30,7 @@ return {
       },
       overrides = function(colors) -- add/modify highlights
         local theme = colors.theme
-        -- local titles = {
-        --   Yeet = { fg = theme.vcs.changed, bg = theme.ui.bg_m3 },
-        --   Harpoon = { fg = theme.vcs.changed, bg = theme.ui.bg_m3 },
-        -- }
-        -- _GokkoNvim.flat_floats(theme, titles)
-        _GokkoNvim.flat_floats()
+        _GokkoNvim.float_styler()
         return {
           NormalFloat = { bg = theme.ui.bg_m3 },
           FloatBorder = { fg = theme.ui.bg_m3, bg = theme.ui.bg_m3 },

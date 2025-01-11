@@ -78,11 +78,7 @@ return {
         TelescopePromptBorder = { fg = "surface", bg = "surface" },
       },
       before_highlight = function(group, highlight, palette)
-        local titles = {
-          Yeet = { fg = palette.foam, bg = palette.surface },
-          Harpoon = { fg = palette.foam, bg = palette.surface },
-        }
-        _GokkoNvim.flat_floats(palette, titles)
+        _GokkoNvim.float_styler()
         -- if highlight.undercurl then
         --     highlight.undercurl = false
         -- end

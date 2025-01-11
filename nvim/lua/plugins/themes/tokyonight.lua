@@ -41,12 +41,7 @@ return {
       on_highlights = function(highlights, colors)
         local prompt = "#2d3149"
         -- highlights.FloatBorder = { bg = colors.bg_dark, fg = colors.bg_dark }
-        local titles = {
-          Yeet = { fg = colors.orange, bg = colors.bg_dark },
-          Harpoon = { fg = colors.orange, bg = colors.bg_dark },
-        }
-
-        _GokkoNvim.flat_floats(colors, titles)
+        _GokkoNvim.float_styler()
         highlights.CursorLine = { bg = colors.bg_dark, blend = 1 }
 
         highlights.TelescopeNormal = {
