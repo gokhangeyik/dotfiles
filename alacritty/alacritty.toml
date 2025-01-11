@@ -498,11 +498,10 @@ live_config_reload = true
 # Example:
 import = [
   # uncomment the flavour you want below:
-  #  "~/.config/alacritty/catppuccin-latte.toml",
-  # "~/.config/alacritty/catppuccin-frappe.toml"
-  # "~/.config/alacritty/catppuccin-macchiato.toml"
   #"~/.config/alacritty/catppuccin-mocha.toml",
-  "~/.config/alacritty/tokyonight-night.toml",
+  # "~/.config/alacritty/tokyonight-night.toml",
+  # "~/.config/alacritty/rosepine.toml",
+   "~/.config/alacritty/kanagawa.toml",
   "~/.config/alacritty/alacritty-overrides.toml",
 ]
 
