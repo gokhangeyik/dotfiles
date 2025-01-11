@@ -60,14 +60,14 @@ opt.winminwidth = 5 -- Minimum window width
 opt.wrap = false -- Disable line wrap
 
 vim.diagnostic.config({
-  -- virtual_text = true, -- floating text next to code is too noisy.
+  virtual_text = false, -- floating text next to code is too noisy.
 
-  virtual_text = {
-    spacing = 4,
-    source = "if_many",
-    prefix = "●",
-    -- prefix = " ",
-  },
+  -- virtual_text = {
+  --   spacing = 4,
+  --   source = "if_many",
+  --   prefix = "●",
+  --   -- prefix = " ",
+  -- },
   underline = true,
   signs = {
     text = {

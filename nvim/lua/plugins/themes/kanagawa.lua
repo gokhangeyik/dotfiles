@@ -37,9 +37,6 @@ return {
         -- _GokkoNvim.flat_floats(theme, titles)
         _GokkoNvim.flat_floats()
         return {
-          -- NormalFloat = { bg = "none" },
-          -- FloatBorder = { bg = "none" },
-          -- FloatTitle = { bg = "none" },
           NormalFloat = { bg = theme.ui.bg_m3 },
           FloatBorder = { fg = theme.ui.bg_m3, bg = theme.ui.bg_m3 },
           FloatTitle = { bg = theme.vcs.changed, fg = theme.ui.bg_m3 },
@@ -51,7 +48,6 @@ return {
           -- set their background accordingly if you wish to keep them dark and borderless
           LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
           MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
-          -- TelescopeTitle = { fg = theme.ui.special, bold = true },
           TelescopePreviewTitle = { bg = theme.diag.ok, fg = theme.ui.bg_m3, bold = true },
           TelescopeResultsTitle = { bg = theme.diag.warning, fg = theme.ui.bg_m3, bold = true },
           TelescopePromptTitle = { bg = theme.diag.info, fg = theme.ui.bg_m3, bold = true },
