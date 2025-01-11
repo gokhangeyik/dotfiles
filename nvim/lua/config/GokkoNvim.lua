@@ -58,7 +58,7 @@ _GokkoNvim.async = function(func)
   vim.defer_fn(func, 0)
 end
 
-_GokkoNvim.flat_floats = function(colors, titles)
+_GokkoNvim.flat_floats = function()
   -- Example titles:
   -- {
   --   Yeet = { fg = colors.orange, bg = colors.bg_dark },
@@ -67,45 +67,45 @@ _GokkoNvim.flat_floats = function(colors, titles)
 
   vim.api.nvim_create_autocmd("WinNew", {
     callback = function()
-      vim.schedule(function()
-        local win_id = vim.api.nvim_get_current_win()
-        local win_conf = vim.api.nvim_win_get_config(win_id)
+      -- vim.schedule(function()
+      local win_id = vim.api.nvim_get_current_win()
+      local win_conf = vim.api.nvim_win_get_config(win_id)
 
-        if win_conf.relative ~= "" then
-          local title = win_conf.title
-          if title and type(title) == "table" and title[1] and title[1][1] then
-            local window_title = title[1][1]
+      if win_conf.relative ~= "" then
+        local title = win_conf.title
+        if title and type(title) == "table" and title[1] and title[1][1] then
+          local window_title = title[1][1]
 
-            for t_name, t_colors in pairs(titles) do
-              if window_title == t_name then
-                local ns_id = vim.api.nvim_create_namespace("float_" .. t_name:lower())
+          -- for t_name, t_colors in pairs(titles) do
+          --   if window_title == t_name then
+          --     local ns_id = vim.api.nvim_create_namespace("float_" .. t_name:lower())
+          --
+          --     vim.api.nvim_set_hl(ns_id, "FloatBorder", {
+          --       bg = t_colors.bg,
+          --       fg = t_colors.bg,
+          --     })
+          --     vim.api.nvim_set_hl(ns_id, "FloatTitle", {
+          --       bg = t_colors.fg,
+          --       fg = t_colors.bg,
+          --       bold = true,
+          --     })
+          --     vim.api.nvim_set_hl(ns_id, "NormalFloat", {
+          --       bg = t_colors.bg,
+          --     })
+          --
+          --     vim.api.nvim_win_set_hl_ns(win_id, ns_id)
 
-                vim.api.nvim_set_hl(ns_id, "FloatBorder", {
-                  bg = t_colors.bg or colors.bg_dark,
-                  fg = t_colors.bg or colors.bg,
-                })
-                vim.api.nvim_set_hl(ns_id, "FloatTitle", {
-                  bg = t_colors.fg or colors.fg,
-                  fg = t_colors.bg or colors.bg_dark,
-                  bold = true,
-                })
-                vim.api.nvim_set_hl(ns_id, "NormalFloat", {
-                  bg = t_colors.bg or colors.bg_dark,
-                })
+          local config = vim.api.nvim_win_get_config(win_id)
+          config.title_pos = "center"
+          config.title = { { " " .. window_title .. " ", "FloatTitle" } }
+          vim.api.nvim_win_set_config(win_id, config)
 
-                vim.api.nvim_win_set_hl_ns(win_id, ns_id)
-
-                local config = vim.api.nvim_win_get_config(win_id)
-                config.title_pos = "center"
-                config.title = { { " " .. window_title .. " ", "FloatTitle" } }
-                vim.api.nvim_win_set_config(win_id, config)
-
-                break
-              end
-            end
-          end
+          -- break
         end
-      end)
+      end
+      -- end
+      -- end
+      -- end)
     end,
   })
 end

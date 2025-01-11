@@ -35,7 +35,6 @@ return {
             name = "LSP",
             module = "blink.cmp.sources.lsp",
             opts = {}, -- Passed to the source directly, varies by source
-
             --- NOTE: All of these options may be functions to get dynamic behavior
             --- See the type definitions for more information
             enabled = true, -- Whether or not to enable the provider
@@ -82,7 +81,7 @@ return {
         -- Sets the fallback highlight groups to nvim-cmp's highlight groups
         -- Useful for when your theme doesn't support blink.cmp
         -- will be removed in a future release
-        use_nvim_cmp_as_default = true,
+        use_nvim_cmp_as_default = false,
         -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
         -- Adjusts spacing to ensure icons are aligned
         nerd_font_variant = "normal",

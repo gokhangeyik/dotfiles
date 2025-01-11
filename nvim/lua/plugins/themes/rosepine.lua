@@ -8,12 +8,12 @@ return {
     require("rose-pine").setup({
       variant = "main", -- auto, main, moon, or dawn
       dark_variant = "main", -- main, moon, or dawn
-      dim_inactive_windows = true,
+      dim_inactive_windows = false,
       extend_background_behind_borders = true,
 
       enable = {
         terminal = true,
-        legacy_highlights = true, -- Improve compatibility for previous versions of Neovim
+        legacy_highlights = false, -- Improve compatibility for previous versions of Neovim
         migrations = true, -- Handle deprecated options automatically
       },
 
@@ -78,7 +78,11 @@ return {
         TelescopePromptBorder = { fg = "surface", bg = "surface" },
       },
       before_highlight = function(group, highlight, palette)
-        -- Disable all undercurls
+        local titles = {
+          Yeet = { fg = palette.foam, bg = palette.surface },
+          Harpoon = { fg = palette.foam, bg = palette.surface },
+        }
+        _GokkoNvim.flat_floats(palette, titles)
         -- if highlight.undercurl then
         --     highlight.undercurl = false
         -- end

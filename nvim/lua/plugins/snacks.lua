@@ -4,6 +4,10 @@ return {
   lazy = false,
   ---@type snacks.Config
   opts = {
+    lazygit = {
+      enabled = true,
+      configure = false,
+    },
     animate = { enabled = false },
     scroll = { enabled = true },
     bigfile = { enabled = true },
