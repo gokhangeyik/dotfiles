@@ -3,14 +3,16 @@
 # -----------------------------------------------------------------------------
 
 foreground: &foreground "#dcd7ba"
+# foreground: &foreground "#E1E3E4"
+listcolor: &foreground-alt "#9CABCA"
 background: &background "default"
-black: &black "#090618" # Not kanagawa palette
-blue: &blue "#7e9cd8"
+black: &black "#16161D" # Not kanagawa palette
+blue: &blue "#658594"
 green: &green "#76946a"
-grey: &grey "#E1E3E4" # Not kanagawa palette
+grey: &grey "#727169" # Not kanagawa palette
 orange: &orange "#ffa066"
 purple: &purple "#957fb8"
-red: &red "#c34043"
+red: &red "#E46876"
 yellow: &yellow "#c0a36e"
 yellow_bright: &yellow_bright "#e6c384"
 
@@ -25,7 +27,7 @@ k9s:
     bgColor: *background
     suggestColor: *orange
   info:
-    fgColor: *grey
+    fgColor: *foreground
     sectionColor: *green
   help:
     fgColor: *foreground
@@ -47,15 +49,15 @@ k9s:
       fgColor: *green
       focusColor: *green
     menu:
-      fgColor: *grey
-      keyColor: *yellow
-      numKeyColor: *yellow
+      fgColor: *foreground
+      keyColor: *green
+      numKeyColor: *blue
     crumbs:
       fgColor: *black
       bgColor: *green
       activeColor: *yellow
     status:
-      newColor: *foreground
+      newColor: *foreground-alt
       modifyColor: *green
       addColor: *grey
       pendingColor: *orange
@@ -85,7 +87,7 @@ k9s:
       cursorBgColor: *blue
       markColor: *yellow_bright
       header:
-        fgColor: *grey
+        fgColor: *foreground-alt
         bgColor: *background
         sorterColor: *orange
     xray:
@@ -97,9 +99,9 @@ k9s:
     yaml:
       keyColor: *red
       colonColor: *grey
-      valueColor: *grey
+      valueColor: *foreground-alt
     logs:
-      fgColor: *grey
+      fgColor: *foreground-alt
       bgColor: *background
       indicator:
         fgColor: *blue
