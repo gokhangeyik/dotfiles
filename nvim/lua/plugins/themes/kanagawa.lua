@@ -41,6 +41,7 @@ return {
           NormalDark = { fg = theme.ui.fg_dim, bg = theme.ui.bg_m3 },
           -- Popular plugins that open floats will link to NormalFloat by default;
           -- set their background accordingly if you wish to keep them dark and borderless
+          Visual = { bg = theme.ui.bg_p1 },
           LazyNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
           MasonNormal = { bg = theme.ui.bg_m3, fg = theme.ui.fg_dim },
           TelescopePreviewTitle = { bg = theme.diag.ok, fg = theme.ui.bg_m3, bold = true },
