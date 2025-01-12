@@ -44,6 +44,9 @@ map("n", "<leader>fn", "<cmd>enew<cr>", { desc = "New File" })
 -- quit
 map("n", "<leader>qq", "<cmd>qa<cr>", { desc = "Quit All" })
 
+-- easy escape
+vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = false })
+
 -- highlights under cursor
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
