@@ -21,13 +21,13 @@ k9s:
   body:
     fgColor: *foreground
     bgColor: *background
-    logoColor: *green
+    logoColor: *blue
   prompt:
     fgColor: *foreground
     bgColor: *background
     suggestColor: *orange
   info:
-    fgColor: *foreground
+    fgColor: *foreground-alt
     sectionColor: *green
   help:
     fgColor: *foreground
@@ -46,11 +46,11 @@ k9s:
     fieldFgColor: *blue
   frame:
     border:
-      fgColor: *green
+      fgColor: *red
       focusColor: *green
     menu:
-      fgColor: *foreground
-      keyColor: *green
+      fgColor: *foreground-alt
+      keyColor: *orange
       numKeyColor: *blue
     crumbs:
       fgColor: *black
