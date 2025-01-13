@@ -80,4 +80,6 @@ _GokkoNvim.float_styler = function()
   })
 end
 
+_GokkoNvim.float_styler()
+
 return _GokkoNvim
