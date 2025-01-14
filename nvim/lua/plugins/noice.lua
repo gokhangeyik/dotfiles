@@ -5,10 +5,10 @@ return {
   opts = {
     lsp = {
       hover = {
-        enabled = false,
+        enabled = true,
       },
       signature = {
-        enabled = false,
+        enabled = true,
       },
       message = {
         enabled = true,

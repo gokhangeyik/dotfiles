@@ -43,7 +43,7 @@ return {
             transform_items = nil, -- Function to transform the items before they're returned
             should_show_items = true, -- Whether or not to show the items
             max_items = nil, -- Maximum number of items to display in the menu
-            min_keyword_length = 0, -- Minimum number of characters in the keyword to trigger the provider
+            min_keyword_length = 2, -- Minimum number of characters in the keyword to trigger the provider
             -- If this provider returns 0 items, it will fallback to these providers.
             -- If multiple providers falback to the same provider, all of the providers must return 0 items for it to fallback
             fallbacks = {},
@@ -68,7 +68,7 @@ return {
           },
         },
         documentation = {
-          auto_show = true,
+          auto_show = false,
           treesitter_highlighting = true,
           window = {
             -- border = "rounded",
@@ -86,7 +86,7 @@ return {
         -- Adjusts spacing to ensure icons are aligned
         nerd_font_variant = "normal",
       },
-      signature = { enabled = true },
+      signature = { enabled = false },
     })
   end,
   -- opts_extend = { "sources.default" },
