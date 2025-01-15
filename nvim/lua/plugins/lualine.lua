@@ -5,11 +5,12 @@ return {
   enabled = true,
   lazy = true,
   config = function()
+    local location = { "location", icon = "" }
     local branch = { "branch", icon = "" }
     local mode = { "mode", icon = "" }
     local diagnostics =
       { "diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " " }, colored = true }
-    local filetype = { "filetype", icon_only = true, colored = true, separator = "", padding = { left = 1, right = 0 } }
+    -- local filetype = { "filetype", icon_only = true, colored = true, separator = "", padding = { left = 1, right = 0 } }
     local filename = {
       "filename",
       file_status = true, -- Displays file status (readonly status, modified status)
@@ -23,9 +24,9 @@ return {
       shorting_target = 40, -- Shortens path to leave 40 spaces in the window
       -- for other components. (terrible name, any suggestions?)
       symbols = {
-        modified = " ", -- Text to show when the file is modified.
-        readonly = " ", -- Text to show when the file is non-modifiable or readonly.
-        unnamed = "[No Name]", -- Text to show for unnamed buffers.
+        modified = "", -- Text to show when the file is modified.
+        readonly = "", -- Text to show when the file is non-modifiable or readonly.
+        unnamed = "Untitled", -- Text to show for unnamed buffers.
         newfile = " ", -- Text to show for newly created file before first write
       },
     }
@@ -45,7 +46,7 @@ return {
       },
       symbols = { added = "󰐖 ", modified = "󰏬 ", removed = "󰍵 " }, -- Changes the symbols used by the diff.
       source = nil, -- A function that works as a data source for diff.
-      separator = {},
+      -- separator = {},
     }
     require("lualine").setup({
       options = {
@@ -53,21 +54,18 @@ return {
         theme = "auto",
         disabled_filetypes = { "Avante" },
         -- section_separators = { left = "🬗", right = "🬤" },
-        -- component_separators = { left = "🬗", right = "🬤" },
-        -- section_separators = { right = "🮕", left = "🮖" },
-        -- component_separators = { right = "🮕", left = "🮖" },
-        section_separators = { left = "🬗", right = "🬤" },
-        component_separators = { left = "🬗", right = "🬤" },
+        section_separators = { left = "", right = "" },
+        component_separators = { right = "", left = "" },
         always_divide_middle = true,
         globalstatus = true,
       },
       sections = {
         lualine_a = { mode },
-        lualine_b = { branch },
-        lualine_c = { filetype, filename },
-        lualine_x = {},
-        lualine_y = { diff, diagnostics },
-        lualine_z = { "progress", "location", harpoon },
+        lualine_b = { branch, diff },
+        lualine_c = { diagnostics, filename },
+        lualine_x = { "encoding", "filetype" },
+        lualine_y = { location, "progress" },
+        lualine_z = { harpoon },
       },
       inactive_sections = {
         lualine_a = {},
