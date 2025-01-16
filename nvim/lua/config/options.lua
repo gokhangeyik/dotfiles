@@ -92,3 +92,4 @@ vim.g.git_worktree = {
   confirm_telescope_deletions = true,
   autopush = false,
 }
+vim.g.kanagawa_lualine_bold = true
