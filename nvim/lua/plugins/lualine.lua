@@ -1,15 +1,17 @@
 return {
   "nvim-lualine/lualine.nvim",
   event = "VeryLazy",
-  priority = 800,
   enabled = true,
   lazy = true,
   config = function()
+    local branch = { "branch", icon = "", separator = { right = "", left = "" } }
+    local mode = { "mode", icon = "", separator = { right = "", left = "" } }
     local location = { "location", icon = "" }
-    local branch = { "branch", icon = "" }
-    local mode = { "mode", icon = "" }
-    local diagnostics =
-      { "diagnostics", symbols = { error = " ", warn = " ", info = " ", hint = " " }, colored = true }
+    local diagnostics = {
+      "diagnostics",
+      symbols = { error = " ", warn = " ", info = " ", hint = " " },
+      colored = true,
+    }
     -- local filetype = { "filetype", icon_only = true, colored = true, separator = "", padding = { left = 1, right = 0 } }
     local filename = {
       "filename",
@@ -24,7 +26,7 @@ return {
       shorting_target = 40, -- Shortens path to leave 40 spaces in the window
       -- for other components. (terrible name, any suggestions?)
       symbols = {
-        modified = "", -- Text to show when the file is modified.
+        modified = "", -- Text to show when the file is modified.
         readonly = "", -- Text to show when the file is non-modifiable or readonly.
         unnamed = "Untitled", -- Text to show for unnamed buffers.
         newfile = " ", -- Text to show for newly created file before first write
@@ -39,14 +41,7 @@ return {
     local diff = {
       "diff",
       colored = true,
-      diff_color = {
-        added = "GitSignsAdd", -- Changes the diff's added color
-        modified = "GitSignsChange", -- Changes the diff's modified color
-        removed = "GitSignsDelete", -- Changes the diff's removed color you
-      },
       symbols = { added = "󰐖 ", modified = "󰏬 ", removed = "󰍵 " }, -- Changes the symbols used by the diff.
-      source = nil, -- A function that works as a data source for diff.
-      -- separator = {},
     }
     require("lualine").setup({
       options = {
@@ -54,18 +49,19 @@ return {
         theme = "auto",
         disabled_filetypes = { "Avante" },
         -- section_separators = { left = "🬗", right = "🬤" },
-        section_separators = { left = "", right = "" },
-        component_separators = { right = "", left = "" },
+        -- component_separators = { left = "🬗", right = "🬤" },
+        section_separators = { left = "", right = "" },
+        component_separators = { left = "", right = "" },
         always_divide_middle = true,
         globalstatus = true,
       },
       sections = {
         lualine_a = { mode },
         lualine_b = { branch, diff },
-        lualine_c = { diagnostics, filename },
-        lualine_x = { "encoding", "filetype" },
-        lualine_y = { location, "progress" },
-        lualine_z = { harpoon },
+        lualine_c = { filename },
+        lualine_x = {},
+        lualine_y = { diagnostics, "encoding", "filetype" },
+        lualine_z = { location, "progress", harpoon },
       },
       inactive_sections = {
         lualine_a = {},

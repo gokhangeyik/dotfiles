@@ -43,10 +43,10 @@ return { -- Fuzzy Finder (files, lsp, etc)
           horizontal = {
             preview_width = 0.6, -- Adjust preview width
             width = function(_, cols, _)
-              return math.min(cols, 150) -- Limit max width
+              return math.min(cols, math.floor(cols * 0.7))
             end,
             height = function(_, _, rows)
-              return math.min(rows, 35) -- Limit max height
+              return math.min(rows, math.floor(rows * 0.9))
             end,
           },
         },
