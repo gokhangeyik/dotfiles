@@ -36,10 +36,10 @@ _GokkoNvim.init_deps = function()
       end
     end
   end
-  vim.api.nvim_create_user_command("MasonInstallAll", function()
-    local packages = table.concat(_GokkoNvim.tools, " ")
-    vim.cmd("MasonInstall " .. packages)
-  end, {})
+  -- vim.api.nvim_create_user_command("MasonInstallAll", function()
+  --   local packages = table.concat(_GokkoNvim.tools, " ")
+  --   vim.cmd("MasonInstall " .. packages)
+  -- end, {})
 end
 
 _GokkoNvim.mason_tools_installer = function()
@@ -79,7 +79,6 @@ _GokkoNvim.float_styler = function()
     end,
   })
 end
-
 _GokkoNvim.float_styler()
 
 return _GokkoNvim
