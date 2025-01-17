@@ -23,6 +23,21 @@ return {
       event = "InsertEnter",
       config = function()
         require("copilot").setup({
+          panels = { enabled = false },
+          suggestion = {
+            enabled = true,
+            auto_trigger = true,
+            hide_during_completion = true,
+            debounce = 75,
+            keymap = {
+              accept = "<C-M-y>",
+              accept_word = false,
+              accept_line = false,
+              next = "<C-M-n>",
+              prev = "<C-M-p>",
+              dismiss = "<C-Esc>",
+            },
+          },
           filetypes = {
             ["*"] = false,
           },
@@ -53,6 +68,24 @@ return {
         file_types = { "markdown", "Avante" },
       },
       ft = { "markdown", "Avante" },
+    },
+  },
+  keys = {
+    {
+      "<leader>aA",
+      function()
+        vim.cmd("Copilot! attach")
+        vim.notify("Copilot attached", "info", { title = "avante" })
+      end,
+      desc = "avante: attach Copilot",
+    },
+    {
+      "<leader>aD",
+      function()
+        vim.cmd("Copilot! detach")
+        vim.notify("Copilot detached", "info", { title = "avante" })
+      end,
+      desc = "avante: detach Copilot",
     },
   },
 }
