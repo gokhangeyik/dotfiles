@@ -23,6 +23,10 @@ return {
     event = "VeryLazy",
     dependencies = "williamboman/mason.nvim",
     config = function()
+      _GokkoNvim.async(_GokkoNvim.init_deps)
+      if not _GokkoNvim.lsp then
+        _GokkoNvim.init_deps()
+      end
       local capabilities = vim.lsp.protocol.make_client_capabilities()
       capabilities = vim.tbl_deep_extend("force", capabilities, require("blink.cmp").get_lsp_capabilities())
       capabilities.textDocument.foldingRange = {
