@@ -24,6 +24,7 @@ return {
       html = { "prettierd", "prettier", stop_after_first = true },
       go = { "goimports", "gofumpt" },
       yaml = { "prettierd", "prettier", stop_after_first = true },
+      json = { "prettierd", "prettier", stop_after_first = true },
       css = { "prettierd", "prettier", stop_after_first = true },
       hcl = { "packer_fmt" },
       terraform = { "terraform_fmt" },
