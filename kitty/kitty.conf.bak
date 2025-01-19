@@ -16,10 +16,10 @@
 # bold_italic_font JetBrainsMonoNF-BoldItalic
 
 
-font_family JetBrains Mono Light
-bold_font auto
-italic_font auto
-bold_italic_font auto
+# font_family JetBrains Mono Light
+# bold_font auto
+# italic_font auto
+# bold_italic_font auto
 # bold_font JetBrains Mono Medium
 # italic_font JetBrains Mono Thin Italic
 # bold_italic_font JetBrains Mono Medium Italic
@@ -749,7 +749,7 @@ copy_on_select yes
 
 #: Performance tuning {{{
 
-repaint_delay 2
+repaint_delay 1
 
 #: Delay between screen updates (in milliseconds). Decreasing it,
 #: increases frames-per-second (FPS) at the cost of more CPU usage.
@@ -1186,7 +1186,7 @@ tab_bar_style powerline
 
 #: The foreground and background colors.
 
-background_opacity 1
+# background_opacity 0.98
 
 #: The opacity of the background. A number between zero and one, where
 #: one is opaque and zero is fully transparent. This will only work if
@@ -1210,7 +1210,7 @@ background_opacity 1
 #: this option when reloading the config will only work if
 #: dynamic_background_opacity was enabled in the original config.
 
-background_blur 0
+# background_blur 64
 
 #: Set to a positive value to enable background blur (blurring of the
 #: visuals behind a transparent window) on platforms that support it.
@@ -1610,7 +1610,8 @@ shell_integration disabled
 #: Only the first valid match, in the order specified, is sourced.
 
 # term xterm-kitty
-term xterm-256color
+# term tmux-256color
+# term xterm-256color
 
 #: The value of the TERM environment variable to set. Changing this
 #: can break many terminal programs, only change it if you know what
@@ -2522,7 +2523,7 @@ macos_option_as_alt no
 
 
 # BEGIN_KITTY_THEME
-# Rosé Pine
+# Catppuccin-Mocha
 include current-theme.conf
 # END_KITTY_THEME
 enabled_layouts splits
