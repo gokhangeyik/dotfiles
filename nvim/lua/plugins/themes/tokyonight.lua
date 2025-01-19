@@ -2,7 +2,7 @@ return {
   "folke/tokyonight.nvim",
   -- event = "VeryLazy",
   lazy = false,
-  enabled = false,
+  enabled = true,
   priority = 1000,
   config = function()
     require("tokyonight").setup({
@@ -12,14 +12,14 @@ return {
 
       style = "night", -- The theme comes in three styles, `storm`, a darker variant `night` and `day`
       light_style = "day", -- The theme is used when the background is set to light
-      transparent = false, -- Enable this to disable setting the background color
+      transparent = true, -- Enable this to disable setting the background color
       terminal_colors = true, -- Configure the colors used when opening a `:terminal` in Neovim
       styles = {
         -- Style to be applied to different syntax groups
         -- Value is any valid attr-list value for `:help nvim_set_hl`
         comments = { italic = true },
         keywords = { italic = true },
-        functions = {},
+        functions = { bold = true, italic = false },
         variables = {},
         -- Background styles. Can be "dark", "transparent" or "normal"
         sidebars = "normal", -- style for sidebars, see below
@@ -39,11 +39,11 @@ return {
       ---@param highlights tokyonight.Highlights
       ---@param colors ColorScheme
       on_highlights = function(highlights, colors)
-        local prompt = "#2d3149"
-        -- highlights.FloatBorder = { bg = colors.bg_dark, fg = colors.bg_dark }
-        _GokkoNvim.float_styler()
+        highlights.FloatTitle = { bg = colors.orange, fg = colors.bg_dark, bold = true }
+        highlights.FloatBorder = { bg = colors.bg_dark, fg = colors.bg_dark }
         highlights.CursorLine = { bg = colors.bg_dark, blend = 1 }
 
+        local prompt = "#2d3149"
         highlights.TelescopeNormal = {
           bg = colors.bg_dark,
           fg = colors.fg_dark,
@@ -73,7 +73,7 @@ return {
         }
       end,
 
-      cache = false, -- When set to true, the theme will be cached for better performance
+      cache = true, -- When set to true, the theme will be cached for better performance
 
       ---@type table<string, boolean|{enabled:boolean}>
       plugins = {
@@ -90,6 +90,6 @@ return {
       },
     })
 
-    vim.cmd.colorscheme("tokyonight")
+    vim.cmd.colorscheme("tokyonight-night")
   end,
 }

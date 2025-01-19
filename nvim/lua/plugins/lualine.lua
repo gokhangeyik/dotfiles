@@ -4,9 +4,42 @@ return {
   enabled = true,
   lazy = true,
   config = function()
+    local colors = require("tokyonight.colors").setup()
+    local custom_tokyonight = {
+      normal = {
+        a = { bg = colors.blue, fg = colors.black },
+        b = { bg = colors.bg_dark1, fg = colors.blue },
+        c = { bg = colors.bg_statusline, fg = colors.fg_sidebar },
+      },
+      insert = {
+        a = { bg = colors.green, fg = colors.black },
+        b = { bg = colors.bg_dark1, fg = colors.green },
+      },
+      command = {
+        a = { bg = colors.yellow, fg = colors.black },
+        b = { bg = colors.bg_dark1, fg = colors.yellow },
+      },
+      visual = {
+        a = { bg = colors.magenta, fg = colors.black },
+        b = { bg = colors.bg_dark1, fg = colors.magenta },
+      },
+      replace = {
+        a = { bg = colors.red, fg = colors.black },
+        b = { bg = colors.bg_dark1, fg = colors.red },
+      },
+      terminal = {
+        a = { bg = colors.green1, fg = colors.black },
+        b = { bg = colors.bg_dark1, fg = colors.green1 },
+      },
+      inactive = {
+        a = { bg = colors.bg_statusline, fg = colors.blue },
+        b = { bg = colors.bg_statusline, fg = colors.fg_gutter, gui = "bold" },
+        c = { bg = colors.bg_statusline, fg = colors.fg_gutter },
+      },
+    }
     local branch = { "branch", icon = "", separator = { right = "", left = "" } }
     local mode = { "mode", icon = "", separator = { right = "", left = "" } }
-    local location = { "location", icon = "" }
+    -- local location = { "location", icon = "" }
     local diagnostics = {
       "diagnostics",
       symbols = { error = " ", warn = " ", info = " ", hint = " " },
@@ -45,7 +78,7 @@ return {
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        theme = "auto",
+        theme = custom_tokyonight,
         disabled_filetypes = { "Avante" },
         -- section_separators = { left = "🬗", right = "🬤" },
         -- component_separators = { left = "🬗", right = "🬤" },
@@ -60,7 +93,7 @@ return {
         lualine_c = { filename },
         lualine_x = {},
         lualine_y = { diagnostics, "encoding", "filetype" },
-        lualine_z = { location, "progress", harpoon },
+        lualine_z = { "location", "progress", harpoon },
       },
       inactive_sections = {
         lualine_a = {},
