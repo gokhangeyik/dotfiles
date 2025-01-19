@@ -14,7 +14,7 @@ return {
         cherryPickedCommitBgColor = { fg = "Identifier" },
         cherryPickedCommitFgColor = { fg = "Function" },
         defaultFgColor = { fg = "Normal" },
-        inactiveBorderColor = { fg = "TelescopeBorder" },
+        inactiveBorderColor = { fg = "BlinkCmpGhostText" },
         optionsTextColor = { fg = "Function" },
         searchingActiveBorderColor = { fg = "MatchParen", bold = true },
         selectedLineBgColor = { bg = "Visual" }, -- set to `default` to have no background colour
@@ -26,7 +26,7 @@ return {
     bigfile = { enabled = true },
     dashboard = { enabled = true },
     notifier = {
-      enabled = false,
+      enabled = true,
       timeout = 3000,
     },
     quickfile = { enabled = true },
