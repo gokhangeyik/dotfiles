@@ -22,10 +22,11 @@ return {
       },
     },
     animate = { enabled = false },
-    scroll = { enabled = true },
+    scroll = { enabled = false },
     bigfile = { enabled = true },
     dashboard = { enabled = true },
     notifier = {
+      style = "compact",
       enabled = true,
       timeout = 3000,
     },
