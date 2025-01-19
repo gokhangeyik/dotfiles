@@ -11,7 +11,7 @@ k9s:
     logoless: true
     crumbsless: false
     noIcons: false
-    skin: kanagawaish-gokko
+    skin: tokyonight-night
   skipLatestRevCheck: false
   disablePodCounting: false
   shellPod:
