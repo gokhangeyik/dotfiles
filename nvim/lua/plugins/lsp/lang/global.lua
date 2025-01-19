@@ -7,8 +7,6 @@ local treesitter = {
   "css",
   "lua",
   "luadoc",
-  "markdown",
-  "markdown_inline",
   "query",
   "vim",
   "vimdoc",
