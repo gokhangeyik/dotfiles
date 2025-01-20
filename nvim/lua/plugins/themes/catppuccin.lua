@@ -3,7 +3,7 @@ return {
   name = "catppuccin",
   priority = 1000,
   lazy = false,
-  enabled = false,
+  enabled = true,
   config = function()
     require("catppuccin").setup({
       flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -13,12 +13,14 @@ return {
       },
       custom_highlights = function(colors)
         return {
-          CursorLine = { bg = colors.surface0, blend = 100 },
+          CursorLine = { bg = colors.mantle, blend = 10 },
           CursorLineNr = { fg = colors.peach, style = { "bold" } },
           LineNr = { fg = colors.overlay0 },
+          FloatTitle = { bg = colors.peach, fg = colors.mantle, bold = true },
+          FloatBorder = { bg = colors.mantle, fg = colors.mantle },
         }
       end,
-      transparent_background = true, -- disables setting the background color.
+      transparent_background = false, -- disables setting the background color.
       show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
       term_colors = true, -- sets terminal colors (e.g. `g:terminal_color_0`)
       dim_inactive = {
@@ -49,7 +51,7 @@ return {
         --   base = "#181825",
         -- },
       },
-      default_integrations = false,
+      default_integrations = true,
       integrations = {
         diffview = true,
         cmp = false,
@@ -58,8 +60,7 @@ return {
         treesitter = true,
         notify = true,
         mini = {
-          enabled = false,
-          indentscope_color = "",
+          enabled = true,
         },
         mason = true,
         fzf = false,

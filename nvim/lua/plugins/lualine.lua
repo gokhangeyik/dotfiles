@@ -5,61 +5,61 @@ return {
   lazy = true,
   dependencies = { "yavorski/lualine-macro-recording.nvim" },
   config = function()
-    local colors = require("tokyonight.colors").setup()
-    local custom_tokyonight = {
-      normal = {
-        a = { bg = colors.blue, fg = colors.bg },
-        b = { bg = colors.bg_highlight, fg = colors.blue },
-        c = { bg = colors.bg, fg = colors.dark5 },
-        x = { bg = colors.blue, fg = colors.bg },
-        y = { bg = colors.bg_highlight, fg = colors.blue },
-        z = { bg = colors.blue, fg = colors.bg },
-      },
-      insert = {
-        a = { bg = colors.green, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg_highlight, fg = colors.green },
-      },
-      command = {
-        a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },
-        b = { bg = colors.bg_highlight, fg = colors.yellow },
-        c = { bg = colors.bg, fg = colors.dark5 },
-        x = { bg = colors.blue, fg = colors.bg },
-        y = { bg = colors.bg_highlight, fg = colors.blue },
-        z = { bg = colors.blue, fg = colors.bg },
-      },
-      visual = {
-        a = { bg = colors.magenta, fg = colors.bg, gui = "bold,italic" },
-        b = { bg = colors.bg_highlight, fg = colors.magenta },
-        c = { bg = colors.bg, fg = colors.dark5 },
-        x = { bg = colors.blue, fg = colors.bg },
-        y = { bg = colors.bg_highlight, fg = colors.blue },
-        z = { bg = colors.blue, fg = colors.bg },
-      },
-      replace = {
-        a = { bg = colors.red, fg = colors.bg },
-        b = { bg = colors.bg_highlight, fg = colors.red },
-        c = { bg = colors.bg, fg = colors.dark5 },
-        x = { bg = colors.blue, fg = colors.bg },
-        y = { bg = colors.bg_highlight, fg = colors.blue },
-        z = { bg = colors.blue, fg = colors.bg },
-      },
-      terminal = {
-        a = { bg = colors.green1, fg = colors.bg },
-        b = { bg = colors.bg_highlight, fg = colors.green1 },
-        c = { bg = colors.bg, fg = colors.dark5 },
-        x = { bg = colors.blue, fg = colors.bg },
-        y = { bg = colors.bg_highlight, fg = colors.blue },
-        z = { bg = colors.blue, fg = colors.bg },
-      },
-      inactive = {
-        a = { bg = colors.bg_statusline, fg = colors.blue },
-        b = { bg = colors.bg_statusline, fg = colors.fg_gutter, gui = "bold" },
-        c = { bg = colors.bg, fg = colors.dark5 },
-        x = { bg = colors.blue, fg = colors.bg },
-        y = { bg = colors.bg_highlight, fg = colors.blue },
-        z = { bg = colors.blue, fg = colors.bg },
-      },
-    }
+    -- local colors = require("tokyonight.colors").setup()
+    -- local custom_tokyonight = {
+    --   normal = {
+    --     a = { bg = colors.blue, fg = colors.bg },
+    --     b = { bg = colors.bg_highlight, fg = colors.blue },
+    --     c = { bg = colors.bg, fg = colors.dark5 },
+    --     x = { bg = colors.blue, fg = colors.bg },
+    --     y = { bg = colors.bg_highlight, fg = colors.blue },
+    --     z = { bg = colors.blue, fg = colors.bg },
+    --   },
+    --   insert = {
+    --     a = { bg = colors.green, fg = colors.bg, gui = "bold" },
+    --     b = { bg = colors.bg_highlight, fg = colors.green },
+    --   },
+    --   command = {
+    --     a = { bg = colors.yellow, fg = colors.bg, gui = "bold" },
+    --     b = { bg = colors.bg_highlight, fg = colors.yellow },
+    --     c = { bg = colors.bg, fg = colors.dark5 },
+    --     x = { bg = colors.blue, fg = colors.bg },
+    --     y = { bg = colors.bg_highlight, fg = colors.blue },
+    --     z = { bg = colors.blue, fg = colors.bg },
+    --   },
+    --   visual = {
+    --     a = { bg = colors.magenta, fg = colors.bg, gui = "bold,italic" },
+    --     b = { bg = colors.bg_highlight, fg = colors.magenta },
+    --     c = { bg = colors.bg, fg = colors.dark5 },
+    --     x = { bg = colors.blue, fg = colors.bg },
+    --     y = { bg = colors.bg_highlight, fg = colors.blue },
+    --     z = { bg = colors.blue, fg = colors.bg },
+    --   },
+    --   replace = {
+    --     a = { bg = colors.red, fg = colors.bg },
+    --     b = { bg = colors.bg_highlight, fg = colors.red },
+    --     c = { bg = colors.bg, fg = colors.dark5 },
+    --     x = { bg = colors.blue, fg = colors.bg },
+    --     y = { bg = colors.bg_highlight, fg = colors.blue },
+    --     z = { bg = colors.blue, fg = colors.bg },
+    --   },
+    --   terminal = {
+    --     a = { bg = colors.green1, fg = colors.bg },
+    --     b = { bg = colors.bg_highlight, fg = colors.green1 },
+    --     c = { bg = colors.bg, fg = colors.dark5 },
+    --     x = { bg = colors.blue, fg = colors.bg },
+    --     y = { bg = colors.bg_highlight, fg = colors.blue },
+    --     z = { bg = colors.blue, fg = colors.bg },
+    --   },
+    --   inactive = {
+    --     a = { bg = colors.bg_statusline, fg = colors.blue },
+    --     b = { bg = colors.bg_statusline, fg = colors.fg_gutter, gui = "bold" },
+    --     c = { bg = colors.bg, fg = colors.dark5 },
+    --     x = { bg = colors.blue, fg = colors.bg },
+    --     y = { bg = colors.bg_highlight, fg = colors.blue },
+    --     z = { bg = colors.blue, fg = colors.bg },
+    --   },
+    -- }
     local branch = { "branch", icon = "", separator = { right = "", left = "" } }
     local mode = { "mode", icon = "", separator = { right = "", left = "" } }
     -- local location = { "location", icon = "" }
@@ -101,7 +101,7 @@ return {
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        theme = custom_tokyonight,
+        theme = "catppuccin",
         disabled_filetypes = { "Avante" },
         -- section_separators = { left = "🬗", right = "🬤" },
         -- component_separators = { left = "🬗", right = "🬤" },
@@ -113,8 +113,8 @@ return {
       sections = {
         lualine_a = { mode },
         lualine_b = { branch, diff },
-        lualine_c = { filename, "macro_recording", "%S" },
-        lualine_x = {},
+        lualine_c = { filename },
+        lualine_x = { "macro_recording" },
         lualine_y = { diagnostics, "encoding" },
         lualine_z = { "location", "progress", harpoon },
       },
