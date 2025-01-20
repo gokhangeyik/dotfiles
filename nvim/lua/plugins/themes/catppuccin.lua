@@ -18,6 +18,7 @@ return {
           LineNr = { fg = colors.overlay0 },
           FloatTitle = { bg = colors.peach, fg = colors.mantle, bold = true },
           FloatBorder = { bg = colors.mantle, fg = colors.mantle },
+          BlinkCmpMenu = { bg = colors.mantle },
         }
       end,
       transparent_background = false, -- disables setting the background color.
