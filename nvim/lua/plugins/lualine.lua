@@ -3,6 +3,7 @@ return {
   event = "VeryLazy",
   enabled = true,
   lazy = true,
+  dependencies = { "yavorski/lualine-macro-recording.nvim" },
   config = function()
     local colors = require("tokyonight.colors").setup()
     local custom_tokyonight = {
@@ -112,7 +113,7 @@ return {
       sections = {
         lualine_a = { mode },
         lualine_b = { branch, diff },
-        lualine_c = { filename },
+        lualine_c = { filename, "macro_recording", "%S" },
         lualine_x = {},
         lualine_y = { diagnostics, "encoding" },
         lualine_z = { "location", "progress", harpoon },
