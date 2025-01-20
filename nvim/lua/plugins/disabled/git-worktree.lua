@@ -3,6 +3,7 @@ return {
   -- "awerebea/git-worktree.nvim",
   "polarmutex/git-worktree.nvim",
   version = "^2",
+  enabled = false,
   lazy = true,
   -- branch = "master",
   dependencies = { "nvim-lua/plenary.nvim" },

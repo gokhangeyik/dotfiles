@@ -72,7 +72,7 @@ _GokkoNvim.float_styler = function()
           local config = vim.api.nvim_win_get_config(win_id)
           config.title_pos = "center"
           config.title = { { " " .. window_title .. " ", "FloatTitle" } }
-          config.relative = "editor"
+          -- config.relative = "editor"
           vim.api.nvim_win_set_config(win_id, config)
         end
       end

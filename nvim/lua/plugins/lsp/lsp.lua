@@ -27,26 +27,20 @@ return {
           mode = mode or "n"
           vim.keymap.set(mode, keys, func, { buffer = event.buf, desc = "LSP: " .. desc })
         end
-        map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
-        map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
-        map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
-        -- Jump to the type of the word under your cursor.
-        --  Useful when you're not sure what type a variable is and you want to see
-        --  the definition of its *type*, not where it was *defined*.
-        map("<leader>lD", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
+        -- map("gd", require("telescope.builtin").lsp_definitions, "[G]oto [D]efinition")
+        -- map("gr", require("telescope.builtin").lsp_references, "[G]oto [R]eferences")
+        -- map("gI", require("telescope.builtin").lsp_implementations, "[G]oto [I]mplementation")
+        -- map("<leader>lD", require("telescope.builtin").lsp_type_definitions, "Type [D]efinition")
+        -- map("<leader>ls", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
+        -- map("<leader>lS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
 
-        -- Fuzzy find all the symbols in your current document.
-        --  Symbols are things like variables, functions, types, etc.
-        map("<leader>ls", require("telescope.builtin").lsp_document_symbols, "[D]ocument [S]ymbols")
-
-        -- Fuzzy find all the symbols in your current workspace.
-        --  Similar to document symbols, except searches over your entire project.
-        map("<leader>lS", require("telescope.builtin").lsp_dynamic_workspace_symbols, "[W]orkspace [S]ymbols")
-
-        -- Rename the variable under your cursor.
-        --  Most Language Servers support renaming across files, etc.
+        -- map("gd", "<cmd>FzfLua lsp_definitions<cr>", "[G]oto [D]efinition")
+        -- map("gr", "<cmd>FzfLua lsp_references<cr>", "[G]oto [R]eferences")
+        -- map("gI", "<cmd>FzfLua lsp_implementations<cr>", "[G]oto [I]mplementation")
+        -- map("<leader>lD", "<cmd>FzfLua lsp_typedefs<cr>", "Type [D]efinition")
+        -- map("<leader>ls", "<cmd>FzfLua lsp_document_symbols<cr>", "[D]ocument [S]ymbols")
+        -- map("<leader>lS", "<cmd>FzfLua lsp_dynamic_workspace_symbols<cr>", "[W]orkspace [S]ymbols")
         map("<leader>lr", vim.lsp.buf.rename, "[R]e[n]ame")
-
         -- Execute a code action, usually your cursor needs to be on top of an error
         -- or a suggestion from your LSP for this to activate.
         map("<leader>ca", vim.lsp.buf.code_action, "[C]ode [A]ction", { "n", "x" })
