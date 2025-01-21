@@ -58,6 +58,44 @@ _GokkoNvim.async = function(func)
   vim.defer_fn(func, 0)
 end
 
+_GokkoNvim.get_conda_envs = function()
+  local conda_envs = {}
+  local home = os.getenv("HOME")
+  local conda_path = home .. "/.conda/envs"
+  local ok, _ = vim.loop.fs_stat(conda_path)
+  if not ok then
+    return conda_envs
+  end
+  local env_names = vim.fn.readdir(conda_path)
+  for _, env_name in ipairs(env_names) do
+    local python_path = conda_path .. "/" .. env_name .. "/bin/python"
+    local ok, _ = vim.loop.fs_stat(python_path)
+    if ok then
+      conda_envs[env_name] = conda_path .. "/" .. env_name
+    end
+  end
+  return conda_envs
+end
+
+_GokkoNvim.run_conda = function(env_name)
+  env_name = env_name or nil
+  if env_name ~= nil then
+    local conda_envs = _GokkoNvim.get_conda_envs()
+    local python_path = conda_envs[env_name] .. "/bin/python"
+    for _, client in ipairs(vim.lsp.get_clients()) do
+      if client.name == "basedpyright" then
+        client.config.settings = client.config.settings or {}
+        client.config.settings.python = client.config.settings.python or {}
+        client.config.settings.python.pythonPath = python_path
+        vim.cmd("LspRestart " .. client.id)
+        vim.notify("Activated Conda Venv: " .. env_name, vim.log.levels.INFO)
+        return
+      end
+    end
+    vim.notify("Basedpyright LSP client not found!", vim.log.levels.WARN)
+  end
+end
+
 _GokkoNvim.float_styler = function()
   vim.api.nvim_create_autocmd("WinNew", {
     callback = function()

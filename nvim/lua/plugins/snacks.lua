@@ -21,7 +21,9 @@ return {
         unstagedChangesColor = { fg = "DiagnosticError" },
       },
     },
-    picker = { enabled = true },
+    picker = {
+      enabled = true,
+    },
     animate = { enabled = false },
     scroll = { enabled = false },
     bigfile = { enabled = true },
@@ -43,7 +45,15 @@ return {
     -- },
   },
   keys = {
-
+    {
+      "<leader>vs",
+      function()
+        local env_list = _GokkoNvim.get_conda_envs()
+        local env_names = vim.tbl_keys(env_list)
+        Snacks.picker.select(env_names, {}, _GokkoNvim.run_conda)
+      end,
+      desc = "Python Venv Selector",
+    },
     {
       "<leader>st",
       function()

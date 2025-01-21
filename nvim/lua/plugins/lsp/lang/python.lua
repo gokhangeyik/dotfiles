@@ -81,16 +81,16 @@ return {
   tools = tools or {},
   treesitter = treesitter or {},
   lang_plugins = {
-    {
-      "linux-cultist/venv-selector.nvim",
-      branch = "regexp",
-      ft = "python",
-      dependencies = { "neovim/nvim-lspconfig", "nvim-telescope/telescope.nvim", "mfussenegger/nvim-dap-python" },
-      opts = {},
-      keys = {
-        { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Virtualenv Select" },
-        { "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "Virtualenv Select from Cached" },
-      },
-    },
+    -- {
+    --   "linux-cultist/venv-selector.nvim",
+    --   branch = "regexp",
+    --   ft = "python",
+    --   dependencies = { "neovim/nvim-lspconfig", "mfussenegger/nvim-dap-python" },
+    --   opts = {},
+    --   keys = {
+    --     { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Virtualenv Select" },
+    --     { "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "Virtualenv Select from Cached" },
+    --   },
+    -- },
   },
 }
