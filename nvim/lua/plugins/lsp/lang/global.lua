@@ -5,8 +5,6 @@ local treesitter = {
   "diff",
   "html",
   "css",
-  "lua",
-  "luadoc",
   "query",
   "vim",
   "vimdoc",

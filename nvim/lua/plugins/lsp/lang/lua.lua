@@ -36,6 +36,7 @@ local tools = {
 
 local treesitter = {
   "lua",
+  "luadoc",
 }
 
 -- language spesific plugins
