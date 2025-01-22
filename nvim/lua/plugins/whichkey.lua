@@ -55,9 +55,9 @@ return { -- Useful plugin to show you pending keybinds.
       { "<leader>f", group = "[F]ile Operations", icon = "" },
       { "<leader>u", group = "[U]ser Interface", icon = "󰏘" },
       { "<leader>q", group = "[Q]uick Session", icon = "" },
-      { "<leader>v", group = "[V]irtualenv", icon = "" },
+      -- { "<leader>v", group = "[V]irtualenv", icon = "" },
       { "<leader>x", group = "Trouble", icon = "" },
-      { "<leader>h", group = "Git [H]unk", icon = "󰊢", mode = { "n", "v" } },
+      -- { "<leader>h", group = "Git [H]unk", icon = "󰊢", mode = { "n", "v" } },
     },
   },
 }

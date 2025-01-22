@@ -80,17 +80,5 @@ return {
   lsp_overrides = lsp_overrides or {},
   tools = tools or {},
   treesitter = treesitter or {},
-  lang_plugins = {
-    -- {
-    --   "linux-cultist/venv-selector.nvim",
-    --   branch = "regexp",
-    --   ft = "python",
-    --   dependencies = { "neovim/nvim-lspconfig", "mfussenegger/nvim-dap-python" },
-    --   opts = {},
-    --   keys = {
-    --     { "<leader>vs", "<cmd>VenvSelect<cr>", desc = "Virtualenv Select" },
-    --     { "<leader>vc", "<cmd>VenvSelectCached<cr>", desc = "Virtualenv Select from Cached" },
-    --   },
-    -- },
-  },
+  lang_plugins = {},
 }

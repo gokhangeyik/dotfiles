@@ -46,7 +46,7 @@ return {
   },
   keys = {
     {
-      "<leader>vs",
+      "<leader>sv",
       function()
         local env_list = _GokkoNvim.get_conda_envs()
         local env_names = vim.tbl_keys(env_list)
