@@ -4,8 +4,7 @@ local lsp = {
   },
 }
 
-local tools = {
-}
+local tools = {}
 
 local treesitter = {
   "helm",
@@ -19,7 +18,7 @@ return {
   lang_plugins = {
     {
       "towolf/vim-helm",
-      ft = { "helkm" },
+      ft = { "helm" },
     },
   },
 }
