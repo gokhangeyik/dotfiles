@@ -49,6 +49,8 @@ opt.splitright = true --
 opt.tabstop = 2 -- Number of spaces tabs count for
 opt.softtabstop = 2
 opt.termguicolors = true -- True color support
+-- opt.guicursor
+--   "n-v-c:block,i-ci-ve:ver25,r-cr:hor20,o:hor50,a:blinkwait700-blinkoff400-blinkon250-Cursor/lCursor,sm:block-blinkwait175-blinkoff150-blinkon175"
 opt.timeoutlen = 700 -- Lower than default (1000) to quickly trigger which-key
 opt.ttimeoutlen = 50
 opt.undofile = true
