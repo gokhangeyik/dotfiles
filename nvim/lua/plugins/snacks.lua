@@ -46,6 +46,13 @@ return {
   },
   keys = {
     {
+      "<leader>bo",
+      function()
+        Snacks.bufdelete.other()
+      end,
+      desc = "Delete other buffers",
+    },
+    {
       "<leader>sv",
       function()
         local env_list = _GokkoNvim.get_conda_envs()
