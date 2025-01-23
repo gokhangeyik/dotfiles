@@ -3,13 +3,31 @@ return {
   -- event = "BufEnter",
   enabled = true,
   event = "VeryLazy",
-  -- lazy = true,
   version = false, -- set this if you want to always pull the latest change
   opts = {
     windows = {
       sidebar_header = {
         rounded = false,
       },
+    },
+    hints = { enabled = false },
+    auto_suggestion_provider = "copilot_gpt4o",
+    behaviour = {
+      auto_suggestions = false, -- Experimental stage
+      auto_set_highlight_group = true,
+      auto_set_keymaps = true,
+      auto_apply_diff_after_generation = false,
+      support_paste_from_clipboard = false,
+      minimize_diff = false, -- Whether to remove unchanged lines when applying a code block
+    },
+    copilot = {
+      endpoint = "https://api.githubcopilot.com",
+      model = "claude-3.5-sonnet",
+      proxy = nil, -- [protocol://]host[:port] Use this proxy
+      allow_insecure = false, -- Allow insecure server connections
+      timeout = 30000, -- Timeout in milliseconds
+      temperature = 0,
+      max_tokens = 4096,
     },
   },
   build = "make",
