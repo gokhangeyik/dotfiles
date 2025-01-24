@@ -10,6 +10,7 @@ return {
         rounded = false,
       },
     },
+    provider = "copilot",
     hints = { enabled = false },
     auto_suggestion_provider = "copilot_gpt4o",
     behaviour = {
@@ -26,7 +27,7 @@ return {
       proxy = nil, -- [protocol://]host[:port] Use this proxy
       allow_insecure = false, -- Allow insecure server connections
       timeout = 30000, -- Timeout in milliseconds
-      temperature = 0,
+      temperature = 0.2,
       max_tokens = 4096,
     },
   },
