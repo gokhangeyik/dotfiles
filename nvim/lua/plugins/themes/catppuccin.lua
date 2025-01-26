@@ -37,7 +37,7 @@ return {
         comments = { "italic" }, -- Change the style of comments
         conditionals = { "italic" },
         loops = { "italic" },
-        -- functions = {},
+        functions = { "bold" },
         -- keywords = {},
         -- strings = {},
         -- variables = {},
@@ -53,10 +53,14 @@ return {
         --   base = "#181825",
         -- },
       },
-      default_integrations = true,
+      default_integrations = false,
       integrations = {
+        alpha = false,
         diffview = true,
         cmp = false,
+        ufo = true,
+        notifier = true,
+        flash = true,
         gitsigns = true,
         grug_far = true,
         treesitter = true,
@@ -71,7 +75,7 @@ return {
         markdown = true,
         neogit = false,
         noice = true,
-        neotree = false,
+        neotree = true,
         native_lsp = {
           enabled = true,
           virtual_text = {

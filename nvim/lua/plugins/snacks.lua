@@ -7,7 +7,7 @@ return {
   opts = {
     lazygit = {
       enabled = true,
-      configure = false,
+      configure = true,
       theme = {
         [241] = { fg = "Special" },
         activeBorderColor = { fg = "MatchParen", bold = true },

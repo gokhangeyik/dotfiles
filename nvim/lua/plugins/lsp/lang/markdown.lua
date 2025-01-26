@@ -19,7 +19,6 @@ return {
   tools = tools or {},
   treesitter = treesitter or {},
   lang_plugins = {
-
     {
       "OXY2DEV/markview.nvim",
       lazy = true, -- Recommended

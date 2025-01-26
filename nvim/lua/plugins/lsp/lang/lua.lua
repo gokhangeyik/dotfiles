@@ -63,7 +63,7 @@ return {
       "saghen/blink.cmp",
       opts = {
         sources = {
-          default = { "lazydev", "lsp", "path", "snippets", "buffer" },
+          default = { "lsp", "path", "snippets", "buffer", "lazydev" },
           -- completion = {
           --   enabled_providers = { "lsp", "path", "snippets", "buffer", "lazydev" },
           -- },
@@ -83,6 +83,5 @@ return {
         },
       },
     },
-    { "folke/neodev.nvim", enabled = false }, -- make sure to uninstall or disable neodev.nvim
   },
 }
