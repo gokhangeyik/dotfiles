@@ -7,7 +7,7 @@ return {
   opts = {
     lazygit = {
       enabled = true,
-      configure = true,
+      configure = false,
       theme = {
         [241] = { fg = "Special" },
         activeBorderColor = { fg = "MatchParen", bold = true },
@@ -45,6 +45,14 @@ return {
     -- },
   },
   keys = {
+    -- Git Worktrees
+    {
+      "<leader>gws",
+      function()
+        Snacks.picker.worktrees()
+      end,
+      desc = "Switch gitworktree",
+    },
     {
       "<leader>bo",
       function()

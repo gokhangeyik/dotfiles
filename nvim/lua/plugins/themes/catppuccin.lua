@@ -53,7 +53,7 @@ return {
         --   base = "#181825",
         -- },
       },
-      default_integrations = false,
+      default_integrations = true,
       integrations = {
         diffview = true,
         cmp = false,
