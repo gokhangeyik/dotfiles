@@ -65,7 +65,13 @@ return {
       function()
         local env_list = _GokkoNvim.get_conda_envs()
         local env_names = vim.tbl_keys(env_list)
-        Snacks.picker.select(env_names, {}, _GokkoNvim.run_conda)
+        local python_icon = require("mini.icons").get("extension", "py")
+        Snacks.picker.select(env_names, {
+          prompt = "Select Conda Virtualenv",
+          format_item = function(item)
+            return python_icon .. " " .. item
+          end,
+        }, _GokkoNvim.run_conda)
       end,
       desc = "Python Venv Selector",
     },
