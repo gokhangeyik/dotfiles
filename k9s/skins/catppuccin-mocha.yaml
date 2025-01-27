@@ -29,7 +29,7 @@ k9s:
       numKeyColor: "#eba0ac"
     crumbs:
       fgColor: "#1e1e2e"
-      bgColor: "default"
+      bgColor: "#eba0ac"
       activeColor: "#f2cdcd"
     status:
       newColor: "#89b4fa"
