@@ -37,7 +37,7 @@ return {
         comments = { "italic" }, -- Change the style of comments
         conditionals = { "italic" },
         loops = { "italic" },
-        functions = { "bold" },
+        -- functions = { "bold" },
         -- keywords = {},
         -- strings = {},
         -- variables = {},
