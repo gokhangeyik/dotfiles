@@ -16,7 +16,7 @@ return {
     }
     local filetype = {
       "filetype",
-      color = { fg = "#b4befe", bg = "#181825" },
+      color = { fg = "#9399b2", bg = "#26263a" },
       icon_only = true,
       colored = true,
       separator = "",
@@ -33,7 +33,7 @@ return {
       -- 3: Absolute path, with tilde as the home directory
       -- 4: Filename and parent dir, with tilde as the home directory
       shorting_target = 40, -- Shortens path to leave 40 spaces in the window
-      color = { fg = "#b4befe", bg = "#181825" },
+      color = { fg = "#9399b2", bg = "#26263a" },
       separator = { right = "🬗", left = "" },
       symbols = {
         modified = "", -- Text to show when the file is modified.
@@ -47,7 +47,7 @@ return {
       icon = " ",
       indicators = { "1", "2", "3", "4", "5" },
       active_indicators = { "[1]", "[2]", "[3]", "[4]", "[5]" },
-      color = { fg = "#b4befe", bg = "#181825" },
+      color = { fg = "#9399b2", bg = "#26263a" },
       separator = { left = "🬤", right = "" },
     }
     local diff = {
