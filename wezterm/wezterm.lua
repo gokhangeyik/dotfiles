@@ -15,8 +15,8 @@ local glocal = safeRequire("overrides")
 -- local font_name = "Hack Nerd Font"
 -- local font_name = "Iosevka Nerd Font"
 -- local font_name = "JetBrainsMono Nerd Font"
-local font_name = "JetBrains Mono"
-local color_scheme = "Tokyo Night"
+local font_name = "SourceCodePro"
+local color_scheme = "Catppuccin Mocha"
 local config = wezterm.config_builder()
 config.color_scheme = color_scheme
 config.hide_tab_bar_if_only_one_tab = true
@@ -34,7 +34,7 @@ config.front_end = "OpenGL"
 
 -- config.custom_block_glyphs = true
 -- config.dpi = 150
-config.font_size = 9.5
+config.font_size = 10
 config.font = wezterm.font_with_fallback({
 	font_name,
 	{ family = "Symbols Nerd Font", scale = 1 },
