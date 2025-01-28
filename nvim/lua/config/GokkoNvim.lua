@@ -84,6 +84,7 @@ _GokkoNvim.run_conda = function(env_name)
     local python_path = conda_envs[env_name] .. "/bin/python"
     for _, client in ipairs(vim.lsp.get_clients()) do
       if client.name == "basedpyright" then
+        vim.notify("Activating Conda Venv: " .. env_name, vim.log.levels.INFO)
         client.config.settings = client.config.settings or {}
         client.config.settings.python = client.config.settings.python or {}
         client.config.settings.python.pythonPath = python_path
