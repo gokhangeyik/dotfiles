@@ -1,6 +1,6 @@
 local lsp = {
   terraformls = {
-    filetypes = { "terraform", "hcl" },
+    filetypes = { "terraform", "hcl", "terraform-vars" },
   },
 }
 
