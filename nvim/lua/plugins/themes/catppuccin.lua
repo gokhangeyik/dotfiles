@@ -7,19 +7,21 @@ return {
   config = function()
     require("catppuccin").setup({
       flavour = "mocha", -- latte, frappe, macchiato, mocha
-      background = { -- :h background
-        light = "mocha",
-        dark = "mocha",
-      },
+      -- background = { -- :h background
+      --   light = "mocha",
+      --   dark = "mocha",
+      -- },
       custom_highlights = function(colors)
         return {
-          CursorLine = { bg = colors.mantle, blend = 10 },
+          CursorLine = { bg = colors.surface0, blend = 10 },
           CursorLineNr = { fg = colors.peach, style = { "bold" } },
           LineNr = { fg = colors.overlay0 },
           NormalFloat = { bg = colors.mantle },
           FloatTitle = { bg = colors.peach, fg = colors.mantle, bold = true },
           FloatBorder = { bg = colors.mantle, fg = colors.mantle },
           BlinkCmpMenu = { bg = colors.mantle },
+          markdownCode = { bg = colors.mantle },
+          markdownCodeBlock = { bg = colors.mantle },
         }
       end,
       transparent_background = true, -- disables setting the background color.
@@ -37,7 +39,7 @@ return {
         comments = { "italic" }, -- Change the style of comments
         conditionals = { "italic" },
         loops = { "italic" },
-        -- functions = { "bold" },
+        functions = { "bold" },
         -- keywords = {},
         -- strings = {},
         -- variables = {},
@@ -53,29 +55,21 @@ return {
         --   base = "#181825",
         -- },
       },
-      default_integrations = false,
+      default_integrations = true,
       integrations = {
-        alpha = false,
+        blink_cmp = true,
         diffview = true,
-        cmp = false,
-        ufo = true,
-        notifier = true,
         flash = true,
         gitsigns = true,
         grug_far = true,
-        treesitter = true,
-        notify = true,
+        harpoon = true,
+        mason = true,
         mini = {
           enabled = true,
         },
-        mason = true,
-        fzf = false,
-        fidget = false,
-        harpoon = true,
-        markdown = true,
-        neogit = false,
-        noice = true,
         neotree = true,
+        noice = true,
+        notifier = true,
         native_lsp = {
           enabled = true,
           virtual_text = {
@@ -96,14 +90,13 @@ return {
             background = true,
           },
         },
-        telescope = {
-          enabled = false,
-          style = "nvchad",
-        },
-        lsp_trouble = true,
-        which_key = true,
+        notify = true,
+        treesitter = true,
+        ufo = true,
+        render_markdown = true,
         snacks = true,
-        blink_cmp = true,
+        lsp_trouble = false,
+        which_key = false,
       },
       compile_path = vim.fn.stdpath("cache") .. "/catppuccin",
     })

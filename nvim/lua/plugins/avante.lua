@@ -9,10 +9,20 @@ return {
       sidebar_header = {
         rounded = false,
       },
+      input = {
+        height = 3,
+      },
+      ask = {
+        floating = false,
+        border = "none",
+      },
+    },
+    file_selector = {
+      provider = "snacks",
     },
     provider = "copilot",
     hints = { enabled = false },
-    auto_suggestion_provider = "copilot_gpt4o",
+    auto_suggestion_provider = "copilot",
     behaviour = {
       auto_suggestions = false, -- Experimental stage
       auto_set_highlight_group = true,
@@ -82,11 +92,11 @@ return {
     -- },
     -- {
     --   -- Make sure to set this up properly if you have lazy=true
-    --   "MeanderingProgrammer/render-markdown.nvim",
-    --   opts = {
-    --     file_types = { "markdown", "Avante" },
-    --   },
-    --   ft = { "markdown", "Avante" },
+    -- "MeanderingProgrammer/render-markdown.nvim",
+    -- lazy = false,
+    -- opts = {
+    --   file_types = { "Avante" },
+    -- },
     -- },
   },
   keys = {
@@ -94,7 +104,7 @@ return {
       "<leader>aA",
       function()
         vim.cmd("Copilot! attach")
-        vim.notify("Copilot attached", "info", { title = "avante" })
+        vim.notify("Copilot attached", vim.log.levels.INFO, { title = "avante" })
       end,
       desc = "avante: attach Copilot",
     },
@@ -102,7 +112,7 @@ return {
       "<leader>aD",
       function()
         vim.cmd("Copilot! detach")
-        vim.notify("Copilot detached", "info", { title = "avante" })
+        vim.notify("Copilot detached", vim.log.levels.INFO, { title = "avante" })
       end,
       desc = "avante: detach Copilot",
     },

@@ -84,6 +84,6 @@ return {
       -- idle time if user input is required.
       silent = false,
     })
-    require("mini.move").setup({})
+    require("mini.move").setup()
   end,
 }

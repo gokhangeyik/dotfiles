@@ -8,7 +8,7 @@ opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.completeopt = { "menu", "menuone", "noselect" }
 opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
 opt.confirm = true -- Confirm to save changes before exiting modified buffer
-opt.cursorline = true -- Enable highlighting of the current line
+opt.cursorline = false -- Enable highlighting of the current line
 opt.expandtab = true -- Use spaces instead of tabs
 -- opt.foldlevel = 1
 -- opt.foldcolumn = "1"
@@ -94,4 +94,3 @@ vim.g.git_worktree = {
   confirm_telescope_deletions = true,
   autopush = false,
 }
-vim.g.kanagawa_lualine_bold = true
