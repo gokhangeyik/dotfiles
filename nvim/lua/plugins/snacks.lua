@@ -25,6 +25,9 @@ return {
       enabled = true,
     },
     animate = { enabled = false },
+    explorer = {
+      enabled = true,
+    },
     scroll = { enabled = false },
     bigfile = { enabled = true },
     dashboard = { enabled = true },
@@ -45,6 +48,14 @@ return {
     -- },
   },
   keys = {
+
+    {
+      "<leader>se",
+      function()
+        Snacks.explorer()
+      end,
+      desc = "Switch gitworktree",
+    },
     -- Git Worktrees
     {
       "<leader>gws",
