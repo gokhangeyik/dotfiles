@@ -20,9 +20,9 @@ return {
     file_selector = {
       provider = "snacks",
     },
-    provider = "copilot",
+    provider = "copilot_sonnet",
     hints = { enabled = false },
-    auto_suggestion_provider = "copilot",
+    auto_suggestion_provider = "copilot_gpt4o",
     behaviour = {
       auto_suggestions = false, -- Experimental stage
       auto_set_highlight_group = true,
@@ -31,14 +31,36 @@ return {
       support_paste_from_clipboard = false,
       minimize_diff = false, -- Whether to remove unchanged lines when applying a code block
     },
-    copilot = {
-      endpoint = "https://api.githubcopilot.com",
-      model = "claude-3.5-sonnet",
-      proxy = nil, -- [protocol://]host[:port] Use this proxy
-      allow_insecure = false, -- Allow insecure server connections
-      timeout = 30000, -- Timeout in milliseconds
-      temperature = 0.2,
-      max_tokens = 4096,
+    -- copilot = {
+    --   endpoint = "https://api.githubcopilot.com",
+    --   model = "claude-3.5-sonnet",
+    --   proxy = nil, -- [protocol://]host[:port] Use this proxy
+    --   allow_insecure = false, -- Allow insecure server connections
+    --   timeout = 30000, -- Timeout in milliseconds
+    --   temperature = 0.2,
+    --   max_tokens = 4096,
+    -- },
+    vendors = {
+      copilot_gpt4o = {
+        __inherited_from = "copilot",
+        endpoint = "https://api.githubcopilot.com",
+        model = "gpt-4o-2024-08-06",
+        proxy = nil, -- [protocol://]host[:port] Use this proxy
+        allow_insecure = false, -- Allow insecure server connections
+        timeout = 30000, -- Timeout in milliseconds
+        temperature = 0,
+        max_tokens = 4096,
+      },
+      copilot_sonnet = {
+        __inherited_from = "copilot",
+        endpoint = "https://api.githubcopilot.com",
+        model = "claude-3.5-sonnet",
+        proxy = nil, -- [protocol://]host[:port] Use this proxy
+        allow_insecure = false, -- Allow insecure server connections
+        timeout = 30000, -- Timeout in milliseconds
+        temperature = 0,
+        max_tokens = 4096,
+      },
     },
   },
   build = "make",
