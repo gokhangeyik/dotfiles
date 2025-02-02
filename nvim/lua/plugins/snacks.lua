@@ -22,7 +22,43 @@ return {
       },
     },
     picker = {
-      enabled = true,
+      layouts = {
+        default = {
+          layout = {
+            box = "horizontal",
+            width = 0.8,
+            min_width = 120,
+            height = 0.8,
+            {
+              box = "vertical",
+              border = "single",
+              title = "{title} {live}",
+              { win = "input", height = 1, border = "bottom" },
+              { win = "list", border = "none" },
+            },
+            { win = "preview", title = "{preview}", border = "single", width = 0.5 },
+          },
+        },
+      },
+      layout = {
+        preset = "default",
+        cycle = false,
+        box = "vertical",
+      },
+      debug = { scores = false },
+      sources = {
+        buffers = {
+          hidden = true,
+        },
+        files = {
+          show_empty = false,
+          hidden = true,
+          ignored = true,
+        },
+      },
+      matcher = {
+        frecency = true,
+      },
     },
     animate = { enabled = false },
     explorer = {
@@ -41,11 +77,6 @@ return {
     scope = { enabled = true },
     indent = { enabled = true },
     words = { enabled = true },
-    -- styles = {
-    --   notification = {
-    --     wo = { wrap = true }, -- Wrap notifications
-    --   },
-    -- },
   },
   keys = {
 
