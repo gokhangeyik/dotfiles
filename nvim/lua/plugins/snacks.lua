@@ -26,7 +26,7 @@ return {
     },
     animate = { enabled = false },
     explorer = {
-      enabled = true,
+      enabled = false,
     },
     scroll = { enabled = false },
     bigfile = { enabled = true },
@@ -49,13 +49,13 @@ return {
   },
   keys = {
 
-    {
-      "<leader>se",
-      function()
-        Snacks.explorer()
-      end,
-      desc = "Switch gitworktree",
-    },
+    -- {
+    --   "<leader>fe",
+    --   function()
+    --     Snacks.explorer()
+    --   end,
+    --   desc = "Switch gitworktree",
+    -- },
     -- Git Worktrees
     {
       "<leader>gws",
