@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.1.0](https://github.com/gokhangeyik/dotfiles/compare/v1.0.0...v1.1.0) (2025-02-06)
+
+
+### Features
+
+* add release-please github action ([f3bc5b3](https://github.com/gokhangeyik/dotfiles/commit/f3bc5b3118b01884a24b2b8314ae1523dfa91f2b))
+* **nvim:** add diffview plugin ([f67d595](https://github.com/gokhangeyik/dotfiles/commit/f67d595593125033b33fc51b5a19b07c88fe02a8))
+* **nvim:** add sops.nvim ([12accbb](https://github.com/gokhangeyik/dotfiles/commit/12accbb7e9932bf0b7a31483f0703ae232f6685c))
+
 ## 1.0.0 (2025-02-06)
 
 
