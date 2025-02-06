@@ -22,6 +22,36 @@ return {
           BlinkCmpMenu = { bg = colors.mantle },
           markdownCode = { bg = colors.mantle },
           markdownCodeBlock = { bg = colors.mantle },
+
+          SnacksNotifierInfo = { bg = colors.mantle },
+          SnacksNotifierBorderInfo = { fg = colors.mantle, bg = colors.mantle },
+          SnacksNotifierTitleInfo = { bg = colors.mantle },
+          SnacksNotifierFooterInfo = { bg = colors.mantle },
+          SnacksNotifierIconInfo = { bg = colors.mantle },
+
+          SnacksNotifierWarn = { bg = colors.mantle },
+          SnacksNotifierBorderWarn = { fg = colors.mantle, bg = colors.mantle },
+          SnacksNotifierTitleWarn = { bg = colors.mantle },
+          SnacksNotifierFooterWarn = { bg = colors.mantle },
+          SnacksNotifierIconWarn = { bg = colors.mantle },
+
+          SnacksNotifierDebug = { bg = colors.mantle },
+          SnacksNotifierBorderDebug = { fg = colors.mantle, bg = colors.mantle },
+          SnacksNotifierTitleDebug = { bg = colors.mantle },
+          SnacksNotifierFooterDebug = { bg = colors.mantle },
+          SnacksNotifierIconDebug = { bg = colors.mantle },
+
+          SnacksNotifierError = { bg = colors.mantle },
+          SnacksNotifierBorderError = { fg = colors.mantle, bg = colors.mantle },
+          SnacksNotifierTitleError = { bg = colors.mantle },
+          SnacksNotifierFooterError = { bg = colors.mantle },
+          SnacksNotifierIconError = { bg = colors.mantle },
+
+          SnacksNotifierTrace = { bg = colors.mantle },
+          SnacksNotifierTraceInfo = { fg = colors.mantle, bg = colors.mantle },
+          SnacksNotifierTitleTrace = { bg = colors.mantle },
+          SnacksNotifierFooterTrace = { bg = colors.mantle },
+          SnacksNotifierIconTrace = { bg = colors.mantle },
         }
       end,
       transparent_background = true, -- disables setting the background color.
