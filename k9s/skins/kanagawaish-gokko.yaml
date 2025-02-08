@@ -4,7 +4,8 @@
 
 foreground: &foreground "#dcd7ba"
 # foreground: &foreground "#E1E3E4"
-listcolor: &foreground-alt "#9CABCA"
+# listcolor: &foreground-alt "#9CABCA"
+listcolor: &foreground-alt "#c8c7c2"
 background: &background "default"
 black: &black "#16161D" # Not kanagawa palette
 blue: &blue "#658594"
