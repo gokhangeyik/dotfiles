@@ -3,7 +3,7 @@ return {
   name = "catppuccin",
   priority = 1000,
   lazy = false,
-  enabled = true,
+  enabled = false,
   config = function()
     require("catppuccin").setup({
       flavour = "mocha", -- latte, frappe, macchiato, mocha
@@ -48,7 +48,7 @@ return {
           SnacksNotifierIconError = { bg = colors.mantle },
 
           SnacksNotifierTrace = { bg = colors.mantle },
-          SnacksNotifierTraceInfo = { fg = colors.mantle, bg = colors.mantle },
+          SnacksNotifierBorderInfo = { fg = colors.mantle, bg = colors.mantle },
           SnacksNotifierTitleTrace = { bg = colors.mantle },
           SnacksNotifierFooterTrace = { bg = colors.mantle },
           SnacksNotifierIconTrace = { bg = colors.mantle },
