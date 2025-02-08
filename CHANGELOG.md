@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/gokhangeyik/dotfiles/compare/v1.1.0...v1.1.1) (2025-02-08)
+
+
+### Bug Fixes
+
+* **nvim.catppuccin:** fix misspelled highlight name ([90c6441](https://github.com/gokhangeyik/dotfiles/commit/90c6441af58a3c536450a73fdf2ca6b59a74b982))
+
 ## [1.1.0](https://github.com/gokhangeyik/dotfiles/compare/v1.0.0...v1.1.0) (2025-02-06)
 
 
