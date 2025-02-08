@@ -2,6 +2,7 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
 vim.g.loaded_perl_provider = 0
+vim.g.kanagawa_lualine_bold = true
 
 local opt = vim.opt
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
@@ -94,3 +95,4 @@ vim.g.git_worktree = {
   confirm_telescope_deletions = true,
   autopush = false,
 }
+
