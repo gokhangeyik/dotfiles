@@ -284,6 +284,13 @@ return {
     {
       "<leader>sd",
       function()
+        Snacks.picker.diagnostics_buffer()
+      end,
+      desc = "Diagnostics",
+    },
+    {
+      "<leader>sD",
+      function()
         Snacks.picker.diagnostics()
       end,
       desc = "Diagnostics",
