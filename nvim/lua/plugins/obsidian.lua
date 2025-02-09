@@ -3,7 +3,7 @@ return {
   version = "*",
   event = "VeryLazy",
   lazy = true,
-  -- ft = "markdown",
+  ft = "markdown",
   -- Replace the above line with this if you only want to load obsidian.nvim for markdown files in your vault:
   -- event = {
   --   -- If you want to use the home shortcut '~' here you need to call 'vim.fn.expand'.
@@ -20,6 +20,7 @@ return {
     { "<leader>oT", mode = { "n" }, "<cmd>ObsidianToday +1<cr>", desc = "Tomorrow" },
     { "<leader>oY", mode = { "n" }, "<cmd>ObsidianToday -1<cr>", desc = "Yesterday" },
     { "<leader>oN", mode = { "n" }, "<cmd>ObsidianNewFromTemplate<cr>", desc = "New Note From Template" },
+    { "<leader>oc", mode = { "n" }, "<cmd>ObsidianToggleCheckbox<cr>", desc = "Toggle Checkbox" },
     {
       "<leader>os",
       mode = { "n" },
@@ -34,7 +35,14 @@ return {
     },
   },
   opts = {
-    ui = { enable = false },
+    open_notes_in = "vsplit",
+    ui = {
+      enable = true,
+      checkboxes = {
+        [" "] = { char = "󰄱", hl_group = "ObsidianTodo" },
+        ["x"] = { char = "", hl_group = "ObsidianDone" },
+      },
+    },
     templates = {
       folder = "Templates",
       date_format = "%d-%m-%Y",
