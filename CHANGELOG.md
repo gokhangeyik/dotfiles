@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.2.0](https://github.com/gokhangeyik/dotfiles/compare/v1.1.1...v1.2.0) (2025-02-09)
+
+
+### Features
+
+* **nvim.obsidian:** add toggle checkbox keymap ([30dd5bc](https://github.com/gokhangeyik/dotfiles/commit/30dd5bc412c8732ddc63b0528614397cdd113f54))
+* **nvim.snacks:** add buffer diagnostics keymap ([a6c92d4](https://github.com/gokhangeyik/dotfiles/commit/a6c92d456c2e01f6eccb74d491184d8db8d55936))
+* **nvim.snacks:** add dashboard banner ([d15f6af](https://github.com/gokhangeyik/dotfiles/commit/d15f6af44a330b0e6b4d10236cfbb387fb0357e5))
+
 ## [1.1.1](https://github.com/gokhangeyik/dotfiles/compare/v1.1.0...v1.1.1) (2025-02-08)
 
 
