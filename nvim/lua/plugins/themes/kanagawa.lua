@@ -32,6 +32,7 @@ return {
       overrides = function(colors) -- add/modify highlights
         local theme = colors.theme
         return {
+          ["@lsp.type.class.python"] = { fg = theme.syn.identifier },
           Normal = { fg = "#c8c7c2" },
           NormalFloat = { bg = theme.ui.bg_m3 },
           FloatBorder = { fg = theme.ui.bg_m3, bg = theme.ui.bg_m3 },
