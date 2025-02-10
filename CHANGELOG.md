@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/gokhangeyik/dotfiles/compare/v1.3.0...v1.4.0) (2025-02-10)
+
+
+### Miscellaneous Chores
+
+* release 1.4.0 ([5821a95](https://github.com/gokhangeyik/dotfiles/commit/5821a959b4998b86bf213b3a925d0017f0fb73e4))
+
 ## [1.3.0](https://github.com/gokhangeyik/dotfiles/compare/v1.2.0...v1.3.0) (2025-02-09)
 
 
