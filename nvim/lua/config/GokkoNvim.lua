@@ -77,6 +77,31 @@ _GokkoNvim.get_conda_envs = function()
   return conda_envs
 end
 
+_GokkoNvim.get_pyenv_venvs = function()
+  local venvs = {}
+  local handle = io.popen("command -v pyenv")
+  if not handle then
+    return venvs
+  end
+  local result = handle:read("*a")
+  handle:close()
+  if result == "" then
+    return venvs
+  end
+  local handle = io.popen("pyenv virtualenvs --bare --skip-aliases")
+  if not handle then
+    return venvs
+  end
+  local output = handle:read("*a")
+  handle:close()
+  for venv in output:gmatch("[^\r\n]+") do
+    local clean_venv = venv:gsub("envs/", "")
+    local pyenv_path = os.getenv("HOME") .. "/.pyenv/versions/" .. venv
+    venvs[clean_venv] = pyenv_path
+  end
+  return venvs
+end
+
 _GokkoNvim.run_conda = function(env_name)
   env_name = env_name or nil
   if env_name ~= nil then
@@ -90,6 +115,26 @@ _GokkoNvim.run_conda = function(env_name)
         client.config.settings.python.pythonPath = python_path
         vim.cmd("LspRestart " .. client.id)
         vim.notify("Activated Conda Venv: " .. env_name, vim.log.levels.INFO)
+        return
+      end
+    end
+    vim.notify("Basedpyright LSP client not found!", vim.log.levels.WARN)
+  end
+end
+
+_GokkoNvim.activate_pyenv = function(env_name)
+  env_name = env_name or nil
+  if env_name ~= nil then
+    local pyenv_envs = _GokkoNvim.get_pyenv_venvs()
+    local python_path = pyenv_envs[env_name] .. "/bin/python"
+    for _, client in ipairs(vim.lsp.get_clients()) do
+      if client.name == "basedpyright" then
+        vim.notify("Activating Pyenv Venv: " .. env_name, vim.log.levels.INFO)
+        client.config.settings = client.config.settings or {}
+        client.config.settings.python = client.config.settings.python or {}
+        client.config.settings.python.pythonPath = python_path
+        vim.cmd("LspRestart " .. client.id)
+        vim.notify("Activated Pyenv Venv: " .. env_name, vim.log.levels.INFO)
         return
       end
     end

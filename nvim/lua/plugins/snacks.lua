@@ -117,7 +117,7 @@ return {
     {
       "<leader>sv",
       function()
-        local env_list = _GokkoNvim.get_conda_envs()
+        local env_list = _GokkoNvim.get_pyenv_venvs()
         local env_names = vim.tbl_keys(env_list)
         local python_icon = require("mini.icons").get("extension", "py")
         Snacks.picker.select(env_names, {
@@ -125,7 +125,7 @@ return {
           format_item = function(item)
             return python_icon .. " " .. item
           end,
-        }, _GokkoNvim.run_conda)
+        }, _GokkoNvim.activate_pyenv)
       end,
       desc = "Python Venv Selector",
     },
