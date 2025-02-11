@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.6.0](https://github.com/gokhangeyik/dotfiles/compare/v1.5.0...v1.6.0) (2025-02-11)
+
+
+### 🚀 Features
+
+* **nvim:** add neotest plugin ([8b910b5](https://github.com/gokhangeyik/dotfiles/commit/8b910b58d914391a9ca0aa32bacbaaa585effc27))
+
+
+### 🛠 Miscellaneous
+
+* **tmux:** reconfigure colors ([1c6fe77](https://github.com/gokhangeyik/dotfiles/commit/1c6fe775b6c764ff4a38d90207ab4d1e6726d311))
+
 ## [1.5.0](https://github.com/gokhangeyik/dotfiles/compare/v1.4.0...v1.5.0) (2025-02-11)
 
 
