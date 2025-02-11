@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/gokhangeyik/dotfiles/compare/v1.4.0...v1.5.0) (2025-02-11)
+
+
+### Features
+
+* **nvim.gokkonvim:** add pyenv support ([de47aa7](https://github.com/gokhangeyik/dotfiles/commit/de47aa7ac99eabb7d30f5e6a4b4efc322bfbd20d))
+
 ## [1.4.0](https://github.com/gokhangeyik/dotfiles/compare/v1.3.0...v1.4.0) (2025-02-10)
 
 
