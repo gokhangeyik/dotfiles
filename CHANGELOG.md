@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.1](https://github.com/gokhangeyik/dotfiles/compare/v1.5.0...v1.5.1) (2025-02-11)
+
+
+### 🛠 Miscellaneous
+
+* **tmux:** reconfigure colors ([7c7b310](https://github.com/gokhangeyik/dotfiles/commit/7c7b31016ffe3d6d95394de65afa92850f303658))
+
 ## [1.5.0](https://github.com/gokhangeyik/dotfiles/compare/v1.4.0...v1.5.0) (2025-02-11)
 
 
