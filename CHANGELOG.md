@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/gokhangeyik/dotfiles/compare/v1.6.0...v1.7.0) (2025-02-11)
+
+
+### 🚀 Features
+
+* **nvim.gokkonvim:** combine python venv management ([e1d0d1d](https://github.com/gokhangeyik/dotfiles/commit/e1d0d1dd7f3d9e22cd93f1cc25c1470cc20fc38e))
+
 ## [1.6.0](https://github.com/gokhangeyik/dotfiles/compare/v1.5.0...v1.6.0) (2025-02-11)
 
 
