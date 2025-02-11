@@ -117,17 +117,18 @@ return {
     {
       "<leader>sv",
       function()
-        local env_list = _GokkoNvim.get_pyenv_venvs()
+        local env_list = _GokkoNvim.get_python_envs()
         local env_names = vim.tbl_keys(env_list)
         local python_icon = require("mini.icons").get("extension", "py")
         Snacks.picker.select(env_names, {
-          prompt = "Select Python Virtualenv",
+          prompt = "Select Python Environment",
           format_item = function(item)
-            return python_icon .. " " .. item
+            local env_info = env_list[item]
+            return string.format("%s [%s]  %s", python_icon, env_info.type, item)
           end,
-        }, _GokkoNvim.activate_pyenv)
+        }, _GokkoNvim.activate_python_env)
       end,
-      desc = "Python Venv Selector",
+      desc = "Python Environment Selector",
     },
     {
       "<leader>st",
