@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.5.0](https://github.com/gokhangeyik/dotfiles/compare/v1.4.0...v1.5.0) (2025-02-11)
+
+
+### 🛠 Miscellaneous
+
+* release 1.5.0 ([c00fa2a](https://github.com/gokhangeyik/dotfiles/commit/c00fa2a73e7d5a7fe97cc27380b5825c0a22eebc))
+
 ## [1.4.0](https://github.com/gokhangeyik/dotfiles/compare/v1.4.0...v1.4.0) (2025-02-11)
 
 
