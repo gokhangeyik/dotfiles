@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.0](https://github.com/gokhangeyik/dotfiles/compare/v1.7.0...v1.8.0) (2025-02-12)
+
+
+### 🚀 Features
+
+* **nvim.gokkonvim:** use python venv path in neotest ([9fbbe03](https://github.com/gokhangeyik/dotfiles/commit/9fbbe039d809fd8aad596cb1ba4c02229e197a8e))
+
 ## [1.7.0](https://github.com/gokhangeyik/dotfiles/compare/v1.6.0...v1.7.0) (2025-02-11)
 
 
