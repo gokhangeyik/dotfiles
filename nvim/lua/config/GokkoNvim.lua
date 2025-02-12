@@ -113,18 +113,31 @@ _GokkoNvim.activate_python_env = function(env_name)
     return
   end
 
+  -- Update basedpyright
   for _, client in ipairs(vim.lsp.get_clients()) do
     if client.name == "basedpyright" then
       client.config.settings = client.config.settings or {}
       client.config.settings.python = client.config.settings.python or {}
       client.config.settings.python.pythonPath = env.python_path
       vim.cmd("LspRestart " .. client.id)
-      vim.notify(string.format("Activated %s environment: %s", env.type, env_name), vim.log.levels.INFO)
-      return
+      break
     end
   end
 
-  vim.notify("Basedpyright LSP client not found!", vim.log.levels.WARN)
+  -- Update neotest-python
+  local neotest = require("neotest")
+  local neotest_python = require("neotest-python")
+  neotest.setup({
+    adapters = {
+      neotest_python({
+        dap = { justMyCode = false },
+        runner = "pytest",
+        python = env.python_path,
+      }),
+    },
+  })
+
+  vim.notify(string.format("Activated %s environment: %s", env.type, env_name), vim.log.levels.INFO)
 end
 
 _GokkoNvim.float_styler = function()

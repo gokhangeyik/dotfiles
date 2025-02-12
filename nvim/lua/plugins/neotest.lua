@@ -15,6 +15,7 @@ return {
           require("neotest-python")({
             dap = { justMyCode = false },
             runner = "pytest",
+            python = vim.fn.exepath("python"),
           }),
         },
       })
