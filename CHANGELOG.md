@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.9.0](https://github.com/gokhangeyik/dotfiles/compare/v1.8.0...v1.9.0) (2025-02-14)
+
+
+### 🚀 Features
+
+* **nvim:** add dbee plugin ([d063d48](https://github.com/gokhangeyik/dotfiles/commit/d063d48f0e999303c2183f354161ca670e95c86f))
+
+
+### 🛠 Miscellaneous
+
+* **nvim:** add http ftplugin ([7e1305b](https://github.com/gokhangeyik/dotfiles/commit/7e1305bdf7c6eb0f18abf3ae730e24acafa7fab8))
+
 ## [1.8.0](https://github.com/gokhangeyik/dotfiles/compare/v1.7.0...v1.8.0) (2025-02-12)
 
 
