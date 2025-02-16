@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.10.0](https://github.com/gokhangeyik/dotfiles/compare/v1.9.0...v1.10.0) (2025-02-16)
+
+
+### 🚀 Features
+
+* **nvim.conform:** add sccs formatter ([d131cf4](https://github.com/gokhangeyik/dotfiles/commit/d131cf4500ab6e5dbc1947577aaeb9aa8b470e2e))
+* **nvim:** add marksman and render-markdown ([a70a9b5](https://github.com/gokhangeyik/dotfiles/commit/a70a9b5648f9732f3eeb71b8a8ccad66b6e0e68b))
+
 ## [1.9.0](https://github.com/gokhangeyik/dotfiles/compare/v1.8.0...v1.9.0) (2025-02-14)
 
 
