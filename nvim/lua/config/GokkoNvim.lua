@@ -56,50 +56,49 @@ end
 
 _GokkoNvim.get_python_envs = function()
   local envs = {}
+  local current_dir = vim.fn.getcwd()
 
-  local home = os.getenv("HOME")
-  local conda_path = home .. "/.conda/envs"
-  local conda_ok, _ = vim.loop.fs_stat(conda_path)
-  if conda_ok then
-    local env_names = vim.fn.readdir(conda_path)
-    for _, env_name in ipairs(env_names) do
-      local python_path = conda_path .. "/" .. env_name .. "/bin/python"
-      local ok, _ = vim.loop.fs_stat(python_path)
-      if ok then
-        envs[env_name] = {
-          type = "conda",
-          path = conda_path .. "/" .. env_name,
-          python_path = python_path,
-        }
-      end
+  local ignored_dirs = {
+    ["node_modules"] = true,
+    [".git"] = true,
+    ["__pycache__"] = true,
+    ["build"] = true,
+    ["dist"] = true,
+  }
+
+  local function check_venv(directory)
+    local venv_path = directory .. "/.venv"
+    local python_path = venv_path .. "/bin/python"
+    local ok, _ = vim.loop.fs_stat(python_path)
+    if ok then
+      local env_name = vim.fn.fnamemodify(directory, ":t") .. "-uv"
+      envs[env_name] = {
+        type = "uv",
+        path = venv_path,
+        python_path = python_path,
+      }
     end
   end
 
-  local handle = io.popen("command -v pyenv")
-  if handle then
-    local result = handle:read("*a")
-    handle:close()
-    if result ~= "" then
-      local pyenv_handle = io.popen("pyenv virtualenvs --bare --skip-aliases")
-      if pyenv_handle then
-        local output = pyenv_handle:read("*a")
-        pyenv_handle:close()
-        for venv in output:gmatch("[^\r\n]+") do
-          local clean_venv = venv:gsub("envs/", "")
-          local pyenv_path = home .. "/.pyenv/versions/" .. venv
-          local python_path = pyenv_path .. "/bin/python"
-          envs[clean_venv] = {
-            type = "pyenv",
-            path = pyenv_path,
-            python_path = python_path,
-          }
-        end
+  check_venv(current_dir)
+
+  local dir_handle = vim.loop.fs_scandir(current_dir)
+  if dir_handle then
+    while true do
+      local name, type = vim.loop.fs_scandir_next(dir_handle)
+      if not name then
+        break
+      end
+
+      if type == "directory" and not ignored_dirs[name] then
+        check_venv(current_dir .. "/" .. name)
       end
     end
   end
 
   return envs
 end
+
 _GokkoNvim.activate_python_env = function(env_name)
   if not env_name then
     return
@@ -119,6 +118,14 @@ _GokkoNvim.activate_python_env = function(env_name)
       client.config.settings = client.config.settings or {}
       client.config.settings.python = client.config.settings.python or {}
       client.config.settings.python.pythonPath = env.python_path
+
+      -- Add venv specific settings for uv environments
+      if env.type == "uv" then
+        client.config.settings.python.venvPath = env.path
+        client.config.settings.python.analysis = client.config.settings.python.analysis or {}
+        client.config.settings.python.analysis.extraPaths = { env.path .. "/lib/python*/site-packages" }
+      end
+
       vim.cmd("LspRestart " .. client.id)
       break
     end
@@ -136,6 +143,11 @@ _GokkoNvim.activate_python_env = function(env_name)
       }),
     },
   })
+
+  -- Set project-level Python path for uv environments
+  if env.type == "uv" then
+    vim.env.PYTHONPATH = env.path .. "/lib/python*/site-packages"
+  end
 
   vim.notify(string.format("Activated %s environment: %s", env.type, env_name), vim.log.levels.INFO)
 end
