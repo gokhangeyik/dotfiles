@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.0](https://github.com/gokhangeyik/dotfiles/compare/v1.10.0...v1.11.0) (2025-02-21)
+
+
+### 🚀 Features
+
+* **nvim/GokkoNvim:** add uv venv support ([95d5504](https://github.com/gokhangeyik/dotfiles/commit/95d550469748a0cd533109f21880045f78e3fd67))
+
 ## [1.10.0](https://github.com/gokhangeyik/dotfiles/compare/v1.9.0...v1.10.0) (2025-02-16)
 
 
