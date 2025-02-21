@@ -71,7 +71,7 @@ _GokkoNvim.get_python_envs = function()
     local python_path = venv_path .. "/bin/python"
     local ok, _ = vim.loop.fs_stat(python_path)
     if ok then
-      local env_name = vim.fn.fnamemodify(directory, ":t") .. "-uv"
+      local env_name = vim.fn.fnamemodify(directory, ":t")
       envs[env_name] = {
         type = "uv",
         path = venv_path,
