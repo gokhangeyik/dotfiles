@@ -55,15 +55,15 @@ local treesitter = {
 }
 
 local lsp_overrides = {
-  gopls = function(client)
-    local semantic = client.config.capabilities.textDocument.semanticTokens or {}
-    client.server_capabilities.semanticTokensProvider = {
-      full = true,
-      legend = { tokenModifiers = semantic.tokenModifiers, tokenTypes = semantic.tokenTypes },
-      range = true,
-    }
-    return client
-  end,
+  -- gopls = function(client)
+  --   local semantic = client.config.capabilities.textDocument.semanticTokens or {}
+  --   client.server_capabilities.semanticTokensProvider = {
+  --     full = true,
+  --     legend = { tokenModifiers = semantic.tokenModifiers, tokenTypes = semantic.tokenTypes },
+  --     range = true,
+  --   }
+  --   return client
+  -- end,
 }
 -- Language spesific plugins
 return {
