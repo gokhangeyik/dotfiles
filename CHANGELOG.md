@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.11.0](https://github.com/gokhangeyik/dotfiles/compare/v1.10.0...v1.11.0) (2025-02-24)
+
+
+### 🚀 Features
+
+* **nvim/GokkoNvim:** add uv venv support ([95d5504](https://github.com/gokhangeyik/dotfiles/commit/95d550469748a0cd533109f21880045f78e3fd67))
+* **nvim:** add `vim-dadbod` ([f46cd76](https://github.com/gokhangeyik/dotfiles/commit/f46cd76d4e537fe070197e5c9a4e91c1d28e5da4))
+
+
+### 🛠 Miscellaneous
+
+* **nvim/lsp/golang:** remove semantic tokens config override ([c55e11c](https://github.com/gokhangeyik/dotfiles/commit/c55e11cb0593687d62d28f68d4f7ac791696ba3c))
+* **nvim:** set kitty dynamic cursor colors ([c3118b2](https://github.com/gokhangeyik/dotfiles/commit/c3118b2e974e0f606f607d47031dc55f5f74e57f))
+* **nvim:** trim "-uv" suffix from venv list ([573c1d2](https://github.com/gokhangeyik/dotfiles/commit/573c1d2a0e90bb45195f6fd4ec6f76485beaee91))
+
 ## [1.10.0](https://github.com/gokhangeyik/dotfiles/compare/v1.9.0...v1.10.0) (2025-02-16)
 
 
