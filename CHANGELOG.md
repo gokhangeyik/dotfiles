@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/gokhangeyik/dotfiles/compare/v1.11.0...v1.11.1) (2025-02-26)
+
+
+### 🛠 Miscellaneous
+
+* **nvim.lang.python:** reconfigure basedpyright ([e67cc76](https://github.com/gokhangeyik/dotfiles/commit/e67cc760b026e876d3a1c858d4ec4ec2ec8f39e9))
+
 ## [1.11.0](https://github.com/gokhangeyik/dotfiles/compare/v1.10.0...v1.11.0) (2025-02-24)
 
 
