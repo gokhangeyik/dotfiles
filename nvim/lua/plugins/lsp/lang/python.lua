@@ -14,7 +14,7 @@ local lsp = {
   -- },
   -- ruff = {
   --   filetypes = { "python" },
-  --   -- cmd_env = { RUFF_TRACE = "messages" },
+  --   cmd_env = { RUFF_TRACE = "messages" },
   --   init_options = {
   --     lint = {
   --       enable = true,
@@ -29,9 +29,10 @@ local lsp = {
     filetypes = { "python" },
     settings = {
       basedpyright = {
+        disableOrganizeImports = false,
         analysis = {
           autoSearchPaths = true,
-          diagnosticMode = "workspace",
+          diagnosticMode = "openFilesOnly",
           useLibraryCodeForTypes = true,
           typeCheckingMode = "standard",
           -- stubPath = "typings",
