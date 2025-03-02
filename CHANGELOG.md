@@ -1,5 +1,14 @@
 # Changelog
 
+## [1.11.1](https://github.com/gokhangeyik/dotfiles/compare/v1.11.0...v1.11.1) (2025-03-02)
+
+
+### 🛠 Miscellaneous
+
+* **avante:** set avante default model to claude-3.7-sonnet ([d90cab1](https://github.com/gokhangeyik/dotfiles/commit/d90cab17c72868ce70d3908e7b9cd566a9f159b3))
+* **nvim.lang.python:** reconfigure basedpyright ([e67cc76](https://github.com/gokhangeyik/dotfiles/commit/e67cc760b026e876d3a1c858d4ec4ec2ec8f39e9))
+* updat kitty and tmux config ([b413903](https://github.com/gokhangeyik/dotfiles/commit/b413903cb4acef7a932ca9eb4c608c7fe0c7b180))
+
 ## [1.11.0](https://github.com/gokhangeyik/dotfiles/compare/v1.10.0...v1.11.0) (2025-02-24)
 
 
