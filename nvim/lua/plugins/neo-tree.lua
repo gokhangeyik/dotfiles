@@ -29,13 +29,10 @@ return {
         hide_dotfiles = false,
         hide_gitignored = false,
         -- hide_by_name = {
-        --   ".github",
-        --   ".gitignore",
-        --   "package-lock.json",
-        --   ".changeset",
-        --   ".prettierrc.json",
+        --   "__pycache__",
+        --   ".pytest_cache",
         -- },
-        never_show = { ".git" },
+        never_show = { ".git", "__pycache__", ".pytest_cache" },
       },
     },
     default_component_configs = {
