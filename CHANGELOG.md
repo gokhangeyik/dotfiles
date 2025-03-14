@@ -1,5 +1,28 @@
 # Changelog
 
+## [1.12.0](https://github.com/gokhangeyik/dotfiles/compare/v1.11.0...v1.12.0) (2025-03-14)
+
+
+### 🚀 Features
+
+* **nvim.lsp:** add tailwindcss lsp ([a8937ca](https://github.com/gokhangeyik/dotfiles/commit/a8937cad3d35fa8c8f764717cf25bf54ad05c113))
+
+
+### 🐛 Bug Fixes
+
+* **nvim/GokkoNvim:** make sure LSPs properly stopped at exit ([448fc5a](https://github.com/gokhangeyik/dotfiles/commit/448fc5a9aff86bd3a30f7c8933c568e0db95ee44))
+
+
+### 🛠 Miscellaneous
+
+* **avante:** set avante default model to claude-3.7-sonnet ([d90cab1](https://github.com/gokhangeyik/dotfiles/commit/d90cab17c72868ce70d3908e7b9cd566a9f159b3))
+* **kitty:** reconfigure ([d84ffca](https://github.com/gokhangeyik/dotfiles/commit/d84ffca9f9d23d296b0535eedb4579a88f1bfedf))
+* **nvim.lang.python:** reconfigure basedpyright ([e67cc76](https://github.com/gokhangeyik/dotfiles/commit/e67cc760b026e876d3a1c858d4ec4ec2ec8f39e9))
+* **nvim.neo-tree:** hide some files and folder by name ([dc6bbb4](https://github.com/gokhangeyik/dotfiles/commit/dc6bbb446d418566fbb98608167aafffac1e6e46))
+* **nvim/mason:** delay mason package installs ([ca20da7](https://github.com/gokhangeyik/dotfiles/commit/ca20da7ca9cde934f922c0ff8cd093466c8d3deb))
+* **nvim:** drop dbee plugin ([c0e6b1b](https://github.com/gokhangeyik/dotfiles/commit/c0e6b1b26d2bc81d3af7bb8d01764d99078ae563))
+* updat kitty and tmux config ([b413903](https://github.com/gokhangeyik/dotfiles/commit/b413903cb4acef7a932ca9eb4c608c7fe0c7b180))
+
 ## [1.11.0](https://github.com/gokhangeyik/dotfiles/compare/v1.10.0...v1.11.0) (2025-02-24)
 
 
