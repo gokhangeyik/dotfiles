@@ -1,6 +1,7 @@
 return {
   "folke/persistence.nvim",
   event = "BufReadPre", -- this will only start session saving when an actual file was opened
+  enabled = false,
   lazy = true,
   opts = {
     dir = vim.fn.stdpath("state") .. "/sessions/", -- directory where session files are saved
@@ -8,6 +9,7 @@ return {
     -- Set to 0 to always save
     need = 1,
     branch = true, -- use git branch to save session
+    autosave = true,
   },
   keys = {
     {
