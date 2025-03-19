@@ -5,6 +5,11 @@ vim.g.loaded_perl_provider = 0
 vim.g.kanagawa_lualine_bold = true
 
 local opt = vim.opt
+opt.numberwidth = 2
+opt.shortmess:append("sI")
+opt.pumheight = 15
+opt.swapfile = false
+opt.smoothscroll = true
 opt.clipboard = "unnamedplus" -- Sync with system clipboard
 opt.completeopt = { "menu", "menuone", "noselect" }
 opt.conceallevel = 2 -- Hide * markup for bold and italic, but not markers with substitutions
@@ -95,4 +100,8 @@ vim.g.git_worktree = {
   confirm_telescope_deletions = true,
   autopush = false,
 }
-
+vim.cmd.syntax("manual")
+vim.g.loaded_node_provider = 0
+vim.g.loaded_python3_provider = 0
+vim.g.loaded_perl_provider = 0
+vim.g.loaded_ruby_provider = 0
