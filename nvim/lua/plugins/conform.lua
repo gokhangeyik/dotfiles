@@ -31,6 +31,8 @@ return {
       terraform = { "terraform_fmt" },
     },
     default_format_opts = {
+      async = true,
+      quiet = false,
       lsp_format = "fallback",
     },
     format_on_save = { timeout_ms = 2000 },
