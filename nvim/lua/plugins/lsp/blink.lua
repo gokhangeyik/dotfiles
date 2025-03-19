@@ -5,29 +5,35 @@ return {
   -- lazy = false, -- lazy loading handled internally
   dependencies = {
     "rafamadriz/friendly-snippets",
-    "moyiz/blink-emoji.nvim",
-    { "L3MON4D3/LuaSnip", version = "v2.*" },
   },
-  version = "v0.*",
+  version = "*",
   config = function()
     require("blink.cmp").setup({
-      snippets = {
-        expand = function(snippet)
-          require("luasnip").lsp_expand(snippet)
-        end,
-        active = function(filter)
-          if filter and filter.direction then
-            return require("luasnip").jumpable(filter.direction)
-          end
-          return require("luasnip").in_snippet()
-        end,
-        jump = function(direction)
-          require("luasnip").jump(direction)
-        end,
+      cmdline = {
+        enabled = true,
+        completion = {
+          menu = {
+            auto_show = true,
+          },
+        },
       },
+      -- snippets = {
+      --   expand = function(snippet)
+      --     require("luasnip").lsp_expand(snippet)
+      --   end,
+      --   active = function(filter)
+      --     if filter and filter.direction then
+      --       return require("luasnip").jumpable(filter.direction)
+      --     end
+      --     return require("luasnip").in_snippet()
+      --   end,
+      --   jump = function(direction)
+      --     require("luasnip").jump(direction)
+      --   end,
+      -- },
       keymap = { preset = "super-tab" },
       sources = {
-        default = { "lsp", "path", "buffer", "snippets", "emoji" },
+        default = { "lsp", "path", "snippets", "buffer" },
         -- optionally disable cmdline completions
         -- cmdline = {},
         providers = {
@@ -64,7 +70,10 @@ return {
           winblend = 10,
           scrollbar = false,
           draw = {
-            columns = { { "label", "label_description", gap = 1 }, { "kind_icon", "kind", gap = 1 } },
+            columns = {
+              { "kind_icon", "label", "label_description", gap = 1 },
+              { "kind", gap = 1 },
+            },
           },
         },
         documentation = {
@@ -84,7 +93,56 @@ return {
         use_nvim_cmp_as_default = false,
         -- Set to 'mono' for 'Nerd Font Mono' or 'normal' for 'Nerd Font'
         -- Adjusts spacing to ensure icons are aligned
-        nerd_font_variant = "normal",
+        nerd_font_variant = "mono",
+        kind_icons = {
+          Array = " ",
+          Boolean = "󰨙 ",
+          Class = " ",
+          Color = " ",
+          Constant = "󰏿",
+          Constructor = " ",
+          Enum = " ",
+          EnumMember = " ",
+          Event = "",
+          Field = "󰜢 ",
+          File = "",
+          Folder = " ",
+          Function = "󰊕",
+          Interface = " ",
+          Keyword = " ",
+          Method = "󰊕",
+          Module = " ",
+          Namespace = "󰦮 ",
+          Null = " ",
+          Number = "󰎠 ",
+          Object = " ",
+          Operator = " ",
+          Property = "󰖷 ",
+          Reference = " ",
+          Snippet = " ",
+          String = " ",
+          Struct = "󰆼",
+          Text = " ",
+          TypeParameter = " ",
+          Unit = "",
+          Value = "󰦨 ",
+          Variable = "󰀫",
+
+          Collapsed = "",
+          Control = " ",
+          Key = " ",
+          Tag = " ",
+
+          Avante = "󰯫 ",
+          Codeium = "󰘦 ",
+          Copilot = " ",
+          Dap = " ",
+          History = " ",
+          Package = " ",
+          RenderMarkdown = " ",
+          Spell = "暈",
+          TabNine = "󰏚 ",
+        },
       },
       signature = { enabled = false },
     })
