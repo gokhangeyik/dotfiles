@@ -1,7 +1,6 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 
-vim.g.loaded_perl_provider = 0
 vim.g.kanagawa_lualine_bold = true
 
 local opt = vim.opt
@@ -100,7 +99,7 @@ vim.g.git_worktree = {
   confirm_telescope_deletions = true,
   autopush = false,
 }
-vim.cmd.syntax("manual")
+-- vim.cmd.syntax("manual")
 vim.g.loaded_node_provider = 0
 vim.g.loaded_python3_provider = 0
 vim.g.loaded_perl_provider = 0

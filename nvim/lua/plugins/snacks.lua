@@ -22,6 +22,7 @@ return {
       },
     },
     picker = {
+      ui_select = true,
       layouts = {
         default = {
           layout = {
@@ -346,7 +347,7 @@ return {
       desc = "Marks",
     },
     {
-      "<leader>sR",
+      "<leader>sr",
       function()
         Snacks.picker.resume()
       end,
