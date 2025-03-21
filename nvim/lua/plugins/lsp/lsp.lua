@@ -1,6 +1,6 @@
 return {
   "neovim/nvim-lspconfig",
-  -- event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+  event = { "BufReadPost", "BufWritePost" },
   -- event = "VeryLazy",
   lazy = true,
   enabled = true,
@@ -15,6 +15,26 @@ return {
         fileOperations = {
           didRename = true,
           willRename = true,
+        },
+      },
+      textDocument = {
+        completion = {
+          completionItem = {
+            snippetSupport = true,
+            commitCharactersSupport = true,
+            deprecatedSupport = true,
+            preselectSupport = true,
+            labelDetailsSupport = true,
+            documentationFormat = { "markdown", "plaintext" },
+            insertReplaceSupport = false,
+            insertTextModeSupport = { 1 },
+            resolveSupport = {
+              properties = {
+                "documentation",
+                "detail",
+              },
+            },
+          },
         },
       },
     },
@@ -57,26 +77,26 @@ return {
         end
         -- /LSP Config Exceptions
 
-        -- if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
-        --   local highlight_augroup = vim.api.nvim_create_augroup("gokko-lsp-highlight", { clear = false })
-        --   vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
-        --     buffer = event.buf,
-        --     group = highlight_augroup,
-        --     callback = vim.lsp.buf.document_highlight,
-        --   })
-        --   vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
-        --     buffer = event.buf,
-        --     group = highlight_augroup,
-        --     callback = vim.lsp.buf.clear_references,
-        --   })
-        --   vim.api.nvim_create_autocmd("LspDetach", {
-        --     group = vim.api.nvim_create_augroup("gokko-lsp-detach", { clear = true }),
-        --     callback = function(event2)
-        --       vim.lsp.buf.clear_references()
-        --       vim.api.nvim_clear_autocmds({ group = "gokko-lsp-highlight", buffer = event2.buf })
-        --     end,
-        --   })
-        -- end
+        if client and client.supports_method(vim.lsp.protocol.Methods.textDocument_documentHighlight) then
+          local highlight_augroup = vim.api.nvim_create_augroup("gokko-lsp-highlight", { clear = false })
+          vim.api.nvim_create_autocmd({ "CursorHold", "CursorHoldI" }, {
+            buffer = event.buf,
+            group = highlight_augroup,
+            callback = vim.lsp.buf.document_highlight,
+          })
+          vim.api.nvim_create_autocmd({ "CursorMoved", "CursorMovedI" }, {
+            buffer = event.buf,
+            group = highlight_augroup,
+            callback = vim.lsp.buf.clear_references,
+          })
+          vim.api.nvim_create_autocmd("LspDetach", {
+            group = vim.api.nvim_create_augroup("gokko-lsp-detach", { clear = true }),
+            callback = function(event2)
+              vim.lsp.buf.clear_references()
+              vim.api.nvim_clear_autocmds({ group = "gokko-lsp-highlight", buffer = event2.buf })
+            end,
+          })
+        end
       end,
     })
   end,

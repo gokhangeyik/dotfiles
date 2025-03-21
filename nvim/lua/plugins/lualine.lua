@@ -32,7 +32,7 @@ return {
       "filename",
       file_status = true, -- Displays file status (readonly status, modified status)
       newfile_status = false, -- Display new file status (new file means no write after created)
-      path = 0,
+      path = 1,
       -- 0: Just the filename
       -- 1: Relative path
       -- 2: Absolute path
@@ -67,7 +67,7 @@ return {
       options = {
         icons_enabled = true,
         theme = "kanagawa",
-        disabled_filetypes = { "Avante" },
+        disabled_filetypes = { "Avante", "snacks_dashboard" },
         -- section_separators = { left = "🬗", right = "🬤" },
         -- component_separators = { left = "🬗", right = "🬤" },
         section_separators = { left = "", right = "" },
@@ -93,7 +93,7 @@ return {
         lualine_z = {},
       },
       tabline = {},
-      extensions = { "neo-tree", "lazy" },
+      extensions = { "neo-tree", "lazy", "oil", "mason" },
     })
   end,
 }
