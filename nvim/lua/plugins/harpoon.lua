@@ -2,7 +2,7 @@ return {
   "ThePrimeagen/harpoon",
   branch = "harpoon2",
   lazy = true,
-  enabled = true,
+  enabled = false,
   config = function()
     require("harpoon").setup({
       menu = {

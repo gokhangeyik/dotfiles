@@ -1,9 +1,9 @@
 return {
   "nvim-lualine/lualine.nvim",
-  event = "VeryLazy",
+  -- event = "UIEnter",
   enabled = true,
-  lazy = true,
-  dependencies = { "yavorski/lualine-macro-recording.nvim" },
+  lazy = false,
+  dependencies = { "yavorski/lualine-macro-recording.nvim", lazy = false },
   config = function()
     local location = { "location", separator = "" }
     local branch = { "branch", icon = "", separator = "" }
@@ -49,14 +49,6 @@ return {
         newfile = " ", -- Text to show for newly created file before first write
       },
     }
-    local harpoon = {
-      "harpoon2",
-      icon = " ",
-      indicators = { "1", "2", "3", "4", "5" },
-      active_indicators = { "[1]", "[2]", "[3]", "[4]", "[5]" },
-      color = { fg = "#9399b2", bg = "#1F1F28" },
-      separator = { left = "", right = "" },
-    }
     local diff = {
       "diff",
       colored = true,
@@ -66,7 +58,7 @@ return {
     require("lualine").setup({
       options = {
         icons_enabled = true,
-        theme = "kanagawa",
+        theme = "auto",
         disabled_filetypes = { "Avante", "snacks_dashboard" },
         -- section_separators = { left = "🬗", right = "🬤" },
         -- component_separators = { left = "🬗", right = "🬤" },
@@ -81,7 +73,7 @@ return {
         lualine_b = { branch, diff },
         lualine_c = { filetype, filename },
         lualine_x = { "macro_recording" },
-        lualine_y = { harpoon, diagnostics },
+        lualine_y = { diagnostics },
         lualine_z = { location, "progress" },
       },
       inactive_sections = {
@@ -93,7 +85,7 @@ return {
         lualine_z = {},
       },
       tabline = {},
-      extensions = { "neo-tree", "lazy", "oil", "mason" },
+      extensions = {},
     })
   end,
 }

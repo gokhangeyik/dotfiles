@@ -1,7 +1,8 @@
 return {
   "kristijanhusak/vim-dadbod-ui",
   enabled = true,
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  lazy = true,
   dependencies = {
     { "tpope/vim-dadbod", lazy = true },
     { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true }, -- Optional

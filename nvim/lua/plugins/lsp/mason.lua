@@ -23,12 +23,10 @@ return {
     event = "VeryLazy",
     dependencies = "williamboman/mason.nvim",
     config = function()
-      vim.schedule(function()
-        _GokkoNvim.async(_GokkoNvim.init_deps)
-        if not _GokkoNvim.lsp then
-          _GokkoNvim.init_deps()
-        end
-      end)
+      _GokkoNvim.async(_GokkoNvim.init_deps)
+      if not _GokkoNvim.lsp then
+        _GokkoNvim.init_deps()
+      end
       -- _GokkoNvim.async(_GokkoNvim.init_deps)
       -- if not _GokkoNvim.lsp then
       --   _GokkoNvim.init_deps()

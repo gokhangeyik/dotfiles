@@ -22,6 +22,13 @@ return {
       },
     },
     picker = {
+      toggles = {
+        follow = "f",
+        hidden = { icon = "" },
+        ignored = { icon = "" },
+        modified = "m",
+        regex = { icon = "R", value = false },
+      },
       ui_select = true,
       layouts = {
         default = {
@@ -47,9 +54,27 @@ return {
         box = "vertical",
       },
       debug = { scores = false },
+      icons = {
+        git = {
+          staged = "󰱒 ",
+          added = "󰐖 ",
+          deleted = " ",
+          ignored = " ",
+          modified = " ",
+          renamed = " ",
+          untracked = " ",
+        },
+      },
       sources = {
         buffers = {
           hidden = true,
+          ignored = true,
+        },
+        explorer = {
+          hidden = true,
+          ignored = true,
+          title = "EXPLORER",
+          exclude = { ".venv", ".git", "__pycache__", ".pytest_cache" },
         },
         files = {
           show_empty = false,
@@ -63,7 +88,7 @@ return {
     },
     animate = { enabled = false },
     explorer = {
-      enabled = false,
+      enabled = true,
     },
     scroll = { enabled = false },
     bigfile = { enabled = true },
@@ -93,13 +118,13 @@ return {
   },
   keys = {
     --
-    -- {
-    --   "<leader>fe",
-    --   function()
-    --     Snacks.explorer()
-    --   end,
-    --   desc = "Switch gitworktree",
-    -- },
+    {
+      "<leader>fe",
+      function()
+        Snacks.explorer()
+      end,
+      desc = "Switch gitworktree",
+    },
     -- Git Worktrees
     {
       "<leader>gws",

@@ -1,7 +1,7 @@
 return {
   "letieu/harpoon-lualine",
-  lazy = true,
-  enabled = true,
+  lazy = false,
+  enabled = false,
   dependencies = {
     {
       "ThePrimeagen/harpoon",
