@@ -22,22 +22,6 @@ autocmd({ "BufWritePre" }, {
   command = [[%s/\s\+$//e]],
 })
 
--- Properly close LSP before quitting Neovim
-autocmd("VimLeavePre", {
-  group = gokko,
-  callback = function()
-    -- Stop all LSP clients
-    local clients = vim.lsp.get_active_clients()
-    for _, client in ipairs(clients) do
-      pcall(function()
-        vim.lsp.stop_client(client.id, true)
-      end)
-    end
-
-    -- Free up resources
-    collectgarbage("collect")
-  end,
-})
 --
 -- -- Keep one empty line at EOF
 -- autocmd({ "BufWritePost" }, {
