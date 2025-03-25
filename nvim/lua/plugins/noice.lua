@@ -1,8 +1,8 @@
 return {
   "folke/noice.nvim",
   enabled = true,
-  event = "UIEnter",
-  lazy = false,
+  lazy = true,
+  event = "VeryLazy",
   opts = {
     lsp = {
       progress = {

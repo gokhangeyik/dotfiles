@@ -6,7 +6,7 @@ return {
   priority = 1000,
   config = function()
     require("kanagawa").setup({
-      compile = false, -- enable compiling the colorscheme
+      compile = true, -- enable compiling the colorscheme
       undercurl = true, -- enable undercurls
       commentStyle = { italic = true },
       functionStyle = {},
@@ -101,6 +101,6 @@ return {
       },
     })
     vim.cmd.colorscheme("kanagawa")
-    -- vim.defer_fn(vim.cmd("KanagawaCompile"), 0)
+    -- _GokkoNvim.async(vim.cmd("KanagawaCompile"))
   end,
 }

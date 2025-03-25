@@ -56,12 +56,6 @@ return {
             score_offset = 0, -- Boost/penalize the score of the items
             override = nil, -- Override
           },
-          -- emoji = {
-          --   module = "blink-emoji",
-          --   name = "Emoji",
-          --   score_offset = 15, -- Tune by preference
-          --   opts = { insert = true }, -- Insert emoji (default) or complete its name
-          -- },
         },
       },
       completion = {

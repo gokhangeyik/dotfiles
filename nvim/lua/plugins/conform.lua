@@ -3,6 +3,7 @@ return {
   event = { "BufWritePre" },
   cmd = { "ConformInfo" },
   enabled = true,
+  lazy = true,
   keys = {
     {
       "<leader>cf",
@@ -43,8 +44,8 @@ return {
       black = { "--line-length", "80" },
     },
   },
-  init = function()
-    -- If you want the formatexpr, here is the place to set it
-    vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-  end,
+  -- init = function()
+  --   -- If you want the formatexpr, here is the place to set it
+  --   vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
+  -- end,
 }

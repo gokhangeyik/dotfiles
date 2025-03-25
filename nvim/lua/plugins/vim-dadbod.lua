@@ -1,11 +1,11 @@
 return {
   "kristijanhusak/vim-dadbod-ui",
   enabled = true,
-  -- event = "VeryLazy",
   lazy = true,
+  event = "VeryLazy",
   dependencies = {
-    { "tpope/vim-dadbod", lazy = true },
-    { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" }, lazy = true }, -- Optional
+    { "tpope/vim-dadbod" },
+    { "kristijanhusak/vim-dadbod-completion", ft = { "sql", "mysql", "plsql" } }, -- Optional
   },
   cmd = {
     "DBUI",
@@ -13,8 +13,8 @@ return {
     "DBUIAddConnection",
     "DBUIFindBuffer",
   },
-  init = function()
-    -- Your DBUI configuration
-    vim.g.db_ui_use_nerd_fonts = 1
-  end,
+  -- init = function()
+  --   -- Your DBUI configuration
+  --   vim.g.db_ui_use_nerd_fonts = 1
+  -- end,
 }
