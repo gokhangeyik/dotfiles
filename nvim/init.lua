@@ -1,11 +1,3 @@
-_GokkoNvim = require("config.GokkoNvim")
-_GokkoNvim.async(_GokkoNvim.init_deps)
-require("config.options")
-require("config.keymaps")
-require("config.autocmds")
-require("config.lazy")
-
--- Lua require cache optimizasyonu
 local function optimize_lua_cache()
   local package_cache = {}
   local old_require = require
@@ -21,3 +13,10 @@ local function optimize_lua_cache()
 end
 
 optimize_lua_cache()
+
+_GokkoNvim = require("config.GokkoNvim")
+_GokkoNvim.async(_GokkoNvim.init_deps)
+require("config.options")
+require("config.keymaps")
+require("config.autocmds")
+require("config.lazy")

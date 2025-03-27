@@ -1,7 +1,8 @@
 return {
   "sindrets/diffview.nvim",
   enabled = true,
-  event = "VeryLazy",
+  -- event = "VeryLazy",
+  lazy = true,
   keys = {
     {
       "<leader>gh",

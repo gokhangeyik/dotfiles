@@ -249,7 +249,6 @@ return {
       end,
       desc = "Git Status",
     },
-    -- Grep
     {
       "<leader>sb",
       function()

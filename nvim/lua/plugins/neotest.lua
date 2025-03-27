@@ -1,6 +1,8 @@
 return {
   {
     "nvim-neotest/neotest",
+    lazy = true,
+    -- event = "VeryLazy",
     dependencies = {
       "nvim-lua/plenary.nvim",
       "nvim-treesitter/nvim-treesitter",
@@ -8,7 +10,6 @@ return {
       "nvim-neotest/neotest-python",
       "nvim-neotest/nvim-nio",
     },
-    event = "VeryLazy",
     config = function()
       require("neotest").setup({
         adapters = {
