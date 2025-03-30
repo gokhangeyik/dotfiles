@@ -3,8 +3,38 @@ return {
   -- event = "BufEnter",
   enabled = true,
   event = "VeryLazy",
-  version = "v0.*", -- set this if you want to always pull the latest change
+  version = false, -- set this if you want to always pull the latest change
   opts = {
+    openai = {
+      hide_in_model_selector = true,
+    },
+    ["openai-gpt-4o-mini"] = {
+      hide_in_model_selector = true,
+    },
+    cohere = {
+      hide_in_model_selector = true,
+    },
+    claude = {
+      hide_in_model_selector = true,
+    },
+    ["claude-opus"] = {
+      hide_in_model_selector = true,
+    },
+    ["claude-haiku"] = {
+      hide_in_model_selector = true,
+    },
+    gemini = {
+      hide_in_model_selector = true,
+    },
+    vertex = {
+      hide_in_model_selector = true,
+    },
+    vertex_claude = {
+      hide_in_model_selector = true,
+    },
+    bedrock = {
+      hide_in_model_selector = true,
+    },
     windows = {
       sidebar_header = {
         rounded = false,
@@ -20,9 +50,9 @@ return {
     file_selector = {
       provider = "snacks",
     },
-    provider = "copilot_sonnet",
+    provider = "cp_sonnet_37",
     hints = { enabled = false },
-    auto_suggestion_provider = "copilot_gpt4o",
+    auto_suggestion_provider = "copilot",
     behaviour = {
       auto_suggestions = false, -- Experimental stage
       auto_set_highlight_group = true,
@@ -31,35 +61,48 @@ return {
       support_paste_from_clipboard = false,
       minimize_diff = false, -- Whether to remove unchanged lines when applying a code block
     },
-    -- copilot = {
-    --   endpoint = "https://api.githubcopilot.com",
-    --   model = "claude-3.5-sonnet",
-    --   proxy = nil, -- [protocol://]host[:port] Use this proxy
-    --   allow_insecure = false, -- Allow insecure server connections
-    --   timeout = 30000, -- Timeout in milliseconds
-    --   temperature = 0.2,
-    --   max_tokens = 4096,
-    -- },
     vendors = {
-      copilot_gpt4o = {
+      -- cp_gpt4o = {
+      --   __inherited_from = "copilot",
+      --   timeout = 30000, -- Timeout in milliseconds
+      --   temperature = 0,
+      --   -- max_tokens = 4096,
+      -- },
+      cp_sonnet_35 = {
         __inherited_from = "copilot",
-        endpoint = "https://api.githubcopilot.com",
-        model = "gpt-4o-2024-08-06",
-        proxy = nil, -- [protocol://]host[:port] Use this proxy
-        allow_insecure = false, -- Allow insecure server connections
+        model = "claude-3.5-sonnet",
         timeout = 30000, -- Timeout in milliseconds
         temperature = 0,
-        max_tokens = 4096,
+        -- max_tokens = 4096,
       },
-      copilot_sonnet = {
+      cp_sonnet_37 = {
         __inherited_from = "copilot",
-        endpoint = "https://api.githubcopilot.com",
         model = "claude-3.7-sonnet",
-        proxy = nil, -- [protocol://]host[:port] Use this proxy
-        allow_insecure = false, -- Allow insecure server connections
         timeout = 30000, -- Timeout in milliseconds
         temperature = 0,
-        max_tokens = 4096,
+        -- max_tokens = 4096,
+      },
+      cp_claude_thinking = {
+        __inherited_from = "copilot",
+        model = "claude-3.7-sonnet-thought",
+        timeout = 30000, -- Timeout in milliseconds
+        temperature = 0,
+        -- max_tokens = 4096,
+      },
+      -- Available
+      copilot_o1 = {
+        __inherited_from = "copilot",
+        model = "o1",
+      },
+      -- Available
+      copilot_o3_mini = {
+        __inherited_from = "copilot",
+        model = "o3-mini",
+      },
+      -- Unavailable
+      copilot_gemini = {
+        __inherited_from = "copilot",
+        model = "gemini-2.0-flash-001",
       },
     },
   },
@@ -111,14 +154,6 @@ return {
     --       use_absolute_path = true,
     --     },
     --   },
-    -- },
-    -- {
-    --   -- Make sure to set this up properly if you have lazy=true
-    -- "MeanderingProgrammer/render-markdown.nvim",
-    -- lazy = false,
-    -- opts = {
-    --   file_types = { "Avante" },
-    -- },
     -- },
   },
   keys = {

@@ -6,7 +6,7 @@ return {
   priority = 1000,
   config = function()
     require("kanagawa").setup({
-      compile = true, -- enable compiling the colorscheme
+      compile = false, -- enable compiling the colorscheme
       undercurl = true, -- enable undercurls
       commentStyle = { italic = true },
       functionStyle = {},
@@ -38,6 +38,10 @@ return {
           NormalFloat = { bg = theme.ui.bg_m3 },
           FloatBorder = { fg = theme.ui.bg_m3, bg = theme.ui.bg_m3 },
           FloatTitle = { bg = theme.diag.info, fg = theme.ui.bg_m3 },
+          AvanteSidebarNormal = { bg = theme.ui.bg },
+          -- AvanteTitle = { bg = theme.ui.bg_m2 },
+          -- AvanteSubtitle = { bg = theme.ui.bg_m2 },
+          -- AvanteThirdTitle = { bg = theme.ui.bg_m2 },
           -- Save an hlgroup with dark background and dimmed foreground
           -- so that you can use it where your still want darker windows.
           -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark
