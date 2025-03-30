@@ -1,5 +1,43 @@
 # Changelog
 
+## [1.13.0](https://github.com/gokhangeyik/dotfiles/compare/v1.12.0...v1.13.0) (2025-03-30)
+
+
+### 🚀 Features
+
+* **ghostty:** add config ([8edb63a](https://github.com/gokhangeyik/dotfiles/commit/8edb63a9b91d0e47a2d9810a04ef4dfb53136ff0))
+* **nvim/blink:** add ripgrep provider ([ccdefcc](https://github.com/gokhangeyik/dotfiles/commit/ccdefcc2079e833ad6b514ba0c41a251f02eb16a))
+* **nvim/keymaps:** add notesidian keymaps ([0f303d5](https://github.com/gokhangeyik/dotfiles/commit/0f303d5ef6f05b5c2063dcff0fef70590094bf75))
+* **nvim/lazy:** add dev context ([75e1cfb](https://github.com/gokhangeyik/dotfiles/commit/75e1cfb0dfe737466625c58b5fc7921959d06a7d))
+* **nvim/notesidian:** add notesidian plugin ([fb7ca85](https://github.com/gokhangeyik/dotfiles/commit/fb7ca85f0fb310597eec7d8cfa8a4112afa55cae))
+* **nvim/session:** replace persistence with mini.sessions ([ba30086](https://github.com/gokhangeyik/dotfiles/commit/ba3008635ff9521fe7d9d5bcf64edd4ee1ffeb9e))
+* **nvim:** disable module cache ([bb70f76](https://github.com/gokhangeyik/dotfiles/commit/bb70f761114a53a88e265a122f1ce8c965c20fe5))
+* **nvim:** remove unused plugins ([5bdf216](https://github.com/gokhangeyik/dotfiles/commit/5bdf216e8c33108a20c0a9aec6bfe50487798309))
+* **nvim:** various performance tuning ([1ae69e3](https://github.com/gokhangeyik/dotfiles/commit/1ae69e3b693e585bec438fb62dfce6ec6fbf173f))
+
+
+### 🛠 Miscellaneous
+
+* **ghostty:** disable cursor shell integration ([fe44649](https://github.com/gokhangeyik/dotfiles/commit/fe44649757872188dba2a6266f2ffd4bf9028824))
+* **kitty:** set cursor color ([8aa232f](https://github.com/gokhangeyik/dotfiles/commit/8aa232f600b39d41b860b816207b142befc841f6))
+* **nvim/avante:** set version constrain ([c305e5b](https://github.com/gokhangeyik/dotfiles/commit/c305e5b5d840b71a2e7764d482562310bfbe3b7e))
+* **nvim/blink:** redesign popup menu ([e4e311c](https://github.com/gokhangeyik/dotfiles/commit/e4e311cd9d9730d1628f6a640dcf7c41e03808fc))
+* **nvim/conform:** set async true ([144bfca](https://github.com/gokhangeyik/dotfiles/commit/144bfca0076162836064ff09277520cff548d249))
+* **nvim/lazy:** disable builtin plugins ([465403e](https://github.com/gokhangeyik/dotfiles/commit/465403e7226407fb9b36a1f079ffe83ecaa22591))
+* **nvim/lsp/golang:** disable obsolete flag ([cb63874](https://github.com/gokhangeyik/dotfiles/commit/cb63874f74469e789343f539310fdcdf29e4bc58))
+* **nvim/lsp:** remove unused functions ([a741307](https://github.com/gokhangeyik/dotfiles/commit/a741307e086bb72350dc636b981c1880ab4ab44f))
+* **nvim/mini:** add statusline config ([a588dfa](https://github.com/gokhangeyik/dotfiles/commit/a588dfacf89ce45c0c45db938c4fe8bff0a355a8))
+* **nvim/neo-tree:** replace `neo-tree` with `snacks explorer` ([6cf9469](https://github.com/gokhangeyik/dotfiles/commit/6cf9469dba0bc2ebae20e79de11c5a6c04097439))
+* **nvim/options:** various changes ([b04f5ad](https://github.com/gokhangeyik/dotfiles/commit/b04f5adf46095a4ab32f6ae95cdfab67c0793fc9))
+* **nvim/persistence:** enable plugin ([435368f](https://github.com/gokhangeyik/dotfiles/commit/435368f45e72dfb6d340b0f1379812efa13af7f6))
+* **nvim/trouble:** disable plugin ([6f07adb](https://github.com/gokhangeyik/dotfiles/commit/6f07adb7b057cc8decddf19c5d428818f8c0efaa))
+* **nvim/vim-tmux-navigator:** change plugin load event ([596a603](https://github.com/gokhangeyik/dotfiles/commit/596a60301f1d4ff9bad6278a5dcb3fb795cc34a1))
+* **nvim:** again some perf improvements ([87de9dc](https://github.com/gokhangeyik/dotfiles/commit/87de9dc38e3f8bccfae9ebe09cb9cb863a246aa8))
+* **nvim:** reconfigure lsp and lualine ([96de43b](https://github.com/gokhangeyik/dotfiles/commit/96de43bc831f686122f2fed488dc20bcff875fd0))
+* **nvim:** remove VimLeavePre autocmd ([291e796](https://github.com/gokhangeyik/dotfiles/commit/291e79620abe8bd57aba97e5889d2877625c3f8a))
+* **nvim:** swap keymaps ([e69310b](https://github.com/gokhangeyik/dotfiles/commit/e69310bbf0066ac0b642f63d6dfa3197eb2e2885))
+* **tmux:** change key bindings ([aa6d4be](https://github.com/gokhangeyik/dotfiles/commit/aa6d4be4e9f7f75511354c05ac67adb3ce5f31d0))
+
 ## [1.12.0](https://github.com/gokhangeyik/dotfiles/compare/v1.11.0...v1.12.0) (2025-03-14)
 
 
