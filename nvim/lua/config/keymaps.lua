@@ -55,6 +55,13 @@ vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = false })
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
 
+map("n", "<leader>od", function()
+  require("notesidian").create_daily_note()
+end, { desc = "Create or edit daily note" })
+map("n", "<leader>ol", function()
+  require("notesidian").create_todo_list()
+end, { desc = "Create or edit Todo List" })
+
 -- Window Split
 map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
