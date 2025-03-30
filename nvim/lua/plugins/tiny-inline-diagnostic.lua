@@ -2,6 +2,7 @@ return {
   "rachartier/tiny-inline-diagnostic.nvim",
   event = "VeryLazy", -- Or `LspAttach`
   priority = 1000, -- needs to be loaded in first
+  enabled = false,
   opts = {
     preset = "minimal", -- Can be: "modern", "classic", "minimal", "powerline", ghost", "simple", "nonerdfont", "amongus"
 
