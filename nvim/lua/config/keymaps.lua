@@ -58,9 +58,14 @@ map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
 map("n", "<leader>od", function()
   require("notesidian").create_daily_note()
 end, { desc = "Create or edit daily note" })
+
 map("n", "<leader>ol", function()
   require("notesidian").create_todo_list()
 end, { desc = "Create or edit Todo List" })
+
+map("n", "<leader>oc", function()
+  require("notesidian").toggle_checkbox()
+end, { desc = "Toggle Todo List Checkbox" })
 
 -- Window Split
 map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
