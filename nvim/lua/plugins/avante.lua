@@ -14,18 +14,18 @@ return {
     cohere = {
       hide_in_model_selector = true,
     },
-    claude = {
-      hide_in_model_selector = true,
-    },
+    -- claude = {
+    --   hide_in_model_selector = true,
+    -- },
     ["claude-opus"] = {
       hide_in_model_selector = true,
     },
     ["claude-haiku"] = {
       hide_in_model_selector = true,
     },
-    gemini = {
-      hide_in_model_selector = true,
-    },
+    -- gemini = {
+    --   hide_in_model_selector = true,
+    -- },
     vertex = {
       hide_in_model_selector = true,
     },
