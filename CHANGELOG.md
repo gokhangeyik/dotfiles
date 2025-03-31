@@ -110,8 +110,7 @@
 * **release-please:** add new changelog sections ([a827656](https://github.com/gokhangeyik/dotfiles/commit/a8276561976809d52b16541305a28580ff34db3b))
 * **tmux:** change key bindings ([aa6d4be](https://github.com/gokhangeyik/dotfiles/commit/aa6d4be4e9f7f75511354c05ac67adb3ce5f31d0))
 * **tmux:** reconfigure colors ([1c6fe77](https://github.com/gokhangeyik/dotfiles/commit/1c6fe775b6c764ff4a38d90207ab4d1e6726d311))
-* updat kitty and tmux config ([b413903](https://github.com/gokhangeyik/dotfiles/commit/b413903cb4acef7a932ca9eb4c608c7fe0c7b180))
-
+* update kitty and tmux config ([b413903](https://github.com/gokhangeyik/dotfiles/commit/b413903cb4acef7a932ca9eb4c608c7fe0c7b180))
 
 ### ♻️ Code Refactoring
 
