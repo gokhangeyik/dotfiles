@@ -13,7 +13,7 @@ return {
       keywordStyle = { italic = true },
       statementStyle = { bold = true },
       typeStyle = {},
-      transparent = true, -- do not set background color
+      transparent = false, -- do not set background color
       dimInactive = false, -- dim inactive window `:h hl-NormalNC`
       terminalColors = false, -- define vim.g.terminal_color_{0,17}
       colors = { -- add/modify theme and palette colors
@@ -38,10 +38,13 @@ return {
           NormalFloat = { bg = theme.ui.bg_m3 },
           FloatBorder = { fg = theme.ui.bg_m3, bg = theme.ui.bg_m3 },
           FloatTitle = { bg = theme.diag.info, fg = theme.ui.bg_m3 },
-          AvanteSidebarNormal = { bg = theme.ui.bg },
-          -- AvanteTitle = { bg = theme.ui.bg_m2 },
-          -- AvanteSubtitle = { bg = theme.ui.bg_m2 },
-          -- AvanteThirdTitle = { bg = theme.ui.bg_m2 },
+          AvanteSidebarNormal = { bg = theme.ui.bg_m2 },
+          AvanteSidebarWinSeparator = { fg = theme.ui.bg_m2, bg = theme.ui.bg_m2 },
+          AvanteSidebarWinHorizontalSeparator = { fg = theme.ui.bg_p1, bg = theme.ui.bg_m2 },
+
+          AvanteTitle = { bg = theme.diag.info, fg = theme.ui.bg },
+          AvanteSubtitle = { bg = theme.syn.number, fg = theme.ui.bg },
+          AvanteThirdTitle = { bg = theme.syn.regex, fg = theme.ui.bg },
           -- Save an hlgroup with dark background and dimmed foreground
           -- so that you can use it where your still want darker windows.
           -- E.g.: autocmd TermOpen * setlocal winhighlight=Normal:NormalDark

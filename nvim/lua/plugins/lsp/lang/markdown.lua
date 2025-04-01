@@ -31,6 +31,9 @@ return {
         },
         checkbox = {
           enabled = true,
+          unchecked = { icon = "󰄰 " },
+          checked = { icon = "󰄴 " },
+          -- custom = { todo = { rendered = "◯ " } },
         },
       },
       ft = { "markdown", "norg", "rmd", "org", "codecompanion", "Avante" },
