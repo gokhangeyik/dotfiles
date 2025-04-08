@@ -65,8 +65,11 @@ end, { desc = "Create or edit Todo List" })
 
 map("n", "<leader>oc", function()
   require("notesidian").toggle_checkbox()
-end, { desc = "Toggle Todo List Checkbox" })
+end, { desc = "Toggle Checkbox" })
 
+map("n", "<leader>of", function()
+  require("notesidian").find_notes()
+end, { desc = "Search Notes" })
 -- Window Split
 map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
