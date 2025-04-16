@@ -6,12 +6,16 @@ return {
   dependencies = {
     "rafamadriz/friendly-snippets",
     "mikavilpas/blink-ripgrep.nvim",
+    "Kaiser-Yang/blink-cmp-avante",
   },
-  version = "*",
+  version = "1.*",
   config = function()
     require("blink.cmp").setup({
       cmdline = {
         enabled = true,
+        keymap = {
+          preset = "inherit",
+        },
         completion = {
           menu = {
             auto_show = true,
@@ -20,10 +24,17 @@ return {
       },
       keymap = { preset = "super-tab" },
       sources = {
-        default = { "lsp", "buffer", "ripgrep", "path", "snippets" },
+        default = { "avante", "lsp", "buffer", "ripgrep", "path", "snippets" },
         -- optionally disable cmdline completions
         -- cmdline = {},
         providers = {
+          avante = {
+            module = "blink-cmp-avante",
+            name = "Avante",
+            opts = {
+              -- options for blink-cmp-avante
+            },
+          },
           lsp = {
             name = "LSP",
             module = "blink.cmp.sources.lsp",
