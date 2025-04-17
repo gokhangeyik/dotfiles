@@ -5,6 +5,32 @@ return {
   event = "VeryLazy",
   version = false, -- set this if you want to always pull the latest change
   opts = {
+    disabled_tools = {
+      "list_files",
+      "search_files",
+      "read_file",
+      "create_file",
+      "rename_file",
+      "delete_file",
+      "create_dir",
+      "rename_dir",
+      "delete_dir",
+      "bash",
+    },
+    -- system_prompt as function ensures LLM always has latest MCP server state
+    -- This is evaluated for every message, even in existing chats
+    system_prompt = function()
+      local hub = require("mcphub").get_hub_instance()
+      if hub ~= nil then
+        return hub:get_active_servers_prompt()
+      end
+    end,
+    -- Using function prevents requiring mcphub before it's loaded
+    custom_tools = function()
+      return {
+        require("mcphub.extensions.avante").mcp_tool(),
+      }
+    end,
     openai = {
       hide_in_model_selector = true,
     },
@@ -81,6 +107,7 @@ return {
         timeout = 30000, -- Timeout in milliseconds
         temperature = 0,
         -- max_tokens = 4096,
+        -- disable_tools = true,
       },
       cp_claude_thinking = {
         __inherited_from = "copilot",
