@@ -1,47 +1,67 @@
 local lsp = {
-  -- pyright = {
-  --   filetypes = { "python" },
-  --   settings = {
-  --     python = {
-  --       analysis = {
-  --         autoSearchPaths = true,
-  --         diagnosticMode = "workspace",
-  --         useLibraryCodeForTypes = true,
-  --         -- ignore = { "*" },
-  --       },
-  --     },
-  --   },
-  -- },
-  -- ruff = {
-  --   filetypes = { "python" },
-  --   cmd_env = { RUFF_TRACE = "messages" },
-  --   init_options = {
-  --     lint = {
-  --       enable = true,
-  --     },
-  --     settings = {
-  --       logLevel = "error",
-  --     },
-  --   },
-  -- },
-
+  ruff = {
+    filetypes = { "python" },
+    cmd_env = { RUFF_TRACE = "messages" },
+    init_options = {
+      lint = {
+        enable = true,
+      },
+      settings = {
+        logLevel = "error",
+        -- Enable all linting rules for comprehensive linting
+        lint = {
+          run = "onSave",
+          select = { "ALL" },
+          ignore = {},
+        },
+        organizeImports = false,
+      },
+    },
+  },
   basedpyright = {
     filetypes = { "python" },
     settings = {
       basedpyright = {
-        disableOrganizeImports = false,
+        disableOrganizeImports = true, -- Let ruff handle imports
         analysis = {
           autoSearchPaths = true,
-          -- diagnosticMode = "openFilesOnly",
           diagnosticMode = "workspace",
           useLibraryCodeForTypes = true,
           typeCheckingMode = "standard",
-          -- stubPath = "typings",
-          -- ignore = { "*" },
+          -- Focus only on type checking
+          diagnosticSeverityOverrides = {
+            -- Lower severity for style issues which ruff will handle
+            reportMissingImports = "warning",
+            reportUnusedImport = "none",
+            reportUnusedVariable = "none",
+            reportGeneralTypeIssues = "error",
+          },
         },
       },
     },
   },
+}
+
+local lsp_overrides = {
+  basedpyright = function(client)
+    -- Limit basedpyright to just type checking capabilities
+    client.server_capabilities.renameProvider = true
+    client.server_capabilities.definitionProvider = true
+    client.server_capabilities.referencesProvider = true
+    client.server_capabilities.documentFormattingProvider = false
+    client.server_capabilities.documentRangeFormattingProvider = false
+    client.server_capabilities.codeActionProvider = false
+    client.server_capabilities.hoverProvider = true
+    return client
+  end,
+
+  ruff = function(client)
+    -- Enable all linting features in ruff
+    client.server_capabilities.hoverProvider = false
+    client.server_capabilities.codeActionProvider = true
+    client.server_capabilities.documentFormattingProvider = true
+    return client
+  end,
 }
 
 local tools = {
@@ -54,28 +74,28 @@ local treesitter = {
   "ninja",
   "rst",
 }
-local lsp_overrides = {
-  -- basedpyright = function(client)
-  --   client.server_capabilities.renameProvider = false
-  --   client.server_capabilities.definitionProvider = false
-  --   client.server_capabilities.referencesProvider = true
-  --   client.server_capabilities.documentFormattingProvider = false
-  --   client.server_capabilities.documentRangeFormattingProvider = false
-  --   client.server_capabilities.documentSymbolProvider = false
-  --   client.server_capabilities.workspaceSymbolProvider = false
-  --   client.server_capabilities.codeActionProvider = false
-  --   client.server_capabilities.completionProvider = false
-  --   client.server_capabilities.signatureHelpProvider = false
-  --   client.server_capabilities.hoverProvider = true
-  --   client.handlers["textDocument/publishDiagnostics"] = function() end
-  --   return client
-  -- end,
+-- local lsp_overrides = {
+-- basedpyright = function(client)
+--   client.server_capabilities.renameProvider = false
+--   client.server_capabilities.definitionProvider = false
+--   client.server_capabilities.referencesProvider = true
+--   client.server_capabilities.documentFormattingProvider = false
+--   client.server_capabilities.documentRangeFormattingProvider = false
+--   client.server_capabilities.documentSymbolProvider = false
+--   client.server_capabilities.workspaceSymbolProvider = false
+--   client.server_capabilities.codeActionProvider = false
+--   client.server_capabilities.completionProvider = false
+--   client.server_capabilities.signatureHelpProvider = false
+--   client.server_capabilities.hoverProvider = true
+--   client.handlers["textDocument/publishDiagnostics"] = function() end
+--   return client
+-- end,
 
-  -- ruff = function(client)
-  --   -- client.server_capabilities.hoverProvider = false
-  --   return client
-  -- end,
-}
+-- ruff = function(client)
+--   -- client.server_capabilities.hoverProvider = false
+--   return client
+-- end,
+-- }
 local lang_plugins = {
   {
     "benomahony/uv.nvim",
