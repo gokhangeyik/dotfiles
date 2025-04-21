@@ -3,6 +3,7 @@ local lsp = {
     filetypes = { "python" },
     cmd_env = { RUFF_TRACE = "messages" },
     init_options = {
+      fixAll = true,
       lint = {
         enable = true,
       },
