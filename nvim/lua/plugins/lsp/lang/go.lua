@@ -1,4 +1,5 @@
 local lsp = {
+  golangci_lint_ls = {},
   gopls = {
     settings = {
       gopls = {
@@ -44,6 +45,7 @@ local tools = {
   "gomodifytags",
   "impl",
   "delve",
+  "golanci-lint",
 }
 
 local treesitter = {
