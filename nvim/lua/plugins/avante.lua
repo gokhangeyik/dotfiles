@@ -5,6 +5,9 @@ return {
   event = "VeryLazy",
   version = false, -- set this if you want to always pull the latest change
   opts = {
+    selector = {
+      provider = "snacks",
+    },
     -- disabled_tools = {
     --   "list_files",
     --   "search_files",
@@ -62,11 +65,14 @@ return {
       hide_in_model_selector = true,
     },
     windows = {
+      width = 45,
+      wrap = true,
       sidebar_header = {
         rounded = false,
       },
       input = {
-        height = 3,
+        prefix = " ",
+        height = 8,
       },
       ask = {
         floating = false,
