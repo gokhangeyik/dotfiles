@@ -55,9 +55,18 @@ vim.api.nvim_set_keymap("i", "jj", "<Esc>", { noremap = false })
 map("n", "<leader>ui", vim.show_pos, { desc = "Inspect Pos" })
 map("n", "<leader>uI", "<cmd>InspectTree<cr>", { desc = "Inspect Tree" })
 
+-- Notesidian.nvim
 map("n", "<leader>od", function()
   require("notesidian").create_daily_note()
-end, { desc = "Create or edit daily note" })
+end, { desc = "Create or edit daily note (Today)" })
+
+map("n", "<leader>oy", function()
+  require("notesidian").create_daily_note(-1)
+end, { desc = "Create or edit daily note (Yesterday)" })
+
+map("n", "<leader>ot", function()
+  require("notesidian").create_daily_note(1)
+end, { desc = "Create or edit daily note (Tomorrow)" })
 
 map("n", "<leader>ol", function()
   require("notesidian").create_todo_list()
@@ -70,6 +79,7 @@ end, { desc = "Toggle Checkbox" })
 map("n", "<leader>of", function()
   require("notesidian").find_notes()
 end, { desc = "Search Notes" })
+
 -- Window Split
 map("n", "<leader>w", "<c-w>", { desc = "Windows", remap = true })
 map("n", "<leader>-", "<C-W>s", { desc = "Split Window Below", remap = true })
