@@ -1,7 +1,8 @@
 k9s:
   liveViewAutoRefresh: true
   refreshRate: 2
-  maxConnRetry: 5
+  maxConnRetry: 15
+  apiServerTimeout: 45s
   readOnly: false
   noExitOnCtrlC: false
   ui:
@@ -10,7 +11,7 @@ k9s:
     reactive: false
     logoless: true
     crumbsless: false
-    noIcons: false
+    noIcons: true
     skin: kanagawaish-gokko
   skipLatestRevCheck: false
   disablePodCounting: false
@@ -29,7 +30,7 @@ k9s:
     tail: 500
     buffer: 5000
     sinceSeconds: -1
-    textWrap: false
+    textWrap: true
     showTime: false
   thresholds:
     cpu:
