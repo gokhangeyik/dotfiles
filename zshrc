@@ -18,6 +18,7 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH="/usr/local/sbin:$PATH"
 export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:$HOME/.krew/bin"
+export PATH="$PATH:$(go env GOPATH)/bin/"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
@@ -28,6 +29,7 @@ export STARSHIP_CONFIG=~/.config/starship.toml
 # export CONDA_CHANGEPS1=False
 export EDITOR="nvim"
 export VISUAL="nvim"
+export BAT_THEME="base16"
 
 
 source /usr/share/zsh-antidote/antidote.zsh
@@ -113,6 +115,7 @@ function repoclean() {
 alias ls='eza --icons -l'
 alias ll='eza --icons -al'
 alias lt='eza --icons -lTg'
+alias cat='bat --style="plain" --paging="never"'
 alias -g k='kubectl'
 alias t='tmux'
 alias top='btop'
@@ -123,7 +126,6 @@ alias gcli='docker run --net=host --rm -it -v $HOME:/home/gokko registry.kodzill
 alias argo="docker run --net=host --rm -it -v $HOME:/home/gokko registry.kodzilla.net/gokko-cli/gokko-cli:latest argo"
 alias basedpyright="docker run --net=host --rm -it -v $HOME:/home/gokko registry.kodzilla.net/gokko-cli/gokko-cli:latest basedpyright"
 alias release-please="docker run --net=host --rm -it -v $HOME:/home/gokko registry.kodzilla.net/gokko-cli/gokko-cli:latest release-please"
-
 alias ollama="podman exec -it ollama ollama"
 alias devpod="devpod-cli"
 
