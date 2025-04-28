@@ -109,6 +109,7 @@ return {
       style = "compact",
       enabled = true,
       timeout = 3000,
+      padding = true,
     },
     quickfile = { enabled = true },
     statuscolumn = { enabled = true },
