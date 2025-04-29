@@ -46,6 +46,7 @@ local tools = {
   "impl",
   "delve",
   "golanci-lint",
+  "djlint",
 }
 
 local treesitter = {
@@ -53,6 +54,7 @@ local treesitter = {
   "gomod",
   "gowork",
   "gosum",
+  "gotmpl",
 }
 
 local lsp_overrides = {
