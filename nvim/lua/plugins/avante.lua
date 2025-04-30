@@ -3,7 +3,7 @@ return {
   -- event = "BufEnter",
   enabled = true,
   event = "VeryLazy",
-  version = false, -- set this if you want to always pull the latest change
+  version = "v0.*", -- set this if you want to always pull the latest change
   opts = {
     selector = {
       provider = "snacks",
