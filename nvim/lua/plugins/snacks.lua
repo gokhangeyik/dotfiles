@@ -1,6 +1,7 @@
 return {
   "folke/snacks.nvim",
   priority = 1000,
+  version = "v2.*",
   lazy = false,
   enabled = true,
   ---@type snacks.Config
@@ -22,6 +23,7 @@ return {
       },
     },
     picker = {
+      ui_select = true,
       toggles = {
         follow = "f",
         hidden = { icon = "" },
@@ -29,30 +31,7 @@ return {
         modified = "m",
         regex = { icon = "R", value = false },
       },
-      ui_select = true,
-      layouts = {
-        default = {
-          layout = {
-            box = "horizontal",
-            width = 0.8,
-            min_width = 120,
-            height = 0.8,
-            {
-              box = "vertical",
-              border = "single",
-              title = "{title} {live}",
-              { win = "input", height = 1, border = "bottom" },
-              { win = "list", border = "none" },
-            },
-            { win = "preview", title = "{preview}", border = "single", width = 0.5 },
-          },
-        },
-      },
-      layout = {
-        preset = "default",
-        cycle = false,
-        box = "vertical",
-      },
+      layout = { preset = "default", cycle = false },
       debug = { scores = false },
       icons = {
         git = {
@@ -84,6 +63,8 @@ return {
       },
       matcher = {
         frecency = true,
+        fuzy = true,
+        history_bonus = true,
       },
     },
     animate = { enabled = false },
@@ -108,7 +89,7 @@ return {
     notifier = {
       style = "compact",
       enabled = true,
-      timeout = 3000,
+      timeout = 6000,
       padding = true,
     },
     quickfile = { enabled = true },
