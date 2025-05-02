@@ -9,7 +9,10 @@ return {
     local branch = { "branch", icon = "", separator = "" }
     local mode = {
       "mode",
-      icon = "",
+      -- icon = "",
+      icon = " ",
+      -- icon = " ",
+      -- icon = "󱠦 ",
       -- separator = { right = "🬗", left = "" },
       separator = { right = "", left = "" },
     }
