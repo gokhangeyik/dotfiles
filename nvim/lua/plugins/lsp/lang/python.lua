@@ -65,10 +65,7 @@ local lsp_overrides = {
   end,
 }
 
-local tools = {
-  "black",
-  "isort",
-}
+local tools = {}
 
 local treesitter = {
   "python",

@@ -20,7 +20,7 @@ return {
     formatters_by_ft = {
       lua = { "stylua" },
       sh = { "shfmt" },
-      python = { "isort", "black" },
+      python = { "ruff_format", "ruff_organize_imports" },
       javascript = { "prettierd", "prettier", stop_after_first = true },
       html = { "prettierd", "prettier", stop_after_first = true },
       go = { "goimports", "gofumpt" },
@@ -41,7 +41,7 @@ return {
       shfmt = {
         prepend_args = { "-i", "2" },
       },
-      black = { "--line-length", "80" },
+      ruff_format = { "--line-length", "80" },
     },
   },
   -- init = function()
