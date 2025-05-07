@@ -65,7 +65,7 @@ return {
       hide_in_model_selector = true,
     },
     windows = {
-      width = 45,
+      width = 35,
       wrap = true,
       sidebar_header = {
         rounded = false,
