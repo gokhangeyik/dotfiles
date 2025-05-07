@@ -14,6 +14,7 @@ local treesitter = {
   "git_config",
   "http",
   "graphql",
+  "tmux",
 }
 
 return {

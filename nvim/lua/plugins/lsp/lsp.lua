@@ -38,6 +38,9 @@ return {
     },
   },
   config = function()
+    for lsp_name, _ in pairs(_GokkoNvim.lsp) do
+      vim.lsp.config(lsp_name, _GokkoNvim.lsp[lsp_name])
+    end
     vim.api.nvim_create_autocmd("LspAttach", {
       group = vim.api.nvim_create_augroup("gokko-lsp-attach", { clear = true }),
       callback = function(event)

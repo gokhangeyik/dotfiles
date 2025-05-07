@@ -35,18 +35,8 @@ return {
       -- }
       local ensure_installed = vim.tbl_deep_extend("force", vim.tbl_keys(_GokkoNvim.lsp), {})
       require("mason-lspconfig").setup({
+        automatic_enable = true,
         ensure_installed = ensure_installed,
-        automatic_installation = true,
-        handlers = {
-          function(server_name)
-            local server = _GokkoNvim.lsp[server_name] or {}
-            -- This handles overriding only values explicitly passed
-            -- by the server configuration above. Useful when disabling
-            -- certain features of an LSP (for example, turning off formatting for ts_ls)
-            server.capabilities = vim.tbl_deep_extend("force", {}, capabilities, server.capabilities or {})
-            require("lspconfig")[server_name].setup(server)
-          end,
-        },
       })
       _GokkoNvim.async(_GokkoNvim.mason_tools_installer)
     end,
