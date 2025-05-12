@@ -124,7 +124,6 @@ alias vi='nvim'
 alias docker="podman"
 alias gcli='docker run --net=host --rm -it -v $HOME:/home/gokko registry.kodzilla.net/gokko-cli/gokko-cli:latest zsh'
 alias argo="docker run --net=host --rm -it -v $HOME:/home/gokko registry.kodzilla.net/gokko-cli/gokko-cli:latest argo"
-alias basedpyright="docker run --net=host --rm -it -v $HOME:/home/gokko registry.kodzilla.net/gokko-cli/gokko-cli:latest basedpyright"
 alias release-please="docker run --net=host --rm -it -v $HOME:/home/gokko registry.kodzilla.net/gokko-cli/gokko-cli:latest release-please"
 alias ollama="podman exec -it ollama ollama"
 alias devpod="devpod-cli"
