@@ -13,7 +13,14 @@ local lsp = {
         lint = {
           run = "onSave",
           select = { "ALL" },
-          ignore = {},
+          ignore = {
+            -- D203 and D211 conflict, pick D211
+            "D203",
+            -- D212 and D213 conflict, pick D212
+            "D213",
+            -- Possbile conflict with formatter
+            "COM812",
+          },
         },
         organizeImports = false,
       },
