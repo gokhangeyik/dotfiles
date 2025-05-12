@@ -3,68 +3,13 @@ return {
   -- event = "BufEnter",
   enabled = true,
   event = "VeryLazy",
-  -- version = "v0.*", -- set this if you want to always pull the latest change
+  version = "v0.*", -- set this if you want to always pull the latest change
   opts = {
     selector = {
       provider = "snacks",
     },
-    -- disabled_tools = {
-    --   "list_files",
-    --   "search_files",
-    --   "read_file",
-    --   "create_file",
-    --   "rename_file",
-    --   "delete_file",
-    --   "create_dir",
-    --   "rename_dir",
-    --   "delete_dir",
-    --   "bash",
-    -- },
-    -- system_prompt as function ensures LLM always has latest MCP server state
-    -- This is evaluated for every message, even in existing chats
-    -- system_prompt = function()
-    --   local hub = require("mcphub").get_hub_instance()
-    --   if hub ~= nil then
-    --     return hub:get_active_servers_prompt()
-    --   end
-    -- end,
-    -- -- Using function prevents requiring mcphub before it's loaded
-    -- custom_tools = function()
-    --   return {
-    --     require("mcphub.extensions.avante").mcp_tool(),
-    --   }
-    -- end,
-    openai = {
-      hide_in_model_selector = true,
-    },
-    ["openai-gpt-4o-mini"] = {
-      hide_in_model_selector = true,
-    },
-    cohere = {
-      hide_in_model_selector = true,
-    },
-    -- claude = {
-    --   hide_in_model_selector = true,
-    -- },
-    ["claude-opus"] = {
-      hide_in_model_selector = true,
-    },
-    ["claude-haiku"] = {
-      hide_in_model_selector = true,
-    },
-    -- gemini = {
-    --   hide_in_model_selector = true,
-    -- },
-    vertex = {
-      hide_in_model_selector = true,
-    },
-    vertex_claude = {
-      hide_in_model_selector = true,
-    },
-    bedrock = {
-      hide_in_model_selector = true,
-    },
     windows = {
+      position = "smart",
       width = 35,
       wrap = true,
       sidebar_header = {
@@ -77,14 +22,16 @@ return {
       ask = {
         floating = false,
         border = "none",
+        start_insert = false,
       },
     },
     file_selector = {
       provider = "snacks",
     },
     provider = "cp_sonnet_37",
-    hints = { enabled = false },
+    hints = { enabled = true },
     auto_suggestion_provider = "copilot",
+    mode = "legacy",
     behaviour = {
       auto_suggestions = false, -- Experimental stage
       auto_set_highlight_group = true,
@@ -92,8 +39,8 @@ return {
       auto_apply_diff_after_generation = false,
       support_paste_from_clipboard = false,
       enable_token_counting = true,
-      enable_cursor_planning_mode = true,
-      minimize_diff = false, -- Whether to remove unchanged lines when applying a code block
+      enable_cursor_planning_mode = false,
+      minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
     },
     vendors = {
       -- cp_gpt4o = {
