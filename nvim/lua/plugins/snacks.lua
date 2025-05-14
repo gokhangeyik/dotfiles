@@ -89,7 +89,7 @@ return {
     notifier = {
       style = "compact",
       enabled = true,
-      timeout = 6000,
+      timeout = 4000,
       padding = true,
     },
     quickfile = { enabled = true },
