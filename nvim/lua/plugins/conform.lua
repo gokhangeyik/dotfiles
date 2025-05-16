@@ -41,7 +41,7 @@ return {
       shfmt = {
         prepend_args = { "-i", "2" },
       },
-      ruff_format = { "--line-length", "80" },
+      ruff_format = { "--line-length", "100" },
     },
   },
   -- init = function()

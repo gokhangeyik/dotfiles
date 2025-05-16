@@ -3,15 +3,11 @@ local lsp = {
     filetypes = { "python" },
     cmd_env = { RUFF_TRACE = "messages" },
     init_options = {
-      fixAll = true,
       lint = {
-        enable = true,
+        enable = false,
       },
       settings = {
-        logLevel = "error",
-        -- Enable all linting rules for comprehensive linting
         lint = {
-          run = "onSave",
           select = { "ALL" },
           ignore = {
             -- D203 and D211 conflict, pick D211
@@ -22,7 +18,9 @@ local lsp = {
             "COM812",
           },
         },
-        organizeImports = false,
+        logLevel = "error",
+        configurationPreference = "filesystemFirst",
+        lineLength = 100,
       },
     },
   },
@@ -79,28 +77,6 @@ local treesitter = {
   "ninja",
   "rst",
 }
--- local lsp_overrides = {
--- basedpyright = function(client)
---   client.server_capabilities.renameProvider = false
---   client.server_capabilities.definitionProvider = false
---   client.server_capabilities.referencesProvider = true
---   client.server_capabilities.documentFormattingProvider = false
---   client.server_capabilities.documentRangeFormattingProvider = false
---   client.server_capabilities.documentSymbolProvider = false
---   client.server_capabilities.workspaceSymbolProvider = false
---   client.server_capabilities.codeActionProvider = false
---   client.server_capabilities.completionProvider = false
---   client.server_capabilities.signatureHelpProvider = false
---   client.server_capabilities.hoverProvider = true
---   client.handlers["textDocument/publishDiagnostics"] = function() end
---   return client
--- end,
-
--- ruff = function(client)
---   -- client.server_capabilities.hoverProvider = false
---   return client
--- end,
--- }
 local lang_plugins = {
   {
     "benomahony/uv.nvim",
