@@ -92,7 +92,7 @@ return {
       timeout = 4000,
       padding = true,
     },
-    quickfile = { enabled = true },
+    quickfile = { enabled = false },
     statuscolumn = { enabled = true },
     scope = { enabled = true },
     indent = { enabled = true },
