@@ -1,11 +1,14 @@
 return {
   "folke/snacks.nvim",
   priority = 1000,
-  version = "v2.*",
+  -- version = "v2.*",
   lazy = false,
   enabled = true,
   ---@type snacks.Config
   opts = {
+    input = {
+      enabled = true,
+    },
     lazygit = {
       enabled = true,
       configure = true,
@@ -45,10 +48,11 @@ return {
         },
       },
       sources = {
-        buffers = {
-          hidden = true,
-          ignored = true,
-        },
+        -- buffers = {
+        --   hidden = true,
+        --   ignored = true,
+        --   nofile = false,
+        -- },
         explorer = {
           hidden = true,
           ignored = true,
@@ -99,7 +103,6 @@ return {
     words = { enabled = true },
   },
   keys = {
-    --
     {
       "<leader>fe",
       function()
