@@ -70,7 +70,7 @@ local lsp_overrides = {
   end,
 }
 
-local tools = {}
+local tools = { "bandit" }
 
 local treesitter = {
   "python",
