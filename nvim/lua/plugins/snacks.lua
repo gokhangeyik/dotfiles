@@ -63,6 +63,7 @@ return {
           show_empty = false,
           hidden = true,
           ignored = true,
+          exclude = { ".venv", ".git", "__pycache__", ".pytest_cache", ".ruff_cache" },
         },
       },
       matcher = {
@@ -124,22 +125,6 @@ return {
         Snacks.bufdelete.other()
       end,
       desc = "Delete other buffers",
-    },
-    {
-      "<leader>sv",
-      function()
-        local env_list = _GokkoNvim.get_python_envs()
-        local env_names = vim.tbl_keys(env_list)
-        local python_icon = require("mini.icons").get("extension", "py")
-        Snacks.picker.select(env_names, {
-          prompt = "Select Python Environment",
-          format_item = function(item)
-            local env_info = env_list[item]
-            return string.format("%s [%s]  %s", python_icon, env_info.type, item)
-          end,
-        }, _GokkoNvim.activate_python_env)
-      end,
-      desc = "Python Environment Selector",
     },
     {
       "<leader>st",
@@ -583,7 +568,7 @@ return {
           .option("conceallevel", { off = 0, on = vim.o.conceallevel > 0 and vim.o.conceallevel or 2 })
           :map("<leader>uc")
         Snacks.toggle.treesitter():map("<leader>uT")
-        Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
+        -- Snacks.toggle.option("background", { off = "light", on = "dark", name = "Dark Background" }):map("<leader>ub")
         Snacks.toggle.inlay_hints():map("<leader>uh")
       end,
     })
