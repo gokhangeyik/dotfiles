@@ -1,8 +1,7 @@
 return {
   "nvim-lualine/lualine.nvim",
   enabled = true,
-  lazy = true,
-  event = "VeryLazy",
+  lazy = false,
   dependencies = { "yavorski/lualine-macro-recording.nvim" },
   config = function()
     local location = { "location", separator = "" }
