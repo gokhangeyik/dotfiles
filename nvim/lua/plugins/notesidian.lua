@@ -4,7 +4,7 @@ return {
   lazy = true,
   -- enabled = false,
   -- dev = true,
-  -- event = "VeryLazy",
+  event = "VeryLazy",
   opts = {
     notes_root = "~/DocuBase/",
   },

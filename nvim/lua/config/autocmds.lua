@@ -28,14 +28,6 @@ vim.api.nvim_create_autocmd("CursorHold", {
   end,
 })
 
--- Run linters
-vim.api.nvim_create_autocmd({ "BufWritePost", "InsertLeave", "BufEnter" }, {
-  callback = function()
-    -- try_lint without arguments runs the linters defined in `linters_by_ft`
-    -- for the current filetype
-    require("lint").try_lint()
-  end,
-})
 --
 -- -- Keep one empty line at EOF
 -- autocmd({ "BufWritePost" }, {

@@ -1,6 +1,12 @@
 local lsp = {
+  -- ty = {
+  --   -- cmd = { "uvx", "ty", "server" },
+  --   -- init_options = {
+  --   --   settings = {},
+  --   -- },
+  -- },
   ruff = {
-    filetypes = { "python" },
+    -- filetypes = { "python" },
     cmd_env = { RUFF_TRACE = "messages" },
     init_options = {
       lint = {
@@ -9,14 +15,7 @@ local lsp = {
       settings = {
         lint = {
           select = { "ALL" },
-          ignore = {
-            -- D203 and D211 conflict, pick D211
-            "D203",
-            -- D212 and D213 conflict, pick D212
-            "D213",
-            -- Possbile conflict with formatter
-            "COM812",
-          },
+          ignore = {},
         },
         logLevel = "error",
         configurationPreference = "filesystemFirst",
@@ -25,7 +24,16 @@ local lsp = {
     },
   },
   basedpyright = {
-    filetypes = { "python" },
+    -- filetypes = { "python" },
+    root_markers = {
+      "pyproject.toml",
+      "setup.py",
+      "setup.cfg",
+      "requirements.txt",
+      "Pipfile",
+      "pyrightconfig.json",
+      ".git",
+    },
     settings = {
       basedpyright = {
         disableOrganizeImports = true, -- Let ruff handle imports
@@ -35,13 +43,14 @@ local lsp = {
           useLibraryCodeForTypes = true,
           typeCheckingMode = "standard",
           -- Focus only on type checking
-          diagnosticSeverityOverrides = {
-            -- Lower severity for style issues which ruff will handle
-            reportMissingImports = "warning",
-            reportUnusedImport = "none",
-            reportUnusedVariable = "none",
-            reportGeneralTypeIssues = "error",
-          },
+          -- diagnosticSeverityOverrides = {
+          --   -- Lower severity for style issues which ruff will handle
+          --   reportMissingImports = "warning",
+          --   reportUnusedImport = "none",
+          --   reportUnusedVariable = "none",
+          --   reportGeneralTypeIssues = "error",
+          --   -- reportMissingTypeStubs = "none",
+          -- },
         },
       },
     },
@@ -56,7 +65,7 @@ local lsp_overrides = {
     client.server_capabilities.referencesProvider = true
     client.server_capabilities.documentFormattingProvider = false
     client.server_capabilities.documentRangeFormattingProvider = false
-    client.server_capabilities.codeActionProvider = false
+    client.server_capabilities.codeActionProvider = true
     client.server_capabilities.hoverProvider = true
     return client
   end,
@@ -70,7 +79,7 @@ local lsp_overrides = {
   end,
 }
 
-local tools = { "bandit" }
+local tools = { "bandit", "pyproject-fmt" }
 
 local treesitter = {
   "python",
@@ -80,8 +89,8 @@ local treesitter = {
 local lang_plugins = {
   {
     "benomahony/uv.nvim",
-    ft = { "python" },
-    -- event = "VeryLazy",
+    -- ft = { "python" },
+    event = "VeryLazy",
     opts = {
       -- Auto-activate virtual environments when found
       auto_activate_venv = true,

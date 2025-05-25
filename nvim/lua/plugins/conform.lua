@@ -30,6 +30,7 @@ return {
       scss = { "prettierd", "prettier", stop_after_first = true },
       hcl = { "packer_fmt" },
       terraform = { "terraform_fmt" },
+      toml = { "pyproject-fmt" },
     },
     default_format_opts = {
       async = true,

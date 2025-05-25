@@ -2,8 +2,7 @@ return {
   "rebelot/kanagawa.nvim",
   enabled = true,
   lazy = false,
-  -- event = "VeryLazy",
-  priority = 1000,
+  priority = 1001,
   config = function()
     require("kanagawa").setup({
       compile = false, -- enable compiling the colorscheme
