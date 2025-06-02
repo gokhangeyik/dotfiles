@@ -1,8 +1,6 @@
 local lsp = {
   ansiblels = {
-    -- cmd = {...},
     filetypes = { "ansible.yaml" },
-    -- capabilities = {},
     settings = {},
   },
 }

@@ -14,7 +14,7 @@ return {
       typeStyle = {},
       transparent = true, -- do not set background color
       dimInactive = false, -- dim inactive window ``
-      terminalColors = false, -- define vim.g.terminal_color_{0,17}
+      terminalColors = true, -- define vim.g.terminal_color_{0,17}
       colors = { -- add/modify theme and palette colors
         palette = {},
         theme = {
@@ -36,6 +36,11 @@ return {
           Normal = { fg = "#c8c7c2" },
           NormalFloat = { bg = theme.ui.bg_m3 },
           FloatBorder = { fg = theme.ui.bg_m3, bg = theme.ui.bg_m3 },
+          BlinkCmpMenuBorder = { fg = theme.ui.bg_m3, bg = theme.ui.bg_m3 },
+          BlinkCmpMenu = { bg = theme.ui.bg_m3 },
+          BlinkCmpSource = { bg = theme.ui.bg_m3 },
+          BlinkCmpLabelDetail = { bg = theme.ui.bg_m3 },
+          BlinkCmpLabelDescription = { bg = theme.ui.bg_m3 },
           FloatTitle = { bg = theme.diag.info, fg = theme.ui.bg_m3 },
           AvanteSidebarNormal = { bg = theme.ui.bg_m2 },
           AvanteSidebarWinSeparator = { fg = theme.ui.bg_m2, bg = theme.ui.bg_m2 },

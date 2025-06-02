@@ -78,7 +78,7 @@ return {
     --   markdown = true,
     -- })
 
-    require("mini.icons").setup()
+    require("mini.icons").setup({})
     MiniIcons.mock_nvim_web_devicons()
 
     require("mini.surround").setup({

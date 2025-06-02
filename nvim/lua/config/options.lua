@@ -2,6 +2,8 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = "\\"
 vim.g.kanagawa_lualine_bold = true
 
+vim.opt.winborder = "solid"
+
 vim.opt.numberwidth = 2
 vim.opt.shortmess:append("sI")
 vim.opt.pumheight = 15
