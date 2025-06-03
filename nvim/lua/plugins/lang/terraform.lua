@@ -1,10 +1,13 @@
 local lsp = {
-  terraformls = {
+  terraform_lsp = {
+    cmd = { "terraform-ls", "serve" },
     filetypes = { "terraform", "hcl", "terraform-vars" },
+    root_markers = { ".terraform", ".git" },
   },
 }
 
 local tools = {
+  "terraform-ls",
   "tflint",
 }
 

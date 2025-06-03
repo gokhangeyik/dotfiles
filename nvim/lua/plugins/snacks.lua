@@ -94,7 +94,7 @@ return {
     notifier = {
       style = "compact",
       enabled = true,
-      timeout = 4000,
+      timeout = 5000,
       padding = true,
     },
     quickfile = { enabled = false },
@@ -108,21 +108,6 @@ return {
       "<leader>fe",
       function()
         Snacks.explorer()
-      end,
-      desc = "Switch gitworktree",
-    },
-    -- Git Worktrees
-    {
-      "<leader>gws",
-      function()
-        Snacks.picker.worktrees()
-      end,
-      desc = "Switch gitworktree",
-    },
-    {
-      "<leader>gwn",
-      function()
-        Snacks.picker.worktrees_new()
       end,
       desc = "Switch gitworktree",
     },

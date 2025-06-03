@@ -72,7 +72,7 @@ vim.opt.wrap = false -- Disable line wrap
 vim.diagnostic.config({
   severity_sort = true,
   virtual_text = false, -- floating text next to code is too noisy.
-  -- virtual_lines = { current_line = true },
+  virtual_lines = { current_line = true },
   -- virtual_text = {
   --   current_line = false,
   --   spacing = 4,

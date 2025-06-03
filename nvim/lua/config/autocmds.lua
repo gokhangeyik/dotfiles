@@ -2,11 +2,6 @@ local augroup = vim.api.nvim_create_augroup
 local gokko = augroup("gokko", {})
 local autocmd = vim.api.nvim_create_autocmd
 
-vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
-  pattern = "*.http",
-  command = "set filetype=http",
-})
-
 -- Highlight on yank
 vim.api.nvim_create_autocmd("TextYankPost", {
   group = augroup("highlight_yank", {}),
@@ -21,10 +16,30 @@ autocmd({ "BufWritePre" }, {
   pattern = "*",
   command = [[%s/\s\+$//e]],
 })
--- Show errors and warnings in a floating window
-vim.api.nvim_create_autocmd("CursorHold", {
+-- -- Show errors and warnings in a floating window
+-- vim.api.nvim_create_autocmd("CursorHold", {
+--   callback = function()
+--     vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+--   end,
+-- })
+
+vim.api.nvim_create_autocmd("WinNew", {
   callback = function()
-    vim.diagnostic.open_float(nil, { focusable = false, source = "if_many" })
+    local win_id = vim.api.nvim_get_current_win()
+    local win_conf = vim.api.nvim_win_get_config(win_id)
+
+    if win_conf.relative ~= "" then
+      local title = win_conf.title
+      if title and type(title) == "table" and title[1] and title[1][1] then
+        local window_title = title[1][1]
+
+        local config = vim.api.nvim_win_get_config(win_id)
+        config.title_pos = "center"
+        config.title = { { " " .. window_title .. " ", "FloatTitle" } }
+        -- config.relative = "editor"
+        vim.api.nvim_win_set_config(win_id, config)
+      end
+    end
   end,
 })
 

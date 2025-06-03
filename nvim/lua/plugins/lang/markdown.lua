@@ -1,11 +1,15 @@
+local bin_name = "marksman"
+local cmd = { bin_name, "server" }
+
 local lsp = {
   marksman = {
-    cmd = { "marksman", "server" },
+    cmd = cmd,
     filetypes = { "markdown", "markdown.mdx" },
+    root_markers = { ".marksman.toml", ".git" },
   },
 }
 
-local tools = {}
+local tools = { "marksman" }
 
 local treesitter = {
   "markdown",

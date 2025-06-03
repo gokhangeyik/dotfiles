@@ -6,7 +6,9 @@ local lsp = {
   --   -- },
   -- },
   ruff = {
-    -- filetypes = { "python" },
+    cmd = { "ruff", "server" },
+    filetypes = { "python" },
+    root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git" },
     cmd_env = { RUFF_TRACE = "messages" },
     init_options = {
       lint = {
@@ -16,6 +18,8 @@ local lsp = {
         lint = {
           select = { "ALL" },
           ignore = {},
+          fixable = { "ALL" },
+          unfixable = {},
         },
         logLevel = "error",
         configurationPreference = "filesystemFirst",
@@ -24,7 +28,8 @@ local lsp = {
     },
   },
   basedpyright = {
-    -- filetypes = { "python" },
+    cmd = { "basedpyright-langserver", "--stdio" },
+    filetypes = { "python" },
     root_markers = {
       "pyproject.toml",
       "setup.py",
@@ -79,7 +84,7 @@ local lsp_overrides = {
   end,
 }
 
-local tools = { "bandit", "pyproject-fmt" }
+local tools = { "basedpyright", "ruff", "bandit", "pyproject-fmt", "debugpy" }
 
 local treesitter = {
   "python",
@@ -91,19 +96,13 @@ local lang_plugins = {
     "benomahony/uv.nvim",
     -- ft = { "python" },
     event = "VeryLazy",
+    -- lazy = true,
     opts = {
-      -- Auto-activate virtual environments when found
       auto_activate_venv = true,
-
-      -- Auto commands for directory changes
       auto_commands = true,
-
-      -- Integration with snacks picker
       picker_integration = true,
-
-      -- Keymaps to register (set to false to disable)
       keymaps = {
-        prefix = "<leader>x", -- Main prefix for uv commands
+        prefix = "<leader>ve", -- Main prefix for uv commands
         commands = true, -- Show uv commands menu (<leader>x)
         run_file = true, -- Run current file (<leader>xr)
         run_selection = true, -- Run selected code (<leader>xs)
@@ -114,19 +113,22 @@ local lang_plugins = {
         remove = true, -- Remove a package (<leader>xd)
         sync = true, -- Sync packages (<leader>xc)
       },
-
-      -- Execution options
       execution = {
-        -- Python run command template
         run_command = "uv run python",
-
-        -- Show output in notifications
         notify_output = true,
-
-        -- Notification timeout in ms
         notification_timeout = 10000,
       },
     },
+  },
+  {
+    "mfussenegger/nvim-dap-python",
+    event = "VeryLazy",
+    dependencies = {
+      "mfussenegger/nvim-dap",
+    },
+    config = function()
+      require("dap-python").setup("python3")
+    end,
   },
 }
 -- Language specific plugins

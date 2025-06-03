@@ -1,5 +1,6 @@
 return {
   "cbochs/grapple.nvim",
+  lazy = true,
   opts = {
     scope = "git_branch", -- also try out "git_branch"
     icons = true, -- setting to "true" requires "nvim-web-devicons"

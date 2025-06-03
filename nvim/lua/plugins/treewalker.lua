@@ -1,8 +1,7 @@
 return {
   "aaronik/treewalker.nvim",
   enabled = true,
-  -- lazy = false,
-  event = "VeryLazy",
+  lazy = true,
   -- The following options are the defaults.
   -- Treewalker aims for sane defaults, so these are each individually optional,
   -- and setup() does not need to be called, so the whole opts block is optional as well.

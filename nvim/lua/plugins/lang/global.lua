@@ -1,5 +1,4 @@
 local treesitter = {
-  "bash",
   "regex",
   "c",
   "diff",
@@ -18,7 +17,7 @@ local treesitter = {
 }
 
 return {
-  lsp = lsp or {},
-  tools = tools or {},
+  -- lsp = lsp or {},
+  -- tools = tools or {},
   treesitter = treesitter or {},
 }
