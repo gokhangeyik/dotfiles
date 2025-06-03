@@ -111,21 +111,6 @@ return {
       end,
       desc = "Switch gitworktree",
     },
-    -- Git Worktrees
-    {
-      "<leader>gws",
-      function()
-        Snacks.picker.worktrees()
-      end,
-      desc = "Switch gitworktree",
-    },
-    {
-      "<leader>gwn",
-      function()
-        Snacks.picker.worktrees_new()
-      end,
-      desc = "Switch gitworktree",
-    },
     {
       "<leader>bo",
       function()

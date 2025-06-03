@@ -4,6 +4,12 @@ local lsp = {
       new_config.settings.json.schemas = new_config.settings.json.schemas or {}
       vim.list_extend(new_config.settings.json.schemas, require("schemastore").json.schemas())
     end,
+    cmd = { "vscode-json-language-server", "--stdio" },
+    filetypes = { "json", "jsonc" },
+    init_options = {
+      provideFormatter = true,
+    },
+    root_markers = { ".git" },
     settings = {
       json = {
         format = {
@@ -15,7 +21,7 @@ local lsp = {
   },
 }
 
-local tools = {}
+local tools = { "json-lsp" }
 
 local treesitter = {
   "json5",

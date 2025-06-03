@@ -15,16 +15,10 @@ if not (vim.uv or vim.loop).fs_stat(lazypath) then
 end
 vim.opt.rtp:prepend(lazypath)
 
--- Make sure to setup `mapleader` and `maplocalleader` before
--- loading lazy.nvim so that mappings are correct.
--- This is also a good place to setup other settings (vim.opt)
-vim.g.mapleader = " "
-vim.g.maplocalleader = "\\"
-
 -- Setup lazy.nvim
 local lang_plugins = {}
 local config_path = vim.fn.stdpath("config")
-local scandir = vim.loop.fs_scandir(config_path .. "/lua/plugins/lsp/lang")
+local scandir = vim.loop.fs_scandir(config_path .. "/lua/plugins/lang")
 if scandir then
   while true do
     local file, t = vim.loop.fs_scandir_next(scandir)
@@ -33,7 +27,7 @@ if scandir then
     end
     if t == "file" and file:match("%.lua$") then
       local module_name = file:sub(1, -5) -- Remove the .lua extension
-      local lang_module = require("plugins.lsp.lang." .. module_name)
+      local lang_module = require("plugins.lang." .. module_name)
       lang_plugins = vim.list_extend(lang_plugins or {}, lang_module.lang_plugins or {})
     end
   end
@@ -42,27 +36,20 @@ require("lazy").setup({
   defaults = {
     lazy = true,
   },
+  concurrency = 8,
   dev = {
-    -- Directory where you store your local plugin projects. If a function is used,
-    -- the plugin directory (e.g. `~/projects/plugin-name`) must be returned.
-    ---@type string | fun(plugin: LazyPlugin): string
     path = "~/Projects/neovim/",
-    ---@type string[] plugins that match these patterns will use your local versions instead of being fetched from GitHub
     patterns = {}, -- For example {"folke"}
     fallback = false, -- Fallback to git when local plugin doesn't exist
   },
   spec = {
-    -- import your plugins
-    { import = "plugins.themes" },
     { import = "plugins" },
-    { import = "plugins.lsp" },
     lang_plugins,
     { import = "plugins.overrides" },
   },
   -- Configure any other settings here. See the documentation for more details.
   -- colorscheme that will be used when installing plugins.
-  install = { colorscheme = { "habamax" } },
-  -- automatically check for plugin updates
+  install = { colorscheme = { "kanagawa" } },
   checker = { enabled = false },
   change_detection = {
     enabled = false,

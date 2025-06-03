@@ -1,8 +1,10 @@
 return {
   "folke/noice.nvim",
   enabled = true,
-  lazy = false,
-  priority = 1000,
+  -- event = "UIEnter",
+  event = "VeryLazy",
+  lazy = true,
+  -- priority = 900,
   opts = {
     lsp = {
       progress = {
@@ -26,7 +28,7 @@ return {
       },
       hover = {
         enabled = true,
-        silent = false, -- set to true to not show a message if hover is not available
+        silent = true, -- set to true to not show a message if hover is not available
         view = nil, -- when nil, use defaults from documentation
         ---@type NoiceViewOptions
         opts = {}, -- merged with defaults from documentation

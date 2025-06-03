@@ -2,7 +2,6 @@ return {
   "saghen/blink.cmp",
   event = "VeryLazy",
   enabled = true,
-  -- lazy = false, -- lazy loading handled internally
   dependencies = {
     "rafamadriz/friendly-snippets",
     "Kaiser-Yang/blink-cmp-avante",
@@ -75,7 +74,7 @@ return {
           treesitter_highlighting = true,
           window = {
             -- border = "rounded",
-            border = "none",
+            border = nil,
             winblend = 10,
           },
         },

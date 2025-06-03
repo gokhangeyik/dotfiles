@@ -6,7 +6,9 @@ local lsp = {
   --   -- },
   -- },
   ruff = {
-    -- filetypes = { "python" },
+    cmd = { "ruff", "server" },
+    filetypes = { "python" },
+    root_markers = { "pyproject.toml", "ruff.toml", ".ruff.toml", ".git" },
     cmd_env = { RUFF_TRACE = "messages" },
     init_options = {
       lint = {
@@ -24,7 +26,8 @@ local lsp = {
     },
   },
   basedpyright = {
-    -- filetypes = { "python" },
+    cmd = { "basedpyright-langserver", "--stdio" },
+    filetypes = { "python" },
     root_markers = {
       "pyproject.toml",
       "setup.py",
@@ -79,7 +82,7 @@ local lsp_overrides = {
   end,
 }
 
-local tools = { "bandit", "pyproject-fmt" }
+local tools = { "basedpyright", "ruff", "bandit", "pyproject-fmt" }
 
 local treesitter = {
   "python",

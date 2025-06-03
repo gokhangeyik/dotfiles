@@ -1,8 +1,11 @@
 return {
   "nvim-lualine/lualine.nvim",
   enabled = true,
+  -- event = "UIEnter",
+  -- event = "VeryLazy",
   lazy = false,
-  dependencies = { "yavorski/lualine-macro-recording.nvim" },
+  priority = 900,
+  dependencies = { "yavorski/lualine-macro-recording.nvim", lazy = false },
   config = function()
     local location = { "location", separator = "" }
     local branch = { "branch", icon = "", separator = "" }

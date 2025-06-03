@@ -1,10 +1,11 @@
 return {
   "yetone/avante.nvim",
-  -- event = "BufEnter",
   enabled = true,
   event = "VeryLazy",
   version = "v0.*", -- set this if you want to always pull the latest change
   opts = {
+    mode = "legacy",
+    provider = "cp_sonnet_37",
     selector = {
       provider = "snacks",
     },
@@ -28,10 +29,8 @@ return {
     file_selector = {
       provider = "snacks",
     },
-    provider = "cp_sonnet_37",
     hints = { enabled = true },
     auto_suggestion_provider = "copilot",
-    mode = "legacy",
     behaviour = {
       auto_suggestions = false, -- Experimental stage
       auto_set_highlight_group = true,
@@ -42,25 +41,31 @@ return {
       enable_cursor_planning_mode = false,
       minimize_diff = true, -- Whether to remove unchanged lines when applying a code block
     },
-    vendors = {
+    providers = {
       -- cp_gpt4o = {
       --   __inherited_from = "copilot",
       --   timeout = 30000, -- Timeout in milliseconds
+      --   extra_request_body ={
       --   temperature = 0,
+      --   },
       --   -- max_tokens = 4096,
       -- },
       cp_sonnet_35 = {
         __inherited_from = "copilot",
         model = "claude-3.5-sonnet",
         timeout = 30000, -- Timeout in milliseconds
-        temperature = 0,
+        extra_request_body = {
+          temperature = 0,
+        },
         -- max_tokens = 4096,
       },
       cp_sonnet_37 = {
         __inherited_from = "copilot",
         model = "claude-3.7-sonnet",
         timeout = 30000, -- Timeout in milliseconds
-        temperature = 0,
+        extra_request_body = {
+          temperature = 0,
+        },
         -- max_tokens = 4096,
         -- disable_tools = true,
       },
@@ -68,7 +73,9 @@ return {
         __inherited_from = "copilot",
         model = "claude-3.7-sonnet-thought",
         timeout = 30000, -- Timeout in milliseconds
-        temperature = 0,
+        extra_request_body = {
+          temperature = 0,
+        },
         -- max_tokens = 4096,
       },
       -- Available

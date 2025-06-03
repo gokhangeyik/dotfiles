@@ -13,9 +13,13 @@
 -- end
 -- optimize_lua_cache()
 --
-_GokkoNvim = require("config.GokkoNvim")
-_GokkoNvim.async(_GokkoNvim.init_deps)
+_GokkoNvim = require("core.GokkoNvim")
+if not _GokkoNvim.firstboot() then
+  _GokkoNvim.load_dependencies()
+end
 require("config.options")
 require("config.keymaps")
 require("config.autocmds")
 require("config.lazy")
+_GokkoNvim.async(_GokkoNvim.init)
+vim.cmd.colorscheme("kanagawa")

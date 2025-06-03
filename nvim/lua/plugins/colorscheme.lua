@@ -1,11 +1,11 @@
 return {
   "rebelot/kanagawa.nvim",
   enabled = true,
-  lazy = false,
-  priority = 1001,
+  lazy = true,
+  priority = 1000,
   config = function()
     require("kanagawa").setup({
-      compile = false, -- enable compiling the colorscheme
+      compile = true, -- enable compiling the colorscheme
       undercurl = true, -- enable undercurls
       commentStyle = { italic = true },
       functionStyle = {},
@@ -108,10 +108,10 @@ return {
       theme = "wave",
       background = {
         dark = "wave",
-        light = "lotus",
+        light = "wave",
       },
     })
-    vim.cmd.colorscheme("kanagawa")
+    -- vim.cmd.colorscheme("kanagawa")
     -- _GokkoNvim.async(vim.cmd("KanagawaCompile"))
   end,
 }

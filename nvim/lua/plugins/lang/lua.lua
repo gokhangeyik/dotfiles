@@ -1,8 +1,17 @@
 local lsp = {
   lua_ls = {
-    -- cmd = {...},
+    cmd = { "lua-language-server" },
     filetypes = { "lua" },
-    -- capabilities = {},
+    root_markers = {
+      ".luarc.json",
+      ".luarc.jsonc",
+      ".luacheckrc",
+      ".stylua.toml",
+      "stylua.toml",
+      "selene.toml",
+      "selene.yml",
+      ".git",
+    },
     settings = {
       Lua = {
         workspace = {
@@ -32,6 +41,7 @@ local lsp = {
 
 local tools = {
   "stylua",
+  "lua-language-server",
 }
 
 local treesitter = {
