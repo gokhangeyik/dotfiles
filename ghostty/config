@@ -126,7 +126,7 @@ font-synthetic-style = bold,italic,bold-italic
 # [fontdrop.info](https://fontdrop.info).
 #
 # To generally disable most ligatures, use `-calt, -liga, -dlig`.
-font-feature =
+# font-feature =
 
 # Font size in points. This value can be a non-integer and the nearest integer
 # pixel size will be selected. If you have a high dpi display where 1pt = 2px
@@ -143,7 +143,7 @@ font-feature =
 # On Linux with GTK, font size is scaled according to both display-wide and
 # text-specific scaling factors, which are often managed by your desktop
 # environment (e.g. the GNOME display scale and large text settings).
-font-size = 10
+# font-size = 10
 
 # A repeatable configuration to set one or more font variations values for
 # a variable font. A variable font is a single font, usually with a filename
@@ -163,11 +163,11 @@ font-size = 10
 #
 # Common axes are: `wght` (weight), `slnt` (slant), `ital` (italic), `opsz`
 # (optical size), `wdth` (width), `GRAD` (gradient), etc.
-font-variation =
-
-font-variation-bold =
-font-variation-italic =
-font-variation-bold-italic =
+# font-variation =
+#
+# font-variation-bold =
+# font-variation-italic =
+# font-variation-bold-italic =
 # Force one or a range of Unicode codepoints to map to a specific named font.
 # This is useful if you want to support special symbols or if you want to use
 # specific glyphs that render better for your specific font.
@@ -398,7 +398,7 @@ freetype-load-flags = hinting,force-autohint,monochrome,autohint
 #
 #   - macOS: titlebar tabs style is not updated when switching themes.
 #
-theme = kanagawabones-gokko
+# theme = kanagawabones-gokko
 # Background color for the window.
 # Specified as either hex (`#RRGGBB` or `RRGGBB`) or a named X11 color.
 # background = #282c34
