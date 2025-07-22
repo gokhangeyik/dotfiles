@@ -180,9 +180,9 @@ _GokkoNvim.init = function()
       vim.notify("GokkoNvim: First-time setup complete! Please restart Neovim!")
     end, 3000)
   else
-    _GokkoNvim.async(_GokkoNvim.lsp_config, 3000)
-    _GokkoNvim.async(_GokkoNvim.lsp_utils, 4000)
-    _GokkoNvim.async(_GokkoNvim.mason_auto_installer, 5000)
+    _GokkoNvim.async(_GokkoNvim.lsp_config, 1000)
+    _GokkoNvim.async(_GokkoNvim.lsp_utils, 2000)
+    _GokkoNvim.async(_GokkoNvim.mason_auto_installer, 3000)
   end
 end
 
