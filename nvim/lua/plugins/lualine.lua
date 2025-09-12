@@ -2,9 +2,9 @@ return {
   "nvim-lualine/lualine.nvim",
   enabled = true,
   -- event = "UIEnter",
-  event = "VeryLazy",
-  lazy = true,
-  -- priority = 900,
+  -- event = "VeryLazy",
+  lazy = false,
+  priority = 100,
   dependencies = { "yavorski/lualine-macro-recording.nvim" },
   config = function()
     local location = { "location", separator = "" }
@@ -20,7 +20,7 @@ return {
     }
     local diagnostics = {
       "diagnostics",
-      symbols = { error = " ", warn = " ", info = " ", hint = " " },
+      symbols = { error = "  ", warn = "  ", info = "  ", hint = " " },
       colored = true,
       -- separator = { left = "🬤", right = "" },
       separator = { left = "", right = "" },

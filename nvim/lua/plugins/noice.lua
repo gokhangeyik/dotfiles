@@ -1,9 +1,9 @@
 return {
   "folke/noice.nvim",
   enabled = true,
-  event = "VeryLazy",
-  lazy = true,
-  -- priority = 900,
+  -- event = "VeryLazy",
+  lazy = false,
+  priority = 90,
   opts = {
     lsp = {
       progress = {
