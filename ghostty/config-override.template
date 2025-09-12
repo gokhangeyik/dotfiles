@@ -1,0 +1,67 @@
+# font-family = ""
+
+# Maple Mono
+# font-family = "Maple Mono NF"
+# font-feature = "cv32, cv33, cv34, cv35, cv36, cv37, -calt, zero"
+# font-style = "Medium"
+# font-style-bold = "Bold"
+# font-style-italic = "Medium Italic"
+# font-style-bold-italic = "Bold Italic"
+# font-size = 9
+# adjust-cell-width = -5%
+# adjust-cell-height = 26
+# adjust-cursor-height = 26
+
+# Iosevka Gokko Term
+# font-family = "Iosevka-Gokko-Term"
+# font-feature = "-liga -calt"
+# font-style = "Medium"
+# font-style-bold = "Bold"
+# font-style-italic = "Medium Oblique"
+# font-style-bold-italic = "Bold Oblique"
+# font-size = 10.5
+# adjust-cell-width = -4%
+# adjust-cell-height = 25
+# adjust-cursor-height = 25
+#
+# adjust-underline-position = 9
+# adjust-underline-thickness = 2
+
+# Comic Code
+# font-family = "Comic Code Ligatures"
+# font-feature = "ss02, -liga"
+
+# JetBrains Mono
+# font-family = "JetBrains Mono"
+# font-feature = "-calt, zero"
+# font-style = "Regular"
+# font-style-bold = "Bold"
+# font-style-italic = "Italic"
+# font-style-bold-italic = "Bold Italic"
+# font-size = 9
+# adjust-cell-width = -5%
+# adjust-cell-height = 23
+# adjust-cursor-height = 23
+
+# Lilex
+# font-family = "Lilex"
+# font-feature = "cv02, cv10, -calt"
+
+# keybind = alt+1=unbind
+# keybind = alt+2=unbind
+# keybind = alt+3=unbind
+# keybind = alt+4=unbind
+# keybind = alt+5=unbind
+
+# freetype-load-flags = no-hinting
+# theme = kanagawabones-gokko
+# selection-invert-fg-bg = true
+# cursor-invert-fg-bg = true
+# window-colorspace = "display-p3"
+
+# background-opacity = 0.90
+# background-blur = true
+# FONT TEST AREA
+# [] [TODO] [BUG] [WARN] [FATAL]
+# != === >= => -->
+# k i l mM fF rR yY $ && Q tT yY wW a $ % m @ 0123456789
