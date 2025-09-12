@@ -138,7 +138,8 @@ eval "$(zoxide init zsh)"
 eval "$(fzf --zsh)"
 eval "$(flux completion zsh)"
 eval "$(uv generate-shell-completion zsh)"
-eval "$(tms --generate zsh)"
+# TMS 5.0, --generate not available anymore
+# eval "$(tms --generate zsh)"
 
 
 # tmux has-session -t=0 2> /dev/null
