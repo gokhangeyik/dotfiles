@@ -1,0 +1,49 @@
+font_size 9
+
+# font_family JetBrainsMono-SemiBold
+# bold_font JetBrainsMono-ExtraBold
+# italic_font JetBrainsMono-SemiBoldItalic
+# bold_italic_font JetBrainsMono-ExtraBoldItalic
+# font_features JetBrainsMono-ExtraBold +cv06 -calt
+# font_features JetBrainsMono-SemiBoldItalic +cv06 -calt
+# font_features JetBrainsMono-SemiBold +cv06 -calt
+# font_features JetBrainsMono-ExtraBoldItalic +cv06 -calt
+#
+font_family MapleMono-NF-Regular
+bold_font MapleMono-NF-Bold
+italic_font MapleMono-NF-Italic
+bold_italic_font MapleMono-NF-BoldItalic
+font_features MapleMono-NF-Regular +cv32 +cv33 +cv34 +cv35 +cv36 +cv37 -calt +zero
+font_features MapleMono-NF-Italic +cv32 +cv33 +cv34 +cv35 +cv36 +cv37  -calt +zero
+font_features MapleMono-NF-Bold +cv32 +cv33 +cv34 +cv35 +cv36 +cv37 -calt +zero
+font_features MapleMono-NF-BoldItalic +cv32 +cv33 +cv34 +cv35 +cv36 +cv37 -calt +zero
+
+# font_family Iosevka-Gokko-Term-Extended
+# bold_font Iosevka-Gokko-Term-Bold-Extended
+# italic_font Iosevka-Gokko-Term-Extended-Oblique
+# bold_italic_font Iosevka-Gokko-Term-Bold-Extended-Oblique
+# font_features Iosevka-Gokko-Term -calt -liga
+# font_features Iosevka-Gokko-Term -calt -liga
+# font_features Iosevka-Gokko-Term -calt -liga
+# font_features Iosevka-Gokko-Term  -calt liga
+
+# font_family family="Comic Code Ligatures"
+# bold_font JetBrainsMono-Bold
+# italic_font JetBrainsMono-LightItalic
+# bold_italic_font JetBrainsMono-BoldItalic
+
+modify_font cell_height 23px
+modify_font cell_width -1px
+# modify_font_baseline 19
+undercurl_style thin-sparse
+background_opacity 1
+background_blur 0
+
+cursor_trail 1
+# cursor_trail_start_treshold 1
+cursor_trail_decay 0.3 0.6
+#
+# [FIXME] [TODO] [BUG] [WARN] [FATAL] [DEBUG]
+# != === >= => -->
+# k i ljsar mM fF rR yY $ && Q tT yY wW ijds a $ % m @ 0123456789
+
