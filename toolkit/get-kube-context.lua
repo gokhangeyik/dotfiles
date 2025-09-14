@@ -12,7 +12,9 @@ local function read_kube_current_context()
 
 	local file, err = io.open(config_path, "r")
 	if not file then
-		error("Failed to open " .. config_path .. ": " .. (err or "unknown error"))
+		-- error("Failed to open " .. config_path .. ": " .. (err or "unknown error"))
+		print(" ")
+		os.exit(1)
 	end
 
 	local content = file:read("*all")
