@@ -1,3 +1,4 @@
+-- disabled
 -- local util = require("nvim-lspconfig.util")
 local lsp = {
   tailwindcss = {

@@ -29,6 +29,16 @@ _GokkoNvim.load_dependencies = function()
         break
       end
       if t == "file" and file:match("%.lua$") then
+        local file_path = config_path .. "/lua/plugins/lang/" .. file
+        local fp = io.open(file_path, "r")
+        if fp then
+          local first_line = fp:read("*line")
+          fp:close()
+          -- Skip if first line contains "--- disabled"
+          if first_line and first_line:match("^%-%-[%s]*disabled") then
+            goto continue
+          end
+        end
         local module_name = file:sub(1, -5)
         local lang_module = require("plugins.lang." .. module_name)
         _GokkoNvim.lang_plugins = vim.list_extend(_GokkoNvim.lang_plugins or {}, lang_module.lang_plugins or {})
@@ -38,6 +48,7 @@ _GokkoNvim.load_dependencies = function()
         _GokkoNvim.tools = _GokkoNvim.remove_dups(vim.list_extend(_GokkoNvim.tools or {}, lang_module.tools or {}))
         _GokkoNvim.treesitter =
           _GokkoNvim.remove_dups(vim.list_extend(_GokkoNvim.treesitter or {}, lang_module.treesitter or {}))
+        ::continue::
       end
     end
   end
@@ -49,8 +60,21 @@ _GokkoNvim.mason_auto_installer = function()
     local ok, pkg = pcall(mason_registry.get_package, package_name)
     if ok then
       if not pkg:is_installed() then
-        pkg:install()
+        local install_ok, install_err = pcall(function()
+          pkg:install()
+        end)
+        if not install_ok then
+          vim.notify(
+            "GokkoNvim: Failed to install Mason package '" .. package_name .. "': " .. (install_err or "Unknown error"),
+            vim.log.levels.ERROR
+          )
+        end
       end
+    else
+      vim.notify(
+        "GokkoNvim: Mason package '" .. package_name .. "' not found in registry",
+        vim.log.levels.WARN
+      )
     end
   end
 end

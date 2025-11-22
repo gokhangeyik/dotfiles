@@ -116,7 +116,7 @@ local tools = {
   "gomodifytags",
   "impl",
   "delve",
-  "golanci-lint",
+  "golangci-lint",
   "djlint",
 }
 

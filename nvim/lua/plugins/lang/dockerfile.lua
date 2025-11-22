@@ -1,11 +1,11 @@
 local lsp = {
   dockerls = {
-    cmd = { "docker-langserver", "--stdio" },
+    cmd = { "docker-language-server", "start", "--stdio" },
     filetypes = { "dockerfile" },
     root_markers = { "Dockerfile" },
   },
   docker_compose_language_service = {
-    cmd = { "docker-compose-langserver", "--stdio" },
+    cmd = { "docker-compose-langserver", "start", "--stdio" },
     filetypes = { "yaml.docker-compose" },
     root_markers = { "docker-compose.yaml", "docker-compose.yml", "compose.yaml", "compose.yml" },
     settings = {},
@@ -13,7 +13,7 @@ local lsp = {
 }
 
 local tools = {
-  "dockerls",
+  "docker-language-server",
   "docker-compose-language-service",
   "hadolint",
 }
