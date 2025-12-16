@@ -1,13 +1,24 @@
 return {
   "folke/snacks.nvim",
   priority = 1000,
-  -- version = "v2.*",
+  version = "v2.*",
   lazy = false,
   enabled = true,
   ---@type snacks.Config
   opts = {
     input = {
       enabled = true,
+    },
+    zen = {
+      dim = false,
+      git_signs = true,
+      diagnostics = true,
+      inlay_hints = true,
+      center = true,
+      show = {
+        statusline = true,
+        tabline = false,
+      },
     },
     lazygit = {
       enabled = true,
@@ -368,6 +379,13 @@ return {
         Snacks.picker.colorschemes()
       end,
       desc = "Colorschemes",
+    },
+    {
+      "<leader>uz",
+      function()
+        Snacks.zen()
+      end,
+      desc = "Zen Mode",
     },
     {
       "<leader>qp",
