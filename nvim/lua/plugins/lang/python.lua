@@ -1,10 +1,4 @@
 local lsp = {
-  -- ty = {
-  --   -- cmd = { "uvx", "ty", "server" },
-  --   -- init_options = {
-  --   --   settings = {},
-  --   -- },
-  -- },
   ruff = {
     cmd = { "ruff", "server" },
     filetypes = { "python" },
@@ -26,6 +20,16 @@ local lsp = {
         lineLength = 100,
       },
     },
+    on_new_config = function(config, root_dir)
+      -- Try to find ruff in virtual environment first
+      local venv_ruff = root_dir .. "/.venv/bin/ruff"
+      if vim.fn.executable(venv_ruff) == 1 then
+        config.cmd = { venv_ruff, "server" }
+      else
+        -- Fallback to system ruff (from PATH)
+        config.cmd = { "ruff", "server" }
+      end
+    end,
   },
   basedpyright = {
     cmd = { "basedpyright-langserver", "--stdio" },
@@ -59,6 +63,16 @@ local lsp = {
         },
       },
     },
+    on_new_config = function(config, root_dir)
+      -- Try to find basedpyright in virtual environment first
+      local venv_basedpyright = root_dir .. "/.venv/bin/basedpyright-langserver"
+      if vim.fn.executable(venv_basedpyright) == 1 then
+        config.cmd = { venv_basedpyright, "--stdio" }
+      else
+        -- Fallback to system basedpyright (from PATH)
+        config.cmd = { "basedpyright-langserver", "--stdio" }
+      end
+    end,
   },
 }
 
