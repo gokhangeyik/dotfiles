@@ -1,6 +1,6 @@
 return {
   "Juksuu/worktrees.nvim",
-  enabled = true,
+  enabled = false,
   lazy = true,
   dependencies = {
     "nvim-lua/plenary.nvim",

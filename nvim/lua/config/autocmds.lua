@@ -16,6 +16,11 @@ autocmd({ "BufWritePre" }, {
   pattern = "*",
   command = [[%s/\s\+$//e]],
 })
+-- Cleanup MS EOL marks
+vim.api.nvim_create_autocmd("BufWritePre", {
+  pattern = "*",
+  command = [[%s/\r//ge]],
+})
 -- -- Show errors and warnings in a floating window
 -- vim.api.nvim_create_autocmd("CursorHold", {
 --   callback = function()

@@ -23,7 +23,7 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/go/bin"
 export PATH="$PATH:$HOME/.local/share/nvim/mason/bin"
 eval "$(luarocks path --bin)"
-export BW_SESSION=$(kwallet-query -r BW_SESSION -f Bitwarden kdewallet)
+# export BW_SESSION=$(kwallet-query -r BW_SESSION -f Bitwarden kdewallet)
 # export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
 # export CRYPTOGRAPHY_OPENSSL_NO_LEGACY=true
 export STARSHIP_CONFIG=~/.config/starship.toml

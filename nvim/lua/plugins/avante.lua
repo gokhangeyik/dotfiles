@@ -1,6 +1,6 @@
 return {
   "yetone/avante.nvim",
-  enabled = true,
+  enabled = false,
   lazy = true,
   event = "VeryLazy", -- Load only after Neovim is fully started
   priority = 900,

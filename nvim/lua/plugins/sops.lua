@@ -1,6 +1,6 @@
 return {
   "lemarsu/sops.nvim",
-  enabled = true,
+  enabled = false,
   cmd = "SOPS",
   -- event = "VeryLazy",
 }
