@@ -28,11 +28,7 @@ local lsp = {
       ".git",
     },
     before_init = function(_, config)
-      -- Add support for golangci-lint V1 (in V2 `--out-format=json` was replaced by
-      -- `--output.json.path=stdout`).
       local v1
-      -- PERF: `golangci-lint version` is very slow (about 0.1 sec) so let's find
-      -- version using `go version -m $(which golangci-lint) | grep '^\smod'`.
       if vim.fn.executable("go") == 1 then
         local exe = vim.fn.exepath("golangci-lint")
         local version = vim.system({ "go", "version", "-m", exe }):wait()
@@ -51,7 +47,6 @@ local lsp = {
     filetypes = { "go", "gomod", "gowork", "gotmpl" },
     root_dir = function(bufnr, on_dir)
       local fname = vim.api.nvim_buf_get_name(bufnr)
-      -- see: https://github.com/neovim/nvim-lspconfig/issues/804
       if mod_cache then
         on_dir(get_root(fname))
         return
@@ -128,22 +123,10 @@ local treesitter = {
   "gotmpl",
 }
 
-local lsp_overrides = {
-  -- gopls = function(client)
-  --   local semantic = client.config.capabilities.textDocument.semanticTokens or {}
-  --   client.server_capabilities.semanticTokensProvider = {
-  --     full = true,
-  --     legend = { tokenModifiers = semantic.tokenModifiers, tokenTypes = semantic.tokenTypes },
-  --     range = true,
-  --   }
-  --   return client
-  -- end,
-}
--- Language spesific plugins
+local lsp_overrides = {}
 return {
   lsp = lsp or {},
   lsp_overrides = lsp_overrides or {},
   tools = tools or {},
   treesitter = treesitter or {},
-  lang_plugins = {},
 }

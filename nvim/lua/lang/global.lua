@@ -1,5 +1,7 @@
 local treesitter = {
   "regex",
+  "markdown",
+  "groovy",
   "c",
   "diff",
   "html",
@@ -17,7 +19,5 @@ local treesitter = {
 }
 
 return {
-  -- lsp = lsp or {},
-  -- tools = tools or {},
   treesitter = treesitter or {},
 }

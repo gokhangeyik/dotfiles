@@ -16,10 +16,8 @@ local treesitter = {
   "hcl",
 }
 
--- Language spesific plugins
 return {
   lsp = lsp or {},
   tools = tools or {},
   treesitter = treesitter or {},
-  lang_plugins = {},
 }

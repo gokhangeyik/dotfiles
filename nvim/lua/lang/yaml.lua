@@ -27,11 +27,4 @@ return {
   lsp = lsp or {},
   tools = tools or {},
   treesitter = treesitter or {},
-  lang_plugins = {
-    {
-      "b0o/SchemaStore.nvim",
-      lazy = true,
-      version = false,
-    },
-  },
 }

@@ -1,9 +1,11 @@
 return {
-  "cbochs/grapple.nvim",
-  lazy = true,
+  enabled = true,
+  event = "SuperLazyGokko",
+  dependencies = {},
+  pack = { src = "https://github.com/cbochs/grapple.nvim" },
   opts = {
-    scope = "git_branch", -- also try out "git_branch"
-    icons = true, -- setting to "true" requires "nvim-web-devicons"
+    scope = "git_branch",
+    icons = true,
     status = true,
   },
   keys = {
@@ -14,7 +16,5 @@ return {
     { "<a-3>", "<cmd>Grapple select index=3<cr>", desc = "Select third tag" },
     { "<a-4>", "<cmd>Grapple select index=4<cr>", desc = "Select fourth tag" },
     { "<a-5>", "<cmd>Grapple select index=5<cr>", desc = "Select fifth tag" },
-    -- { "<c-s-n>", "<cmd>Grapple cycle_tags next<cr>", desc = "Go to next tag" },
-    -- { "<c-s-p>", "<cmd>Grapple cycle_tags prev<cr>", desc = "Go to previous tag" },
   },
 }
