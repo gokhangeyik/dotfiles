@@ -1,7 +1,11 @@
 return {
-  "mistweaverco/kulala.nvim",
-  lazy = true,
+  enabled = true,
+  dependencies = {},
   ft = { "http", "rest" },
+  pack = { src = "https://github.com/mistweaverco/kulala.nvim" },
+  opts = {
+    global_keymaps = false,
+  },
   keys = {
     { "<leader>R", "", desc = "+Rest", ft = "http" },
     { "<leader>Rb", "<cmd>lua require('kulala').scratchpad()<cr>", desc = "Open scratchpad", ft = "http" },
@@ -21,8 +25,5 @@ return {
     { "<leader>Rs", "<cmd>lua require('kulala').run()<cr>", desc = "Send the request", ft = "http" },
     { "<leader>RS", "<cmd>lua require('kulala').show_stats()<cr>", desc = "Show stats", ft = "http" },
     { "<leader>Rt", "<cmd>lua require('kulala').toggle_view()<cr>", desc = "Toggle headers/body", ft = "http" },
-  },
-  opts = {
-    global_keymaps = false,
   },
 }

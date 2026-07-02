@@ -1,9 +1,8 @@
 return {
-  "folke/trouble.nvim",
-  -- event = "VeryLazy",
-  lazy = true,
   enabled = true,
-  opts = {}, -- for default options, refer to the configuration section for custom setup.
+  pack = { src = "https://github.com/folke/trouble.nvim" },
+  event = "SuperLazyGokko",
+  opts = {},
   cmd = "Trouble",
   keys = {
     {

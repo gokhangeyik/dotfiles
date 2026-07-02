@@ -1,8 +1,8 @@
 return {
   enabled = true,
+  ft = { "ansible.yaml" },
   dependencies = {},
-  event = "LazyGokko",
-  pack = { src = "https://github.com/williamboman/mason.nvim" },
+  pack = { src = "https://github.com/mfussenegger/nvim-ansible" },
   opts = {
     ui = {
       check_outdated_packages_on_open = true,
@@ -14,6 +14,16 @@ return {
         package_pending = "➜",
         package_uninstalled = "✗",
       },
+    },
+  },
+  keys = {
+    {
+      "<leader>ta",
+      function()
+        require("ansible").run()
+      end,
+      desc = "Ansible Run Playbook/Role",
+      silent = true,
     },
   },
 }

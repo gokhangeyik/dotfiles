@@ -1,13 +1,13 @@
 local lsp = {
-  terraform_lsp = {
-    cmd = { "terraform-ls", "serve" },
+  tofu_ls = {
+    cmd = { "tofu-ls", "serve" },
     filetypes = { "terraform", "hcl", "terraform-vars" },
     root_markers = { ".terraform", ".git" },
   },
 }
 
 local tools = {
-  "terraform-ls",
+  "tofu-ls",
   "tflint",
 }
 
@@ -16,10 +16,8 @@ local treesitter = {
   "hcl",
 }
 
--- Language spesific plugins
 return {
   lsp = lsp or {},
   tools = tools or {},
   treesitter = treesitter or {},
-  lang_plugins = {},
 }

@@ -1,21 +1,8 @@
 return {
-  "stevearc/conform.nvim",
-  event = { "BufWritePre" },
-  cmd = { "ConformInfo" },
   enabled = true,
-  lazy = true,
-  keys = {
-    {
-      "<leader>cf",
-      function()
-        require("conform").format({ async = true })
-      end,
-      mode = "",
-      desc = "Format buffer",
-    },
-  },
-  ---@module "conform"
-  ---@type conform.setupOpts
+  dependencies = {},
+  event = "LazyGokko",
+  pack = { src = "https://github.com/stevearc/conform.nvim" },
   opts = {
     formatters_by_ft = {
       lua = { "stylua" },
@@ -45,8 +32,14 @@ return {
       ruff_format = { "--line-length", "100" },
     },
   },
-  -- init = function()
-  --   -- If you want the formatexpr, here is the place to set it
-  --   vim.o.formatexpr = "v:lua.require'conform'.formatexpr()"
-  -- end,
+  keys = {
+    {
+      "<leader>cf",
+      function()
+        require("conform").format({ async = true })
+      end,
+      mode = "",
+      desc = "Format buffer",
+    },
+  },
 }

@@ -1,10 +1,16 @@
 return {
-  "kevinhwang91/nvim-ufo",
-  lazy = true,
-  event = "VeryLazy",
-  dependencies = {
-    "kevinhwang91/promise-async",
-  },
+  enabled = true,
+  dependencies = { { src = "https://github.com/kevinhwang91/promise-async" } },
+  event = "SuperLazyGokko",
+  pack = { src = "https://github.com/kevinhwang91/nvim-ufo" },
+  opts = {},
+  config = function()
+    require("ufo").setup({
+      provider_selector = function(bufnr, filetype, buftype)
+        return { "treesitter", "indent" }
+      end,
+    })
+  end,
   keys = {
     {
       "zR",
@@ -23,11 +29,4 @@ return {
       desc = "Close All Folds",
     },
   },
-  config = function()
-    require("ufo").setup({
-      provider_selector = function(bufnr, filetype, buftype)
-        return { "treesitter", "indent" }
-      end,
-    })
-  end,
 }

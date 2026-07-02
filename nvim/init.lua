@@ -1,9 +1,23 @@
+vim.g._start_time = vim.fn.reltime()
+vim.g.mapleader = " "
+vim.g.maplocalleader = "\\"
+
+require("vim._core.ui2").enable({
+  enable = true,
+})
+
 _GokkoNvim = require("core.GokkoNvim")
-if not _GokkoNvim.firstboot() then
-  _GokkoNvim.load_dependencies()
-end
 require("config.options")
+require("config.diagnostics")
 require("config.keymaps")
 require("config.autocmds")
-require("config.lazy")
-_GokkoNvim.async(_GokkoNvim.init, 100)
+
+_GokkoNvim.load_dependencies()
+
+require("core.GokkoPack").setup({
+  sources = {
+    "lua/plugins",
+  },
+})
+
+_GokkoNvim.init()
